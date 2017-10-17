@@ -1,17 +1,16 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
 import io from 'socket.io-client';
 
 import router from './router';
+import store from './store';
 import app from './vue/app/app.vue';
 
 import '../style/index.scss';
 
-Vue.use(VueRouter);
-
 new Vue({
     el: '#app',
     router,
+    store,
     render: h => h(app, {
         ref: 'app'
     }),
