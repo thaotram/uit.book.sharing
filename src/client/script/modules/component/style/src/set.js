@@ -10,15 +10,15 @@ module.exports = function set(style, vars = {}) {
         return;
     }
 
-    style = style.constructor.name == 'VueComponent' ?
-        style.$options.style :
-        style;
+    style = style.constructor.name === 'VueComponent'
+        ? style.$options.style
+        : style;
 
     if (Array.isArray(style)) {
         style.forEach((eachStyle) => {
             setEachStyle(eachStyle, vars);
         });
-    } else if (typeof style == 'object' && !Array.isArray(style)) {
+    } else if (typeof style === 'object' && !Array.isArray(style)) {
         setEachStyle(style, vars);
     } else {
         console.error({
