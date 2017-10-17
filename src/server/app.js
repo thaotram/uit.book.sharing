@@ -8,15 +8,15 @@ import AppExpress from './express/express';
 import AppSocket from './socket/socket';
 import AppConfig from './config/config';
 
-let app = express();
-let port = process.env.PORT || 5;
-let server = http.createServer(app);
-let io = SocketIO(server);
+const app = express();
+const port = process.env.PORT || 5;
+const server = http.createServer(app);
+const io = SocketIO(server);
 
 console.log(chalk.bgMagenta(
-    process.env.NODE_ENV == 'development' ?
-        '\n ----- [ Development Environment ] ----- ' :
-        '\n ----- [ Productions Environment ] ----- '
+    process.env.NODE_ENV === 'development'
+        ? '\n ----- [ Development Environment ] ----- '
+        : '\n ----- [ Productions Environment ] ----- '
 ));
 
 AppConfig(app, io);
@@ -26,6 +26,6 @@ AppSocket(io);
 server.listen(port);
 
 console.log(
-    '   ' +
-    chalk.underline.bgCyan(' http://ai.ai:' + port + ' - Lúc: ' + moment().format('hh:mm:ss') + ' ')
+    '   '
+    + chalk.underline.bgCyan(' http://ai.ai:' + port + ' - Lúc: ' + moment().format('hh:mm:ss') + ' ')
 );

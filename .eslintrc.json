@@ -39,7 +39,9 @@
             "always"
         ],
         "no-console": "off",
-        "no-unused-vars": "warn"
+        "no-unused-vars": "warn",
+        "space-before-function-paren": ["error", "never"],
+        "operator-linebreak": ["error", "before"]
         // "no-extra-semi": "off"
     }
 }
