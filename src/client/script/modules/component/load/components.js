@@ -1,10 +1,10 @@
-let components = require.context('../../../vue', true, /.*\.vue$/);
-export default function (query) {
-    let results = {},
-        reg = new RegExp(`^..*/${query}.*(.vue)?$`);
+const components = require.context('../../../vue', true, /.*\.vue$/);
+export default function(query) {
+    const results = {};
+    const reg = new RegExp(`^..*/${query}.*(.vue)?$`);
     components.keys().forEach((key) => {
         if (reg.test(key)) {
-            let name = 'ai-' + key.replace(/^\.\/.*\/([^/]*).vue$/, '$1');
+            const name = 'ai-' + key.replace(/^\.\/.*\/([^/]*).vue$/, '$1');
             results[name] = components(key).default;
         }
     });
