@@ -42,6 +42,6 @@
         "no-unused-vars": "warn",
         "space-before-function-paren": ["error", "never"],
         "operator-linebreak": ["error", "before"],
-        "eol-last": ["error", "always"]
+        "eol-last": "off"
     }
 }
