@@ -10,13 +10,13 @@
 <script>
 import {
     components,
+    style
 } from 'modules';
 
 export default {
     name: 'button',
     components: {
-        ...components('container/row'),
-        ...components('units/br'),
+        ...components('row'),
     },
     props: {
         path: {
@@ -96,10 +96,11 @@ export default {
             size: style.get('size', this, 40),
             dpi: window.devicePixelRatio
         });
+        /*
         let args = [this.path, this.root, true].filter((value) => {
-            return value !== undefined;
-        });
-        let [parent, property] = find(...args);
+                return value !== undefined;
+            }),
+            [parent, property] = find(...args);
         if (parent &&
             property !== undefined &&
             parent[property] !== undefined) {
@@ -124,6 +125,7 @@ export default {
         } else {
             // console.log(this.$el);
         }
+        */
     }
 };
 </script>

@@ -1,7 +1,8 @@
 <template>
-    <div id="header" class="row">
+    <div id="header" class="row" size="40">
         <ai-row>
-            ok
+            <ai-button text="hongphuc" />
+
         </ai-row>
     </div>
 </template>
@@ -9,20 +10,12 @@
 import {
     components
 } from 'modules';
+
 export default {
     name: 'header',
     components: {
-        ...components('row')
+        ...components('row'),
+        ...components('button')
     }
 };
 </script>
-<style scoped>
-.find {
-    display: flex;
-    line-height: 50px;
-    height: 50px;
-    vertical-align: middle;
-    font-size: 20px;
-    color: #868f98
-}
-</style>

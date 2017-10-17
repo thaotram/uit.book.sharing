@@ -58,6 +58,12 @@ module.exports = {
                 removeScriptTypeAttributes: true,
                 removeStyleLinkTypeAttributes: true
             }
+        }),
+        new webpack.ProvidePlugin({
+            jQuery: 'jquery',
+            $: 'jquery',
+            'window.jQuery': 'jquery',
+            Popper: ['popper.js', 'default'],
         })
     ],
     resolve: {

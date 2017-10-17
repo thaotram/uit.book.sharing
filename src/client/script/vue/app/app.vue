@@ -1,7 +1,24 @@
 <template>
-    <div id="app" class="col">
-        <ai-header/>
-        <div style="height: 20px; background: #f2f5f7"></div>
+    <div id="app">
+        <div class="row">
+            <div class="col">
+                1 of 2
+            </div>
+            <div class="col">
+                2 of 2
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                1 of 3
+            </div>
+            <div class="col">
+                2 of 3
+            </div>
+            <div class="col">
+                3 of 3
+            </div>
+        </div>
     </div>
 </template>
 <script>
