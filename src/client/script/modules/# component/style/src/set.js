@@ -1,16 +1,16 @@
-import setEachStyle from "./setEachStyle.js";
+import setEachStyle from './setEachStyle.js';
 
 module.exports = function set(style, vars = {}) {
-    if (typeof vars !== "object") {
+    if (typeof vars !== 'object') {
         console.error({
-            err: "In set style function: vars is not an object",
+            err: 'In set style function: vars is not an object',
             style: style,
             vars: vars
         });
         return;
     }
 
-    style = style.constructor.name == "VueComponent" ?
+    style = style.constructor.name == 'VueComponent' ?
         style.$options.style :
         style;
 
@@ -18,11 +18,11 @@ module.exports = function set(style, vars = {}) {
         style.forEach((eachStyle) => {
             setEachStyle(eachStyle, vars);
         });
-    } else if (typeof style == "object" && !Array.isArray(style)) {
+    } else if (typeof style == 'object' && !Array.isArray(style)) {
         setEachStyle(style, vars);
     } else {
         console.error({
-            err: "In set style function: style is not an object or an array of objects",
+            err: 'In set style function: style is not an object or an array of objects',
             style: style,
             vars: vars
         });

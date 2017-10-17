@@ -1,4 +1,3 @@
-// Todo: Change RegExp
 let components = require.context('../vue', true, /.*\.vue$/);
 export default function (query) {
     let results = {};

@@ -10,9 +10,9 @@ global.all = function () {
     }
 };
 
-module.exports = function getStyleElement(group = "default", callback = () => {}) {
+module.exports = function getStyleElement(group = 'default', callback = () => {}) {
     if (!styleGroups.hasOwnProperty(group)) {
-        styleGroups[group] = document.createElement("style");
+        styleGroups[group] = document.createElement('style');
         document.head.appendChild(styleGroups[group]);
         styleGroups[group].sheet.properties = [];
     }

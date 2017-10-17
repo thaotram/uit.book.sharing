@@ -1,5 +1,5 @@
-import insertRule from "./insertRule";
-import getStyleElement from "./getStyleElement";
+import insertRule from './insertRule';
+import getStyleElement from './getStyleElement';
 
 
 // properties => noOverwriteProperties
@@ -13,7 +13,7 @@ module.exports = function setRule(selector, rules, group, overwrite) {
         } else {
             let length = sheet.cssRules.length;
             for (let index = 0; index < length; index++) {
-                if (selector.replace(/\s/g, "") == sheet.cssRules[index].selectorText.replace(/\s/g, "")) {
+                if (selector.replace(/\s/g, '') == sheet.cssRules[index].selectorText.replace(/\s/g, '')) {
                     sheet.deleteRule(index);
                     insertRule(selector, rules, sheet, index);
                     return;
