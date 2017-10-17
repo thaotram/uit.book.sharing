@@ -1,4 +1,4 @@
-let components = require.context('../vue', true, /.*\.vue$/);
+let components = require.context('../../../vue', true, /.*\.vue$/);
 export default function (query) {
     let results = {};
     let reg = new RegExp(`^..*/${query}(.vue)?$`);

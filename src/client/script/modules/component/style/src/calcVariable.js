@@ -4,6 +4,6 @@ module.exports = function calcVariable(css, vars) {
         css = css.join(';');
     }
     return css.replace(/#{([$.\w\s()+\-*/]+)}/g, (match, $1) => {
-        return eval($1.replace(/\$/g, 'vars.'));
+        return eval(vars[$1.replace(/\$/g, '')]);
     });
 };
