@@ -14,7 +14,7 @@ new Vue({
     render: h => h(app, {
         ref: 'app'
     }),
-    created: function () {
+    created: function() {
         io();
     }
 });
