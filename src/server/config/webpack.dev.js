@@ -14,7 +14,7 @@ export default {
     devtool: '#source-map',
     output: {
         filename: 'script.js',
-        path: path.resolve(__dirname, './dist/client'),
+        path: path.resolve(__dirname, './dist/client')
     },
     devServer: {
         contentBase: './dist/client',
@@ -68,25 +68,16 @@ export default {
                 removeStyleLinkTypeAttributes: true
             }
         }),
-        new webpack.ProvidePlugin({
-            jQuery: 'jquery',
-            $: 'jquery',
-            'window.jQuery': 'jquery',
-            Popper: ['popper.js', 'default'],
-            // In case you imported plugins individually, you must also require them here:
-            // Util: 'exports-loader?Util!bootstrap/js/dist/util',
-            // Dropdown: 'exports-loader?Dropdown!bootstrap/js/dist/dropdown',
-        }),
         new class {
             apply(compiler) {
-                compiler.plugin('emit', function (compilation, callback) {
+                compiler.plugin('emit', function(compilation, callback) {
                     console.log(
-                        '      ' +
-                        chalk.bgGreen(' Emit client '));
+                        '      '
+                        + chalk.bgGreen(' Emit client '));
                     callback();
                 });
             }
-        }
+        }()
     ],
     resolve: {
         extensions: ['.js', '.vue', '.json'],
@@ -94,5 +85,5 @@ export default {
             path.resolve(__dirname, '../../../node_modules'),
             path.resolve(__dirname, '../../../src/client/script/modules')
         ]
-    },
+    }
 };

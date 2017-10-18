@@ -1,8 +1,8 @@
 // import SocketIO from 'socket.io';
-export default function (io) {
+export default function(io) {
     io.on('connection', (client) => {
-        let sessionID = client.request.sessionID,
-            socketID = client.id;
+        const sessionID = client.request.sessionID;
+        const socketID = client.id;
         console.log(`${socketID} in`);
 
         client.on('foo', (data) => {

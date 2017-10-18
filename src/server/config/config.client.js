@@ -5,11 +5,11 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 
 import webpackConfig from './webpack.dev';
 
-let webpackCompiler = webpack(webpackConfig);
+const webpackCompiler = webpack(webpackConfig);
 
-export default function (app) {
-    process.env.NODE_ENV == 'development' ?
-        app.use(webpackDevMiddleware(webpackCompiler, {
+export default function(app) {
+    process.env.NODE_ENV === 'development'
+        ? app.use(webpackDevMiddleware(webpackCompiler, {
             stats: {
                 colors: true,
                 hash: false,
@@ -17,9 +17,9 @@ export default function (app) {
                 modules: false
             },
             log: console.log
-        })) &&
-        app.use(webpackHotMiddleware(webpackCompiler, {
+        }))
+        && app.use(webpackHotMiddleware(webpackCompiler, {
             log: console.log
-        })) :
-        app.use(express.static('dist/client'));
+        }))
+        : app.use(express.static('dist/client'));
 }

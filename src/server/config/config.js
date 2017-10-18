@@ -3,8 +3,8 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import appConfigClient from './config.client';
 
-export default function (app, io) {
-    let sessionConfig = session({
+export default function(app, io) {
+    const sessionConfig = session({
         name: 'net.aivn',
         secret: 'Mã bảo mật session ở máy chủ',
         resave: false,
