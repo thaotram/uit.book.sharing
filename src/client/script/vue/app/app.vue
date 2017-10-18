@@ -1,19 +1,6 @@
 <template>
     <div id="app">
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Active</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
+        <ai-header/>
     </div>
 </template>
 <script>
@@ -31,3 +18,11 @@ export default {
     }
 };
 </script>
+<style lang="scss">
+#app {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    min-width: 400px;
+}
+</style>

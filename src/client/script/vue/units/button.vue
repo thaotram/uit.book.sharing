@@ -16,7 +16,7 @@ import {
 export default {
     name: 'button',
     components: {
-        ...components('row'),
+        ...components('row')
     },
     props: {
         path: {
@@ -25,9 +25,6 @@ export default {
         value: {
             default: ''
         },
-        // toggle: {
-        //     default: false
-        // },
         text: {
             default: ''
         },
@@ -43,26 +40,26 @@ export default {
         overwrite: false,
         rules: {
             '[size="#{$size}"] .button': [
-                'min-height: #{$size * $dpi}px',
+                'min-height: #{$size * $dpi}px'
             ],
             '[size="#{$size}"] .button > .br': [
-                'width: #{$size * $dpi *0.3}px',
+                'width: #{$size * $dpi *0.3}px'
             ],
             '[size="#{$size}"] .button > .slot': [
                 'padding: 0 #{$size * $dpi *0.3}px',
-                'font-size: #{($size * 0.2 + 7) * $dpi}px',
+                'font-size: #{($size * 0.2 + 7) * $dpi}px'
             ],
             '[size="#{$size}"] .button > .icon': [
                 'min-height: #{$size * $dpi}px',
                 'line-height: #{$size * $dpi}px',
                 'width: #{$size * $dpi}px',
                 'padding: 0',
-                'font-size: #{$size * $dpi * 0.4}px',
+                'font-size: #{$size * $dpi * 0.4}px'
             ],
             '[size="#{$size}"] .button > .text': [
                 'line-height: #{$size * $dpi }px',
                 'padding: 0',
-                'font-size: #{($size * 0.2 + 7) * $dpi}px',
+                'font-size: #{($size * 0.15 + 7) * $dpi}px'
             ]
         }
     },
@@ -71,7 +68,7 @@ export default {
             isActive: false,
             compiledValue: '',
             watchersValue: [],
-            buttonClick: () => {},
+            buttonClick: () => {}
         };
     },
     methods: {
@@ -79,17 +76,17 @@ export default {
             if (!this.compiledValue) {
                 this.isActive = false;
             } else {
-                if (this.compiledValue[0] == '@') {
-                    if (this.compiledValue == '@') {
+                if (this.compiledValue[0] === '@') {
+                    if (this.compiledValue === '@') {
                         this.isActive = valueInPath;
                     } else {
-                        this.isActive = valueInPath == this.compiledValue.substr(1);
+                        this.isActive = valueInPath === this.compiledValue.substr(1);
                     }
                 } else {
-                    this.isActive = valueInPath == this.compiledValue && this.compiledValue !== '';
+                    this.isActive = valueInPath === this.compiledValue && this.compiledValue !== '';
                 }
             }
-        },
+        }
     },
     mounted() {
         style.set(this, {
@@ -97,34 +94,34 @@ export default {
             dpi: window.devicePixelRatio
         });
         /*
-        let args = [this.path, this.root, true].filter((value) => {
-                return value !== undefined;
-            }),
-            [parent, property] = find(...args);
-        if (parent &&
-            property !== undefined &&
-            parent[property] !== undefined) {
-            let value = parent[property];
-            this.$watch('value', () => {
+            let args = [this.path, this.root, true].filter((value) => {
+                    return value !== undefined;
+                }),
+                [parent, property] = find(...args);
+            if (parent &&
+                property !== undefined &&
+                parent[property] !== undefined) {
+                let value = parent[property];
+                this.$watch('value', () => {
+                    complier(this, 'value', 'compiledValue', 'watchersValue', undefined, true);
+                });
                 complier(this, 'value', 'compiledValue', 'watchersValue', undefined, true);
-            });
-            complier(this, 'value', 'compiledValue', 'watchersValue', undefined, true);
 
-            this.$watch('compiledValue', () => {
-                this.updateIsActive(value);
-            });
-            this.buttonClick = () => {
-                run(parent, property, this.compiledValue, this);
-            };
-            if (typeof value !== 'function' && parent.constructor.name == 'VueComponent') {
-                parent.$watch(property, (value) => {
+                this.$watch('compiledValue', () => {
                     this.updateIsActive(value);
                 });
-                this.updateIsActive(value);
+                this.buttonClick = () => {
+                    run(parent, property, this.compiledValue, this);
+                };
+                if (typeof value !== 'function' && parent.constructor.name == 'VueComponent') {
+                    parent.$watch(property, (value) => {
+                        this.updateIsActive(value);
+                    });
+                    this.updateIsActive(value);
+                }
+            } else {
+                // console.log(this.$el);
             }
-        } else {
-            // console.log(this.$el);
-        }
         */
     }
 };

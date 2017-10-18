@@ -1,4 +1,10 @@
-    @import 'global/style.scss';
+@import "variables";
+
+@import 'global/style.scss';
 @import 'global/fonts.scss';
 @import 'global/layout.scss';
-@import 'components/flex.scss';
+
+@import 'components/input.scss';
+@import 'components/col-row.scss';
+@import 'components/container.scss';
+@import 'components/button-label.scss';
