@@ -40,26 +40,26 @@ export default {
         overwrite: false,
         rules: {
             '[size="#{$size}"] .button': [
-                'min-height: #{$size * $dpi}px'
+                'min-height: #{$size}px'
             ],
             '[size="#{$size}"] .button > .br': [
-                'width: #{$size * $dpi *0.3}px'
+                'width: #{$size *0.3}px'
             ],
             '[size="#{$size}"] .button > .slot': [
-                'padding: 0 #{$size * $dpi *0.3}px',
-                'font-size: #{($size * 0.2 + 7) * $dpi}px'
+                'padding: 0 #{$size *0.3}px',
+                'font-size: #{$size * 0.2 + 7}px'
             ],
             '[size="#{$size}"] .button > .icon': [
-                'min-height: #{$size * $dpi}px',
-                'line-height: #{$size * $dpi}px',
-                'width: #{$size * $dpi}px',
+                'min-height: #{$size}px',
+                'line-height: #{$size}px',
+                'width: #{$size}px',
                 'padding: 0',
-                'font-size: #{$size * $dpi * 0.4}px'
+                'font-size: #{$size * 0.4}px'
             ],
             '[size="#{$size}"] .button > .text': [
-                'line-height: #{$size * $dpi }px',
+                'line-height: #{$size }px',
                 'padding: 0',
-                'font-size: #{($size * 0.15 + 7) * $dpi}px'
+                'font-size: #{$size * 0.15 + 7}px'
             ]
         }
     },
@@ -90,8 +90,7 @@ export default {
     },
     mounted() {
         style.set(this, {
-            size: style.get('size', this, 40),
-            dpi: window.devicePixelRatio
+            size: style.get('size', this, 40)
         });
         /*
             let args = [this.path, this.root, true].filter((value) => {

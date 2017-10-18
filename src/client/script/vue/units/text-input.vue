@@ -38,21 +38,20 @@ export default {
         overwrite: false,
         rules: {
             '[size="#{$size}"] input.input[type="text"]': [
-                'height: #{$size * $dpi}px',
-                'padding: 0 #{$size * $dpi * 0.3}px',
-                'font-size: #{($size * 0.15 + 7) * $dpi}px'
+                'height: #{$size}px',
+                'padding: 0 #{$size * 0.3}px',
+                'font-size: #{$size * 0.15 + 7}px'
             ],
             '[size="#{$size}"] input.input.round[type="text"]': [
-                'height: #{$size * $dpi * 0.6}px',
-                'margin: #{$size * $dpi * 0.2}px',
-                'border-radius: #{$size * $dpi * 0.3}px'
+                'height: #{$size * 0.6}px',
+                'margin: #{$size * 0.2}px',
+                'border-radius: #{$size * 0.3}px'
             ]
         }
     },
     mounted() {
         style.set(this, {
-            size: style.get('size', this, 40),
-            dpi: window.devicePixelRatio
+            size: style.get('size', this, 40)
         });
     }
 };

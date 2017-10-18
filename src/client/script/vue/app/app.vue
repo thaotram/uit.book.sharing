@@ -23,6 +23,6 @@ export default {
     position: absolute;
     height: 100%;
     width: 100%;
-    min-width: 400px;
+    min-width: 300px;
 }
 </style>

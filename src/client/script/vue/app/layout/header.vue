@@ -1,13 +1,14 @@
 <template>
     <div id="header"
          class="row"
-         size="40">
-        <ai-container style="background: rgba(0,50,90,0.2)"
-                      class="row">
+         size="50">
+        <ai-container class="row">
             <ai-label id="logo"
                       text="BookSharing"
                       style="flex:1" />
-            <ai-image src="https://graph.facebook.com/ai.scanlation/picture?width=200" />
+            <ai-col class="square">
+                <ai-image size="30" src="https://graph.facebook.com/ai.scanlation/picture?width=200" />
+            </ai-col>
         </ai-container>
     </div>
 </template>

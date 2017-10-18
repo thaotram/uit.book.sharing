@@ -20,22 +20,19 @@ export default {
         overwrite: false,
         rules: {
             '[size="#{$size}"] img.image': [
-                'height: #{$size * $dpi}px',
-                'width:  #{$size * $dpi}px'
+                'height: #{$size}px',
+                'width:  #{$size}px'
+            ],
+            'img.image[size="#{$size}"]': [
+                'height: #{$size}px',
+                'width:  #{$size}px'
             ]
         }
     },
     mounted() {
         style.set(this, {
-            size: style.get('size', this, 40),
-            dpi: window.devicePixelRatio
+            size: style.get('size', this, 40)
         });
-        // debugger;
     }
 };
 </script>
-<style>
-img {
-    background: red;
-}
-</style>

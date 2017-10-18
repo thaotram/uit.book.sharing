@@ -77,31 +77,30 @@ export default {
         overwrite: false,
         rules: {
             '[size="#{$size}"] .input > input': [
-                'height: #{$size * $dpi}px',
-                'padding: 0 #{$size * $dpi * 0.3}px',
-                'font-size: #{($size * 0.15 + 7) * $dpi}px'
+                'height: #{$size}px',
+                'padding: 0 #{$size * 0.3}px',
+                'font-size: #{$size * 0.15 + 7}px'
             ],
             '[size="#{$size}"] .input.square > input': [
-                'width: #{$size * $dpi}px'
+                'width: #{$size}px'
             ],
             '[size="#{$size}"] .input > textarea': [
-                'padding: #{$size * $dpi * 0.3}px #{$size * $dpi * 0.3}px',
-                'font-size: #{($size * 0.2 + 8) * $dpi}px'
+                'padding: #{$size * 0.3}px #{$size * 0.3}px',
+                'font-size: #{($size * 0.2 + 8)}px'
             ],
             '[size="#{$size}"] .input > .checkbox': [
-                'line-height: #{$size * $dpi}px',
-                'height: #{$size * $dpi}px',
-                'width: #{$size * $dpi}px'
+                'line-height: #{$size}px',
+                'height: #{$size}px',
+                'width: #{$size}px'
             ],
             '[size="#{$size}"] .input > .checkbox > span': [
-                'line-height: #{$size * $dpi}px'
+                'line-height: #{$size}px'
             ]
         }
     },
     mounted() {
         style.set(this, {
-            size: style.get('size', this, 40),
-            dpi: window.devicePixelRatio
+            size: style.get('size', this, 40)
         });
         setTimeout(() => {
             this.updateTextareaHeight();

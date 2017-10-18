@@ -14,14 +14,13 @@ export default {
         overwrite: false,
         rules: {
             '.row[size="#{$size}"]': [
-                'min-height: #{$realSize}px'
+                'min-height: #{$size}px'
             ]
         }
     },
     mounted() {
         style.set(this, {
-            size: style.get('size', this, 40),
-            realSize: style.get('size', this, 40) * window.devicePixelRatio
+            size: style.get('size', this, 40)
         });
     }
 };
