@@ -1,5 +1,6 @@
 <template>
-    <div class="col">
+    <div class="layer"
+         :index="this.index">
         <slot/>
     </div>
 </template>
@@ -8,19 +9,25 @@ import {
     style
 } from 'modules';
 export default {
-    name: 'col',
+    name: 'layer',
+    props: {
+        index: {
+            type: Number,
+            default: 1
+        }
+    },
     style: {
         group: 'default',
         overwrite: false,
         rules: {
-            '[size="#{$size}"] .col.square': [
-                'width: #{$size}px'
+            '.layer[index="#{$index}"]': [
+                'z-index: #{$index}'
             ]
         }
     },
     mounted() {
         style.set(this, {
-            size: style.get('size', this, 40)
+            index: this.index
         });
     }
 };

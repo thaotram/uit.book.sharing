@@ -1,10 +1,16 @@
 @import "variables";
+@import "_";
+@import "_2";
 
-@import 'global/style.scss';
-@import 'global/fonts.scss';
-@import 'global/layout.scss';
+@import 'global/style';
+@import 'global/fonts';
+@import 'global/layout';
+// @import 'global/grid';
 
-@import 'components/input.scss';
-@import 'components/col-row.scss';
-@import 'components/container.scss';
-@import 'components/button-label.scss';
+@import 'components/button-label';
+@import 'components/col-row';
+@import 'components/contain';
+@import 'components/input';
+@import 'components/image';
+@import 'components/layer';
+

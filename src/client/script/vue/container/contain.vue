@@ -1,10 +1,10 @@
 <template>
-    <div class="container">
+    <div class="contain">
         <slot/>
     </div>
 </template>
 <script>
 export default {
-    name: 'container'
+    name: 'contain'
 };
 </script>

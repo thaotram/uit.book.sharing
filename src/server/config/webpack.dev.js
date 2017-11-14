@@ -44,7 +44,7 @@ export default {
                 presets: ['es2015', 'stage-2']
             }
         }, {
-            test: /\.(png|jpg|gif|svg)$/,
+            test: /\.(png|jpg|gif|svg|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
             loader: 'file-loader',
             options: {
                 name: '[name].[ext]?[hash]'

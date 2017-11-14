@@ -39,7 +39,6 @@ import {
     components,
     style
 } from 'modules';
-
 export default {
     name: 'input',
     components: {

@@ -1,7 +1,5 @@
 <template>
-    <div class="line">
-
-    </div>
+    <div class="line"/>
 </template>
 <script>
 export default {

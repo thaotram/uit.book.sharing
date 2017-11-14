@@ -1,6 +1,8 @@
 <template>
-    <div id="app">
+    <div id="app"
+         class="col">
         <ai-header/>
+        <ai-body/>
     </div>
 </template>
 <script>
@@ -11,7 +13,9 @@ import {
 export default {
     name: 'app',
     components: {
-        ...components('header')
+        ...components('layout'),
+        ...components('line'),
+        ...components('contain')
     },
     mounted() {
         // console.clear();
@@ -23,6 +27,7 @@ export default {
     position: absolute;
     height: 100%;
     width: 100%;
-    min-width: 300px;
+    min-width: 350px;
+    background: #f2f5f7;
 }
 </style>

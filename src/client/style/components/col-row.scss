@@ -2,7 +2,7 @@
     flex-direction: column;
     >.line {
         margin: 0 auto;
-        min-height: 1px;
+        min-height: $line-size;
         width: 100%;
     }
 }
@@ -11,12 +11,11 @@
     flex-direction: row;
     >.line {
         margin: 0;
-        min-width: 1px;
+        min-width: $line-size;
     }
-    >.vr {
-        margin: 0;
-        min-width: 1px;
-        align-self: center;
+    &.flex-wrap {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 
@@ -32,8 +31,20 @@
             flex: 1;
         }
     }
-    >.line,
-    >.vr {
-        background-color: #7C8086;
+    >.line {
+        &.light {
+            background-color: #f0f0f0;
+        }
+        &.dark {
+            background-color: rgba(0,0,0,0.2);
+        }
     }
+}
+
+.hasShadow {
+    overflow: visible;
+}
+
+.scroll {
+    overflow: auto;
 }

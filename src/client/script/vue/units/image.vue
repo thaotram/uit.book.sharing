@@ -1,6 +1,8 @@
 <template>
-    <img class="image"
-         :src="this.src">
+    <div class="image"
+         :style="srcStyle" />
+    <!-- <img class="image"
+         :src="this.src"> -->
 </template>
 <script>
 import {
@@ -19,15 +21,22 @@ export default {
         group: 'default',
         overwrite: false,
         rules: {
-            '[size="#{$size}"] img.image': [
+            '[size="#{$size}"] .image': [
                 'height: #{$size}px',
                 'width:  #{$size}px'
             ],
-            'img.image[size="#{$size}"]': [
+            '.image[size="#{$size}"]': [
                 'height: #{$size}px',
                 'width:  #{$size}px'
             ]
         }
+    },
+    data() {
+        return {
+            srcStyle: {
+                backgroundImage: `url(${this.src})`
+            }
+        };
     },
     mounted() {
         style.set(this, {

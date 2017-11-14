@@ -13,12 +13,12 @@ html,
 body {
     user-select: none;
     -webkit-user-select: none;
-    font-family: 'Quicksand', sans-serif;
+    font-family: $text-font;
     color: rgba(0, 0, 0, 0.87);
     word-wrap: break-word;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 1.5em;
+    line-height: 1.2em;
 }
 
 li,
@@ -46,15 +46,14 @@ a:hover {
 
 @for $header from 1 through 6 {
     h#{$header} {
-        font-family: 'Segoe UI Semibold';
         font-weight: bold;
-        font-size: 1em + (6 - $header) * 0.2em;
-        line-height: 1.5em + (6 - $header) * 0.2em; // margin: 0.5em 0;
+        font-size: 1em + (6 - $header) * 0.1em; // line-height: 1.5em + (6 - $header) * 0.2em; // margin: 0.5em 0;
+        line-height: 1.2em;
     }
 }
 
 img {
-    user-drag: none;
+    // user-drag: none;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
@@ -75,12 +74,14 @@ hr {
 ::-webkit-scrollbar {
     width: 12px;
     height: 12px;
-    background-color: rgba(0, 0, 0, 0.2);
+    border: solid rgba(0, 0, 0, 0.2);
+    border-width: 0 0 0 1px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border: 2px solid rgba(0, 0, 0, 0.0);
+    background-color: rgba(0, 0, 0, 0.1);
+    border: solid rgba(0, 0, 0, 0.0);
+    border-width: 0 0 0 1px;
 }
 
 ::-webkit-scrollbar-corner {
