@@ -14,7 +14,7 @@ import {
 } from 'modules';
 
 export default {
-    name: 'list-of-book',
+    name: 'list-of-books',
     data() {
         return {
             items: [1, 1, 1, 3, 4, 5]

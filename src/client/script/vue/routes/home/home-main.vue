@@ -1,7 +1,7 @@
 <template>
     <div id="home-main"
          class="full">
-        <ai-list-of-book/>
+        <ai-list-of-books/>
     </div>
 </template>
 
@@ -13,13 +13,13 @@ import {
 export default {
     name: 'home-main',
     components: {
-        ...components('routes/home/list')
+        ...components('list-of-items')
     }
 };
 </script>
 
 <style lang="scss">
 #home-main {
-    padding-left: 20px;
+    padding: 20px 0 20px 20px;
 }
 </style>
