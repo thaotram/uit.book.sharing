@@ -25,28 +25,3 @@ export default {
     }
 };
 </script>
-
-<style lang="scss">
-.book {
-    transition: all 0.5s;
-}
-
-.book-enter,
-.book-leave-to
-/* .book-leave-active for <2.1.8 */
-
-{
-    opacity: 0;
-    transform: scale(0);
-}
-
-.book-enter-to {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.book-move {
-    opacity: 1;
-    transition: all 0.5s;
-}
-</style>

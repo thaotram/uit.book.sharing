@@ -1,16 +1,17 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import home from './vue/routes/home/home.vue';
+import homePage from './vue/routes/home/home-page.vue';
+import bookPage from './vue/routes/book/book-page.vue';
 
 Vue.use(VueRouter);
 
 export default new VueRouter({
     routes: [{
         path: '/',
-        component: home
+        component: homePage
     }, {
-        path: '/a',
-        component: {}
+        path: '/book/:id',
+        component: bookPage
     }]
 });

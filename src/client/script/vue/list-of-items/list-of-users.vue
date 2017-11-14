@@ -30,6 +30,7 @@ export default {
                 results: 5
             }
         }).then(function(response) {
+            console.log(response.data.results);
             self.users = response.data.results;
         });
     }

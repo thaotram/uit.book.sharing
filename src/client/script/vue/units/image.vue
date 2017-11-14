@@ -1,8 +1,7 @@
 <template>
-    <div class="image"
-         :style="srcStyle" />
-    <!-- <img class="image"
-         :src="this.src"> -->
+    <router-link class="image"
+                 :to="link"
+                 :style="srcStyle" />
 </template>
 <script>
 import {
@@ -15,6 +14,11 @@ export default {
             type: String,
             required: true,
             default: '#'
+        },
+        link: {
+            type: String,
+            required: false,
+            default: '/'
         }
     },
     style: {

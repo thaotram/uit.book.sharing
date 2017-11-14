@@ -3,12 +3,15 @@
          class="row"
          size="50">
         <ai-contain class="row">
-            <ai-label id="logo"
-                      text="BookSharing"
-                      style="flex:1" />
+            <router-link to="/"
+                         class="full"
+                         id="logo">
+                <ai-label text="BookSharing" />
+            </router-link>
             <ai-col class="square">
                 <ai-image size="30"
                           class="round"
+                          link="user/me"
                           src="https://graph.facebook.com/ai.scanlation/picture?width=200" />
             </ai-col>
         </ai-contain>
@@ -34,7 +37,14 @@ export default {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     z-index: 2;
     #logo {
-        >.text {
+        cursor: pointer;
+        &:hover {
+            text-decoration: none;
+        }
+        .label {
+            cursor: pointer;
+        }
+        .text {
             font-family: 'Pacifico', cursive;
             font-size: 1.2em;
             flex: 1;
