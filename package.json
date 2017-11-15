@@ -37,6 +37,7 @@
     "express-session": "^1.15.6",
     "lokijs": "^1.5.1",
     "moment": "^2.19.1",
+    "nanobar": "^0.4.2",
     "socket.io": "^2.0.3",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
