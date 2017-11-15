@@ -35,12 +35,12 @@ export default {
             ]
         }
     },
-    data() {
-        return {
-            srcStyle: {
+    computed: {
+        srcStyle: function() {
+            return {
                 backgroundImage: `url(${this.src})`
-            }
-        };
+            };
+        }
     },
     mounted() {
         style.set(this, {

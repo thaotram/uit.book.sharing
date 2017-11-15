@@ -4,9 +4,9 @@
                   :src="info.image" />
         <div class="col">
             <div class="col">
-                <div class="title">
+                <h4 class="title">
                     {{ info.title }}
-                </div>
+                </h4>
                 <div class="author">
                     {{ info.author }}
                 </div>
@@ -94,13 +94,8 @@ $image-size: 200px;
             margin-left: $image-size / 8 * 5 + $size * 2;
             padding: $size $size $size 0;
             height: $image-size - $size * 2;
-            >.title {
-                line-height: 1.2em;
-                font-size: 1.4em;
-            }
             >.author {
                 color: #666;
-                line-height: 1.2em;
                 font-size: 0.8em;
             }
             >.description {
@@ -109,7 +104,6 @@ $image-size: 200px;
                 font-size: 0.8em;
                 line-height: 1.2em;
                 color: #666;
-                font-style: italic;
             }
             >.book-button {
                 overflow: visible;

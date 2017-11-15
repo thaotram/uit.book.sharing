@@ -2,6 +2,7 @@
     <ai-contain class="row full">
         <ai-home-sidebar class="hidden-sm-down" />
         <ai-line class="dark hidden-sm-down" />
+        <ai-space size="20" class="hidden-sm-down" />
         <ai-home-main/>
     </ai-contain>
 </template>

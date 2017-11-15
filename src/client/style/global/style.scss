@@ -46,9 +46,9 @@ a:hover {
 
 @for $header from 1 through 6 {
     h#{$header} {
-        font-weight: bold;
+        font-weight: normal;
         font-size: 1em + (6 - $header) * 0.1em; // line-height: 1.5em + (6 - $header) * 0.2em; // margin: 0.5em 0;
-        line-height: 1.2em;
+        line-height: 1.5em;
     }
 }
 

@@ -23,14 +23,13 @@ export default {
         };
     },
     mounted() {
-        var self = this;
+        const self = this;
         axios.get('https://randomuser.me/api/', {
             params: {
                 inc: 'name,picture',
                 results: 5
             }
         }).then(function(response) {
-            console.log(response.data.results);
             self.users = response.data.results;
         });
     }
