@@ -25,5 +25,6 @@ export default function(app, io) {
         extended: true
     }));
     app.use(cookieParser());
+    app.set('json spaces', 2);
     appConfigClient(app);
 }
