@@ -1,17 +1,17 @@
 <template>
     <div class="book row">
-        <ai-image link="/book/"
-                  src="https://ewedit.files.wordpress.com/2016/09/9781408855652-png.jpg?w=409" />
+        <ai-image :link="'/book/' + info.id"
+                  :src="info.image" />
         <div class="col">
             <div class="col">
                 <div class="title">
-                    Harry Potter
+                    {{ info.title }}
                 </div>
                 <div class="author">
-                    J. K. Rowling
+                    {{ info.author }}
                 </div>
                 <p class="full description">
-                    Harry Potter và Hòn đá Phù thủy là cuốn đầu trong loạt tiểu thuyết Harry Potter
+                    {{ info.description }}
                 </p>
                 <ai-row class="book-button"
                         size="35">
@@ -40,7 +40,7 @@ export default {
         ...components('units'),
         ...components('item')
     },
-    props: ['bookInfo'],
+    props: ['info'],
     data() {
         return {
 

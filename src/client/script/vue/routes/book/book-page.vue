@@ -1,6 +1,6 @@
 <template>
-    <ai-contain class="row">
-        
+    <ai-contain class="col full">
+        <ai-book-header/>
     </ai-contain>
 </template>
 
@@ -9,11 +9,10 @@ import {
     components
 } from 'modules';
 export default {
-    name: 'bookPage',
+    name: 'book-page',
     components: {
-        ...components('contain'),
-        ...components('units'),
-        ...components('item')
+        ...components('routes/book'),
+        ...components('contain')
     }
 };
 </script>

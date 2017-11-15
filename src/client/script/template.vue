@@ -11,7 +11,7 @@ import {
     components
 } from 'modules';
 export default {
-    name: 'bookPage',
+    name: 'template',
     components: {
         ...components('contain'),
         ...components('item')

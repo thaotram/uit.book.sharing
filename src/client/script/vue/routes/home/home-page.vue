@@ -1,12 +1,9 @@
 <template>
-    <div>
-        <!-- TODO: add home-header -->
-        <ai-contain class="row">
-            <ai-home-sidebar class="hidden-sm-down" />
-            <ai-line class="dark hidden-sm-down" />
-            <ai-home-main/>
-        </ai-contain>
-    </div>
+    <ai-contain class="row full">
+        <ai-home-sidebar class="hidden-sm-down" />
+        <ai-line class="dark hidden-sm-down" />
+        <ai-home-main/>
+    </ai-contain>
 </template>
 
 <script>
@@ -15,7 +12,7 @@ import {
 } from 'modules';
 
 export default {
-    name: 'home',
+    name: 'home-page',
     components: {
         ...components('contain'),
         ...components('units'),

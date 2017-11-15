@@ -2,9 +2,9 @@
     <transition-group name="book"
                       tag="div"
                       class="row flex-wrap">
-        <ai-book v-for="item in items"
-                 :what="item"
-                 :key="item" />
+        <ai-book v-for="(book, index) in books"
+                 :info="book"
+                 :key="index" />
     </transition-group>
 </template>
 
@@ -17,11 +17,23 @@ export default {
     name: 'list-of-books',
     data() {
         return {
-            items: [1, 1, 1, 3, 4, 5]
+            books: [{
+                id: 1,
+                title: 'Harry Potter',
+                author: 'J. K. Rowling',
+                description: 'Harry Potter và Hòn đá Phù thủy là cuốn đầu trong loạt tiểu thuyết Harry Potter',
+                image: 'https://ewedit.files.wordpress.com/2016/09/9781408855652-png.jpg?w=409'
+            }, {
+                id: 2,
+                title: 'Harry Potter',
+                author: 'J. K. Rowling',
+                description: 'Harry Potter và Hòn đá Phù thủy là cuốn đầu trong loạt tiểu thuyết Harry Potter',
+                image: 'https://ewedit.files.wordpress.com/2016/09/9781408855652-png.jpg?w=409'
+            }]
         };
     },
     components: {
-        ...components('item')
+        ...components('book')
     }
 };
 </script>
