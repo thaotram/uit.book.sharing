@@ -1,6 +1,7 @@
 <template>
     <div id="home-main"
          class="full">
+        <ai-nav :links="links" />
         <ai-list-of-books/>
     </div>
 </template>
@@ -12,8 +13,17 @@ import {
 
 export default {
     name: 'home-main',
+    data() {
+        return {
+            links: [
+                ['Trang chủ', '/'],
+                ['Sách', '/book']
+            ]
+        };
+    },
     components: {
-        ...components('list-of-items')
+        ...components('list-of-items'),
+        ...components('units')
     }
 };
 </script>

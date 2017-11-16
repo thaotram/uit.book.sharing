@@ -22,8 +22,7 @@
                 </ai-row>
                 <ai-line class="dark" />
                 <div class="box scroll">
-                    <span class="bold">Tóm lược:</span>
-                    {{ info.description }}
+                    <span class="bold">Tóm lược:</span> {{ info.description }}
                 </div>
             </ai-col>
         </ai-row>
@@ -31,24 +30,15 @@
 </template>
 
 <script>
-import axios from 'axios';
 import {
     components
 } from 'modules';
 export default {
     name: 'book-header',
-    data() {
-        return {
-            info: {}
-        };
-    },
-    created() {
-        const self = this;
-        axios
-            .get('/api/book/get/' + this.$route.params.id)
-            .then((response) => {
-                self.info = response.data;
-            });
+    props: {
+        info: {
+
+        }
     },
     components: {
         ...components('contain'),
