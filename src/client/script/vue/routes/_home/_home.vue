@@ -1,11 +1,14 @@
 <template>
-    <ai-contain class="row full">
-        <ai-home-sidebar class="hidden-sm-down" />
-        <ai-line class="dark hidden-sm-down" />
-        <ai-space size="20"
-                  class="hidden-sm-down" />
-        <ai-home-main/>
-    </ai-contain>
+    <div class="full">
+        <ai-section-header to="/Sách"
+                           text="Ngẫu nhiên" />
+        <ai-book-large api="/api/book/1" />
+        <ai-section-header to="/Sách"
+                           text="Tất cả sách" />
+        <ai-contain class="row flex-wrap">
+            <ai-list-of-books api="/api/book" />
+        </ai-contain>
+    </div>
 </template>
 
 <script>
@@ -17,7 +20,9 @@ export default {
     components: {
         ...components('contain'),
         ...components('units'),
-        ...components('routes/_home')
+        ...components('items'),
+        ...components('ui'),
+        ...components('list-of-books')
     },
     created() {
         this.$parent.links = [

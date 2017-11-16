@@ -1,34 +1,5 @@
 <template>
-    <ai-contain class="col full hasShadow">
-        <ai-row class="book-header hasShadow">
-            <ai-image class="shadow"
-                      :src="info.image" />
-            <ai-row class="full content">
-                <ai-line class="dark" />
-                <ai-col class="full">
-                    <ai-row class="box">
-                        <ai-col class="full">
-                            <h1 class="bold">{{ info.title }}</h1>
-                            <h6>
-                            <router-link to="/">
-                                {{ info.author }}
-                            </router-link>
-                        </h6>
-                        </ai-col>
-                        <ai-col>
-                            <span class="icon">
-                            
-                        </span>
-                        </ai-col>
-                    </ai-row>
-                    <ai-line class="dark" />
-                    <div class="box scroll">
-                        <span class="bold">Tóm lược:</span> {{ info.description }}
-                    </div>
-                </ai-col>
-            </ai-row>
-        </ai-row>
-    </ai-contain>
+    <ai-book-large :book="book"/>
 </template>
 
 <script>
@@ -40,11 +11,12 @@ export default {
     name: 'book-page',
     components: {
         ...components('container'),
-        ...components('units')
+        ...components('units'),
+        ...components('items/book-large')
     },
     data() {
         return {
-            info: {}
+            book: {}
         };
     },
     created() {
@@ -52,11 +24,11 @@ export default {
         axios
             .get('/api/book/' + this.$route.params.id)
             .then((response) => {
-                self.info = response.data;
+                self.book = response.data;
                 self.$parent.links = [
                     ['Trang chủ', '/'],
                     ['Sách', '/Sách'],
-                    [self.info.title, '/Sách/' + this.info.id]
+                    [self.book.title, '/Sách/' + this.book.id]
                 ];
             });
     }

@@ -11,15 +11,20 @@ export default {
                 props: {
                     name: 'nav'
                 }
-            }, this.links ? this.links.map((link, index) => {
+            }, this.links ? this.links.map((link, index, links) => {
                 return [
-                    index === 0 ? null : h('span', {
-                        class: 'icon',
-                        key: index
-                    }, ''),
+                    (index === 0
+                        ? null
+                        : h('span', {
+                            class: 'icon',
+                            key: index
+                        }, '')),
                     h('router-link', {
                         props: {
                             to: link[1]
+                        },
+                        class: {
+                            current: index === links.length - 1
                         },
                         key: link[0]
                     }, link[0])
@@ -42,11 +47,14 @@ export default {
     >* {
         height: 30px;
         line-height: 30px;
+        &:not(.icon) {
+            font-size: 1.2em;
+        }
     }
-    >a {
-        font-size: 1.2em;
+    >.current {
+        color: #000
     }
-    >span {
+    >span.icon {
         margin: 0 10px;
         font-weight: bold;
         color: #3498db

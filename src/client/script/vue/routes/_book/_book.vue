@@ -1,9 +1,11 @@
 <template>
-    <ai-contain class="full"
-                id="_book">
-        <h1>Tất cả Sách</h1>
-        <ai-list-of-books api="/api/book" />
-    </ai-contain>
+    <div class="col full">
+        <ai-section-header to="/Sách" text="Tất cả sách"/>
+        <ai-contain class="full"
+                    id="_book">
+            <ai-list-of-books api="/api/book" />
+        </ai-contain>
+    </div>
 </template>
 
 <script>
@@ -15,24 +17,17 @@ export default {
     name: 'b-page',
     components: {
         ...components('list-of-books'),
-        ...components('contain')
-    },
-    data() {
-        return {
-            books: []
-        };
+        ...components('contain'),
+        ...components('ui')
     },
     created() {
         this.$parent.links = [
             ['Trang chủ', '/'],
-            ['Sách', '/']
+            ['Sách', '/Sách']
         ];
-        // const self = this;
-        // axios
-        //     .get('/api/book')
-        //     .then((response) => {
-        //         self.books = response.data;
-        //     });
     }
 };
 </script>
+<style lang="scss">
+
+</style>

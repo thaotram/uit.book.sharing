@@ -2,7 +2,7 @@
     <transition-group name="book"
                       tag="div"
                       class="row flex-wrap"> -->
-        <ai-book v-for="(book, index) in books"
+        <ai-book-small v-for="(book, index) in books"
                  :info="book"
                  :key="index" />
     </transition-group>
@@ -15,7 +15,7 @@ import {
 export default {
     name: 'list-of-books',
     components: {
-        ...components('items/book')
+        ...components('items/book-small')
     },
     data() {
         return {

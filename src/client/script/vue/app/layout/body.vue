@@ -1,11 +1,12 @@
 <template>
     <div id="body"
-         class="full col">
+         class="full">
         <ai-contain class="navigator">
-            <ai-nav :links="links"/>
+            <ai-nav :links="links" />
         </ai-contain>
         <router-view ref="view"
                      id="view" />
+        <ai-footer/>
     </div>
 </template>
 
@@ -17,7 +18,7 @@ import {
 export default {
     name: 'body',
     components: {
-        ...components('layout'),
+        ...components('layout/footer'),
         ...components('line'),
         ...components('nav'),
         ...components('container')
@@ -33,7 +34,7 @@ export default {
 #body {
     overflow: auto;
     >.navigator {
-        margin: 20px 0;
+        margin: 20px auto;
     }
 }
 

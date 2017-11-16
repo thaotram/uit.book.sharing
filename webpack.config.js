@@ -8,7 +8,7 @@ module.exports = {
     devtool: '#source-map',
     output: {
         filename: 'script.js',
-        path: path.resolve(__dirname, 'dist/client'),
+        path: path.resolve(__dirname, 'dist/client')
     },
     devServer: {
         contentBase: './dist/client',
@@ -22,8 +22,14 @@ module.exports = {
                 presets: ['es2015', 'stage-2']
             }
         }, {
-            test: /\.sass$/,
-            loader: 'sass-loader'
+            test: /\.scss$/,
+            use: [{
+                loader: 'style-loader'
+            }, {
+                loader: 'css-loader'
+            }, {
+                loader: 'sass-loader'
+            }]
         }, {
             test: /\.js$/,
             loader: 'babel-loader',
@@ -32,7 +38,7 @@ module.exports = {
                 presets: ['es2015', 'stage-2']
             }
         }, {
-            test: /\.(png|jpg|gif|svg)$/,
+            test: /\.(png|jpg|gif|svg|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
             loader: 'file-loader',
             options: {
                 name: '[name].[ext]?[hash]'
@@ -63,14 +69,14 @@ module.exports = {
             jQuery: 'jquery',
             $: 'jquery',
             'window.jQuery': 'jquery',
-            Popper: ['popper.js', 'default'],
+            Popper: ['popper.js', 'default']
         })
     ],
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         modules: [
             path.join(__dirname, 'node_modules'),
-            // path.resolve(__dirname, 'src/client/modules')
+            path.resolve(__dirname, 'src/client/script/modules')
         ]
-    },
+    }
 };
