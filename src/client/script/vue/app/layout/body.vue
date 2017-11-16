@@ -1,8 +1,11 @@
 <template>
     <div id="body"
-         class="full"
-         :class="{hasScroll: isScroll}">
-        <router-view></router-view>
+         class="full col">
+        <ai-contain class="navigator">
+            <ai-nav :links="links"/>
+        </ai-contain>
+        <router-view ref="view"
+                     id="view" />
     </div>
 </template>
 
@@ -16,29 +19,21 @@ export default {
     components: {
         ...components('layout'),
         ...components('line'),
+        ...components('nav'),
         ...components('container')
     },
     data() {
         return {
-            isScroll: false
+            links: []
         };
-    },
-    updated() {
-        this.isScroll = this.$el.scrollHeight > this.$el.offsetHeight;
-    },
-    mounted() {
-        this.isScroll = this.$el.scrollHeight > this.$el.offsetHeight;
     }
 };
 </script>
 <style lang="scss">
 #body {
     overflow: auto;
-    >.contain {
-        min-height: 100%;
-    }
-    &.hasScroll>.contain {
-        padding-right: calc(50px - 12px);
+    >.navigator {
+        margin: 20px 0;
     }
 }
 

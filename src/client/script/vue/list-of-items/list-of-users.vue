@@ -13,9 +13,9 @@ import {
 } from 'modules';
 
 export default {
-    name: 'list-of-books',
+    name: 'ai-list-of-users',
     components: {
-        ...components('item')
+        ...components('items')
     },
     data() {
         return {

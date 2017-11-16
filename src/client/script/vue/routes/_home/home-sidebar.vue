@@ -1,10 +1,7 @@
 <template>
     <div id="sidebar"
          class="col hasShadow">
-        <ai-space size="40" />
-        <router-link to="123">
-            Thông tin
-        </router-link>
+        <router-link to="/book"> Sách </router-link>
     </div>
 </template>
 
@@ -25,5 +22,6 @@ export default {
 <style lang="scss">
 #sidebar {
     width: 200px;
+    font-size: 1.2em;
 }
 </style>

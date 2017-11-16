@@ -33,35 +33,19 @@
 </template>
 <script>
 import {
-    components,
-    style
+    components
 } from 'modules';
 export default {
-    name: 'book',
+    name: 'thebook',
     components: {
         ...components('container'),
         ...components('units'),
-        ...components('item')
+        ...components('items')
     },
-    props: ['info'],
-    data() {
-        return {
-
-        };
-    },
-    style: {
-        group: 'default',
-        overwrite: false,
-        rules: {
-            // '.book[size="#{$size}"]': [
-            //     'width: #{$size}px'
-            // ]
+    props: {
+        info: {
+            default: () => ({})
         }
-    },
-    mounted() {
-        style.set(this, {
-            height: style.get('size', this, 40)
-        });
     }
 };
 </script>

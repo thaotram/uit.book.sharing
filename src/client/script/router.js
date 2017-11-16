@@ -1,9 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import homePage from './vue/routes/home/home-page.vue';
-import bookPage from './vue/routes/book/book-page.vue';
-
 import Nanobar from 'nanobar';
 
 Vue.use(VueRouter);
@@ -17,16 +14,24 @@ const nanobar = new Nanobar({
 const router = new VueRouter({
     routes: [{
         path: '/',
-        component: homePage
+        component: require('./vue/routes/_home/_home.vue').default
+    }, {
+        path: '/book',
+        component: require('./vue/routes/_book/_book.vue').default
     }, {
         path: '/book/:id',
-        component: bookPage
+        component: require('./vue/routes/_book.id/_book.id.vue').default
     }]
 });
 
 router.beforeEach((to, from, next) => {
-    nanobar.go(100);
+    nanobar.go(70);
     next();
+});
+
+router.afterEach((to, from) => {
+    // console.log(to);
+    nanobar.go(100);
 });
 
 export default router;

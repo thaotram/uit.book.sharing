@@ -1,9 +1,6 @@
 import recursiveFind from './src/recursiveFind.js';
 
 module.exports = function find(findPath) {
-    // if (findPath == "scroll") {
-    //     throw findPath;
-    // }
     if (arguments.length >= 3) {
         const arg = [...arguments].slice(1);
         return find(findPath, find(...arg));
@@ -28,9 +25,12 @@ module.exports = function find(findPath) {
             throw 'Không tìm thấy module thích hợp';
         }
     } else if (name || ref) {
-        const where = (typeof arguments[1] === 'string') ? [find(arguments[1])]
-            : (Array.isArray(arguments[1]) ? [arguments[1][0]]
-                : ((typeof arguments[1] === 'object' && arguments[1].constructor.name === 'VueComponent') ? [arguments[1]]
+        const where = (typeof arguments[1] === 'string')
+            ? [find(arguments[1])]
+            : (Array.isArray(arguments[1])
+                ? [arguments[1][0]]
+                : ((typeof arguments[1] === 'object' && arguments[1].constructor.name === 'VueComponent')
+                    ? [arguments[1]]
                     : undefined)
             );
         const result = recursiveFind(name, ref, where);

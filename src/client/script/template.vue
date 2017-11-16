@@ -14,7 +14,7 @@ export default {
     name: 'template',
     components: {
         ...components('contain'),
-        ...components('item')
+        ...components('items')
     }
 };
 </script>
