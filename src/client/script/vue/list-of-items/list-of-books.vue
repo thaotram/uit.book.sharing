@@ -3,7 +3,7 @@
                       tag="div"
                       class="row flex-wrap"> -->
         <ai-book-small v-for="(book, index) in books"
-                 :info="book"
+                 :book="book"
                  :key="index" />
     </transition-group>
 </template>

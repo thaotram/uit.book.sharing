@@ -1,9 +1,10 @@
 <template>
     <div id="body"
-         class="full">
+         class="full col">
         <ai-contain class="navigator">
             <ai-nav :links="links" />
         </ai-contain>
+        <ai-line class="dark"/>
         <router-view ref="view"
                      id="view" />
         <ai-footer/>

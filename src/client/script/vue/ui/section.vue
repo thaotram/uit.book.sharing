@@ -1,8 +1,9 @@
 <template>
-    <ai-contain class="section-header">
-        <router-link :to="to">
+    <ai-contain class="section">
+        <router-link :to="to" v-if="to">
             {{ text }}
         </router-link>
+        <p v-else>{{ text }}</p>
     </ai-contain>
 </template>
 <script>
@@ -13,7 +14,7 @@ export default {
     name: 'header',
     props: {
         to: {
-            default: '/'
+            default: undefined
         },
         text: {
             default: 'Text'
@@ -26,13 +27,13 @@ export default {
 </script>
 
 <style lang="scss">
-.section-header {
+.section {
     font-size: 1.3em;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    background-color: rgba(#3498db, 0.3);
-    >a {
-    overflow: visible;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    >*>* {
+        color: black;
+        overflow: visible;
         padding: 0 10px;
     }
 }

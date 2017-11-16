@@ -1,34 +1,34 @@
 <template>
-    <ai-contain class="col full hasShadow">
-        <ai-row class="book-large hasShadow">
+    <ai-row class="book-large hasShadow">
+        <router-link class="image-link"
+                     :to="'/Sách/' + computedBook.id">
             <ai-image class="shadow"
-                      :src="computedBook.image" />
-            <ai-row class="full content">
-                <ai-line class="dark" />
-                <ai-col class="full">
-                    <ai-row class="box">
-                        <ai-col class="full">
-                            <h1 class="bold">{{ computedBook.title }}</h1>
-                            <h6>
+                    :src="computedBook.image" />
+        </router-link>
+        <ai-row class="full content">
+            <ai-line class="dark" />
+            <ai-col class="full">
+                <ai-row class="box title-author">
+                    <ai-col class="full">
+                        <h1 class="bold">
+                            <router-link to="/" class="title">
+                                {{ computedBook.title }}
+                            </router-link>
+                        </h1>
+                        <h6>
                             <router-link to="/">
                                 {{ computedBook.author }}
                             </router-link>
                         </h6>
-                        </ai-col>
-                        <ai-col>
-                            <span class="icon">
-                            
-                        </span>
-                        </ai-col>
-                    </ai-row>
-                    <ai-line class="dark" />
-                    <div class="box scroll">
-                        <span class="bold">Tóm lược:</span> {{ computedBook.description }}
-                    </div>
-                </ai-col>
-            </ai-row>
+                    </ai-col>
+                </ai-row>
+                <ai-line class="dark" />
+                <div class="box scroll">
+                    <span class="bold">Tóm lược:</span> {{ computedBook.description }}
+                </div>
+            </ai-col>
         </ai-row>
-    </ai-contain>
+    </ai-row>
 </template>
 
 <script>
@@ -37,7 +37,7 @@ import {
     components
 } from 'modules';
 export default {
-    name: 'book-page',
+    name: 'book-large',
     components: {
         ...components('container'),
         ...components('units')
@@ -78,20 +78,34 @@ $image-size: 400px;
 .book-large {
     background: white;
     border-radius: 4px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     height: $image-size;
-    margin: $size * 1.5 0 $size * 0.5 0;
+    margin: $size+10px 10px 10px 10px;
     position: relative;
     .box {
         padding: $size * 0.5;
     }
-    >.image {
+    .title{
+        color: black;
+        &:hover{
+            color:#3498db;
+            text-decoration: none;
+        }
+    }
+    .title-author{
+        min-height: 60px;
+    }
+    >.image-link {
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
         height: $image-size;
         left: $size;
         position: absolute;
         top: -$size;
         width: $image-size / 8 * 5;
+        >.image{
+            width: 100%;
+            height: 100%;
+        }
     }
     >.content {
         margin-left: $image-size / 8 * 5 + $size * 2;

@@ -1,27 +1,28 @@
 <template>
     <div class="contain">
-        <div class="row full">
+        <div :class="childClass">
             <slot/>
         </div>
     </div>
 </template>
 <script>
 export default {
-    name: 'contain'
+    name: 'contain',
+    props: ['childClass']
 };
 </script>
 <style lang="scss">
 .contain {
-    margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
     &.wrap {
         flex-wrap: wrap;
         width: auto;
     }
-    >.row {
+    >div {
         overflow: visible;
-        max-width: 1400px;
+        max-width: 1000px;
+        margin: 0 auto;
     }
 }
 

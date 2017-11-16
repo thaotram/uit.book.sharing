@@ -1,5 +1,56 @@
 <template>
-    <ai-book-large :book="book"/>
+    <div>
+        <ai-book :book="book" />
+        <ai-section text="Có thể mượn" />
+        <ai-contain childClass="col hasShadow borrow-1">
+            <table>
+                <tr>
+                    <td>Chủ sách</td>
+                    <td>Địa chỉ</td>
+                    <td>Yêu cầu</td>
+                    <td>Có thể cho mượn trong</td>
+                </tr>
+                <tr>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>123</td>
+                </tr>
+            </table>
+        </ai-contain>
+        <ai-section text="Có nhu cầu mượn" />
+        <ai-contain childClass="col hasShadow borrow-2">
+            <table>
+                <tr>
+                    <td>Người muốn mượn sách</td>
+                    <td>Địa chỉ</td>
+                    <td>Dự kiến trả trong</td>
+                </tr>
+                <tr>
+                    <td>Phạm Hồng Phúc</td>
+                    <td>123</td>
+                    <td>123</td>
+                </tr>
+            </table>
+        </ai-contain>
+        <ai-section text="Đang mượn" />
+        <ai-contain childClass="col hasShadow borrow-3">
+            <table>
+                <tr>
+                    <td>Chủ sách</td>
+                    <td>Người mượn</td>
+                    <td>Địa chỉ</td>
+                    <td>Dự kiến trả trong</td>
+                </tr>
+                <tr>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>123</td>
+                </tr>
+            </table>
+        </ai-contain>
+    </div>
 </template>
 
 <script>
@@ -12,7 +63,9 @@ export default {
     components: {
         ...components('container'),
         ...components('units'),
-        ...components('items/book-large')
+        ...components('ui'),
+        ...components('routes/_book.id'),
+        ...components('items/book')
     },
     data() {
         return {

@@ -1,6 +1,6 @@
 <template>
     <div class="col full">
-        <ai-section-header to="/Sách" text="Tất cả sách"/>
+        <ai-section to="/Sách" text="Tất cả sách"/>
         <ai-contain class="full"
                     id="_book">
             <ai-list-of-books api="/api/book" />

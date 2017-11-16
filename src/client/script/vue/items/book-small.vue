@@ -1,31 +1,25 @@
 <template>
     <div class="book row hasShadow">
         <router-link class="image-link"
-                     :to="'/Sách/' + info.id">
-            <ai-image :src="info.image" />
+                     :to="'/Sách/' + computedBook.id">
+            <ai-image :src="computedBook.image" />
         </router-link>
         <div class="col">
             <div class="col hasShadow">
-                <div class="row" size="60">
+                <div class="row"
+                     size="60">
                     <div class="col full">
                         <h4 class="title bold">
-                            {{ info.title }}
+                            {{ computedBook.title }}
                         </h4>
                         <div class="author">
-                            {{ info.author }}
+                            {{ computedBook.author }}
                         </div>
                     </div>
-
                 </div>
                 <p class="full description scroll">
-                    {{ info.description }}
+                    {{ computedBook.description }}
                 </p>
-                <!-- <ai-row class="book-button hasShadow"
-                        size="35">
-                    <ai-button path="#router.push"
-                               :value="'/Sách/' + info.id"
-                               text="Xem thêm" />
-                </ai-row> -->
             </div>
             <ai-line class="light" />
             <ai-row size="20"
@@ -37,19 +31,43 @@
     </div>
 </template>
 <script>
+import axios from 'axios';
 import {
     components
 } from 'modules';
 export default {
-    name: 'book',
+    name: 'book-small',
     components: {
         ...components('container'),
         ...components('units'),
         ...components('items')
     },
+    computed: {
+        computedBook() {
+            return this.dataBook || this.book;
+        }
+    },
+    data() {
+        return {
+            dataBook: undefined
+        };
+    },
     props: {
-        info: {
+        book: {
             default: () => ({})
+        },
+        api: {
+            default: undefined
+        }
+    },
+    mounted() {
+        const self = this;
+        if (this.api !== undefined) {
+            axios
+                .get(this.api)
+                .then((response) => {
+                    self.dataBook = response.data;
+                });
         }
     }
 };
@@ -59,9 +77,9 @@ $size: 20px;
 $image-size: 200px;
 .book {
     flex: 1;
-    margin: 40px 10px 10px 10px;
-    min-width: $image-size * 1.5;
-    max-width: $image-size * 1.9;
+    margin: 30px 10px 10px 10px;
+    min-width: $image-size * 1.8;
+    max-width: $image-size * 2.3;
     position: relative;
     >.image-link {
         display: block;
@@ -90,9 +108,9 @@ $image-size: 200px;
             height: $image-size - $size * 2;
             >.description {
                 margin: 0.5em 0;
-                font-size: 0.8em;
-                line-height: 1.2em;
-                color: #666;
+                font-size: 0.9em;
+                line-height: 1.3em;
+                color: #222;
             }
             >.book-button {
                 >.button {

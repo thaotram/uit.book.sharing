@@ -1,11 +1,10 @@
 <template>
     <div class="full">
-        <ai-section-header to="/Sách"
-                           text="Ngẫu nhiên" />
-        <ai-book-large api="/api/book/1" />
-        <ai-section-header to="/Sách"
-                           text="Tất cả sách" />
-        <ai-contain class="row flex-wrap">
+        <ai-section text="Ngẫu nhiên" />
+        <ai-book api="/api/book/1"/>
+        <ai-section to="/Sáchs"
+                    text="Tất cả sách" />
+        <ai-contain>
             <ai-list-of-books api="/api/book" />
         </ai-contain>
     </div>
@@ -20,7 +19,8 @@ export default {
     components: {
         ...components('contain'),
         ...components('units'),
-        ...components('items'),
+        ...components('items/book'),
+        ...components('items/book-large'),
         ...components('ui'),
         ...components('list-of-books')
     },

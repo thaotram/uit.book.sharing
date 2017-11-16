@@ -1,0 +1,73 @@
+$in-table: 1px solid rgba(#000, 0.2);
+$out-table: 0px;
+[class*=borrow-] {
+    // padding: 10px;
+    >table {
+        background: white;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        width: calc(100% - 20px);
+        margin: 0 10px;
+        border: $out-table;
+        border-collapse: collapse;
+        >tr {
+            border-top: $out-table;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba(#3498db, 0.1)
+            }
+            >td {
+                text-align: center;
+                padding: 15px;
+                border-left: $out-table;
+                border-collapse: collapse;
+                &+td {
+                    border-left: $in-table;
+                }
+            }
+            &+tr {
+                border-top: $in-table;
+            }
+        }
+    }
+}
+
+.borrow-1>table>tr>td {
+    &:nth-child(1) {
+        width: 20%;
+    }
+    &:nth-child(2) {
+        width: 30%;
+    }
+    &:nth-child(3) {
+        width: 30%;
+    }
+    &:nth-child(4) {
+        width: 20%;
+    }
+}
+
+.borrow-2>table>tr>td {
+    &:nth-child(1) {
+        width: 20%;
+    }
+    &:nth-child(2) {
+        width: auto;
+    }
+    &:nth-child(3) {
+        width: 20%;
+    }
+}
+
+.borrow-3>table>tr>td {
+    &:nth-child(1),
+    &:nth-child(2) {
+        width: 20%;
+    }
+    &:nth-child(3) {
+        width: 40%;
+    }
+    &:nth-child(4) {
+        width: 20%;
+    }
+}
