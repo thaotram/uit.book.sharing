@@ -1,7 +1,7 @@
 <template>
     <div id="sidebar"
          class="col hasShadow">
-        <router-link to="/book"> Sách </router-link>
+        <router-link to="/Sách"> Sách </router-link>
     </div>
 </template>
 

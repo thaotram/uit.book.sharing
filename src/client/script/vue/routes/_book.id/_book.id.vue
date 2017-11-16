@@ -55,8 +55,8 @@ export default {
                 self.info = response.data;
                 self.$parent.links = [
                     ['Trang chủ', '/'],
-                    ['Sách', '/book'],
-                    [self.info.title, '/book/' + this.info.id]
+                    ['Sách', '/Sách'],
+                    [self.info.title, '/Sách/' + this.info.id]
                 ];
             });
     }

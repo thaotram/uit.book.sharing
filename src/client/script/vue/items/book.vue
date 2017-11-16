@@ -1,26 +1,31 @@
 <template>
     <div class="book row hasShadow">
         <router-link class="image-link"
-                     :to="'/book/' + info.id">
+                     :to="'/Sách/' + info.id">
             <ai-image :src="info.image" />
         </router-link>
         <div class="col">
             <div class="col hasShadow">
-                <h4 class="title bold">
-                    {{ info.title }}
-                </h4>
-                <div class="author">
-                    {{ info.author }}
+                <div class="row" size="60">
+                    <div class="col full">
+                        <h4 class="title bold">
+                            {{ info.title }}
+                        </h4>
+                        <div class="author">
+                            {{ info.author }}
+                        </div>
+                    </div>
+
                 </div>
                 <p class="full description scroll">
                     {{ info.description }}
                 </p>
-                <ai-row class="book-button hasShadow"
+                <!-- <ai-row class="book-button hasShadow"
                         size="35">
                     <ai-button path="#router.push"
-                               :value="'/book/' + info.id"
+                               :value="'/Sách/' + info.id"
                                text="Xem thêm" />
-                </ai-row>
+                </ai-row> -->
             </div>
             <ai-line class="light" />
             <ai-row size="20"
@@ -83,10 +88,6 @@ $image-size: 200px;
             margin-left: $image-size / 8 * 5 + $size * 2;
             padding: $size $size $size 0;
             height: $image-size - $size * 2;
-            >.author {
-                color: #666;
-                font-size: 0.8em;
-            }
             >.description {
                 margin: 0.5em 0;
                 font-size: 0.8em;

@@ -16,10 +16,10 @@ const router = new VueRouter({
         path: '/',
         component: require('./vue/routes/_home/_home.vue').default
     }, {
-        path: '/book',
+        path: '/Sách',
         component: require('./vue/routes/_book/_book.vue').default
     }, {
-        path: '/book/:id',
+        path: '/Sách/:id',
         component: require('./vue/routes/_book.id/_book.id.vue').default
     }]
 });

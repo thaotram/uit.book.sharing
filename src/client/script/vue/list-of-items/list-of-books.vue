@@ -3,8 +3,8 @@
                       tag="div"
                       class="row flex-wrap"> -->
         <ai-book v-for="(book, index) in books"
-                    :info="book"
-                    :key="index" />
+                 :info="book"
+                 :key="index" />
     </transition-group>
 </template>
 <script>

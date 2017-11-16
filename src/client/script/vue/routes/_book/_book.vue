@@ -1,7 +1,8 @@
 <template>
-    <div class="full">
-        <ai-list-of-books :books="books_" />
-    </div>
+    <ai-contain class="full" id="_book">
+        <h1>Tất cả Sách</h1>
+        <ai-list-of-books :books="books" />
+    </ai-contain>
 </template>
 
 <script>
@@ -11,13 +12,14 @@ import {
 } from 'modules';
 
 export default {
-    name: 'book-page',
+    name: 'b-page',
     components: {
-        ...components('list-of-books')
+        ...components('list-of-books'),
+        ...components('contain')
     },
     data() {
         return {
-            books_: []
+            books: []
         };
     },
     created() {
@@ -29,7 +31,7 @@ export default {
         axios
             .get('/api/book')
             .then((response) => {
-                self.books_ = response.data;
+                self.books = response.data;
             });
     }
 };

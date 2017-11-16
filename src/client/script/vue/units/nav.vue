@@ -38,6 +38,7 @@ export default {
 <style lang="scss">
 .nav {
     height: 30px;
+    padding: 0 10px;
     >* {
         height: 30px;
         line-height: 30px;
