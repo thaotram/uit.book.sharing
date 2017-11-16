@@ -32,6 +32,7 @@ export default {
     padding-bottom: 15px;
     background-color: rgba(#3498db, 0.3);
     >a {
+    overflow: visible;
         padding: 0 10px;
     }
 }

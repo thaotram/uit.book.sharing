@@ -2,16 +2,16 @@
     <ai-contain class="col full hasShadow">
         <ai-row class="book-large hasShadow">
             <ai-image class="shadow"
-                      :src="bookInfo.image" />
+                      :src="computedBook.image" />
             <ai-row class="full content">
                 <ai-line class="dark" />
                 <ai-col class="full">
                     <ai-row class="box">
                         <ai-col class="full">
-                            <h1 class="bold">{{ bookInfo.title }}</h1>
+                            <h1 class="bold">{{ computedBook.title }}</h1>
                             <h6>
                             <router-link to="/">
-                                {{ bookInfo.author }}
+                                {{ computedBook.author }}
                             </router-link>
                         </h6>
                         </ai-col>
@@ -23,7 +23,7 @@
                     </ai-row>
                     <ai-line class="dark" />
                     <div class="box scroll">
-                        <span class="bold">Tóm lược:</span> {{ bookInfo.description }}
+                        <span class="bold">Tóm lược:</span> {{ computedBook.description }}
                     </div>
                 </ai-col>
             </ai-row>
@@ -43,9 +43,14 @@ export default {
         ...components('units')
     },
     computed: {
-        bookInfo() {
-            return this.book;
+        computedBook() {
+            return this.dataBook || this.book;
         }
+    },
+    data() {
+        return {
+            dataBook: undefined
+        };
     },
     props: {
         book: {
@@ -61,7 +66,7 @@ export default {
             axios
                 .get(this.api)
                 .then((response) => {
-                    self.book = response.data;
+                    self.dataBook = response.data;
                 });
         }
     }

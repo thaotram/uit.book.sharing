@@ -27,5 +27,5 @@ server.listen(port);
 
 console.log(
     '   '
-    + chalk.underline.bgCyan(' http://ai.ai:' + port + ' - Lúc: ' + moment().format('hh:mm:ss') + ' ')
+    + chalk.underline.bgCyan(' http://127.0.0.1:' + port + ' - Lúc: ' + moment().format('hh:mm:ss') + ' ')
 );

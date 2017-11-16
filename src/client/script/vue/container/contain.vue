@@ -19,7 +19,8 @@ export default {
         flex-wrap: wrap;
         width: auto;
     }
-    >div {
+    >.row {
+        overflow: visible;
         max-width: 1400px;
     }
 }
