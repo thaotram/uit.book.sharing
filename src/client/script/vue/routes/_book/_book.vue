@@ -1,12 +1,12 @@
 <template>
-    <ai-contain class="full" id="_book">
+    <ai-contain class="full"
+                id="_book">
         <h1>Tất cả Sách</h1>
-        <ai-list-of-books :books="books" />
+        <ai-list-of-books api="/api/book" />
     </ai-contain>
 </template>
 
 <script>
-import axios from 'axios';
 import {
     components
 } from 'modules';
@@ -27,12 +27,12 @@ export default {
             ['Trang chủ', '/'],
             ['Sách', '/']
         ];
-        const self = this;
-        axios
-            .get('/api/book')
-            .then((response) => {
-                self.books = response.data;
-            });
+        // const self = this;
+        // axios
+        //     .get('/api/book')
+        //     .then((response) => {
+        //         self.books = response.data;
+        //     });
     }
 };
 </script>

@@ -8,7 +8,7 @@
     </transition-group>
 </template>
 <script>
-// import book from '../items/thebook.vue';
+import axios from 'axios';
 import {
     components
 } from 'modules';
@@ -17,10 +17,23 @@ export default {
     components: {
         ...components('items/book')
     },
+    data() {
+        return {
+            books: []
+        };
+    },
     props: {
-        books: {
-            default: () => ({})
+        api: {
+            default: '/api/book'
         }
+    },
+    created() {
+        const self = this;
+        axios
+            .get(this.api)
+            .then((response) => {
+                self.books = response.data;
+            });
     }
 };
 </script>

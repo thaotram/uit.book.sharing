@@ -1,12 +1,11 @@
 <template>
     <div id="home-main"
          class="full">
-        <ai-list-of-books :books="books" />
+        <ai-list-of-books api="/api/book" />
     </div>
 </template>
 
 <script>
-import axios from 'axios';
 import {
     components
 } from 'modules';
@@ -15,19 +14,6 @@ export default {
     components: {
         ...components('list-of-items'),
         ...components('units')
-    },
-    data() {
-        return {
-            books: []
-        };
-    },
-    created() {
-        const self = this;
-        axios
-            .get('/api/book')
-            .then((response) => {
-                self.books = response.data;
-            });
     }
 };
 </script>
