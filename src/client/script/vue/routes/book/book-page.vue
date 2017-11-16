@@ -1,7 +1,9 @@
 <template>
-    <ai-contain class="col full">
-        <ai-book-header/>
-    </ai-contain>
+    <div class="col book-page">
+        <ai-contain class="col full hasShadow">
+            <ai-book-header/>
+        </ai-contain>
+    </div>
 </template>
 
 <script>
@@ -16,3 +18,8 @@ export default {
     }
 };
 </script>
+<style lang="scss">
+.book-page {
+    padding: 20px 0;
+}
+</style>

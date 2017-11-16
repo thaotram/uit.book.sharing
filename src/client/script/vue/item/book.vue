@@ -1,22 +1,26 @@
 <template>
-    <div class="book row">
-        <ai-image :link="'/book/' + info.id"
-                  :src="info.image" />
+    <div class="book row hasShadow">
+        <router-link class="image-link"
+                     :to="'/book/' + info.id">
+            <ai-image :src="info.image" />
+        </router-link>
         <div class="col">
-            <div class="col">
-                <h4 class="title">
+            <div class="col hasShadow">
+                <h4 class="title bold">
                     {{ info.title }}
                 </h4>
                 <div class="author">
                     {{ info.author }}
                 </div>
-                <p class="full description">
+                <p class="full description scroll">
                     {{ info.description }}
                 </p>
-                <ai-row class="book-button"
+                <ai-row class="book-button hasShadow"
                         size="35">
-                    <ai-button text="Mượn ngay" />
-                    <ai-button icon="" />
+                    <ai-button path="#router.push"
+                               value="/to"
+                               text="Xem thêm" />
+                    <!-- <ai-button icon="" /> -->
                 </ai-row>
             </div>
             <ai-line class="light" />
@@ -71,17 +75,20 @@ $image-size: 200px;
     min-width: $image-size * 1.5;
     max-width: $image-size * 1.9;
     position: relative;
-    overflow: visible!important;
-    >.image {
+    >.image-link {
+        display: block;
         position: absolute;
-        box-sizing: border-box;
-        padding: 0;
-        height: $image-size;
-        width: $image-size / 8 * 5;
         top: $size * -1;
         left: $size;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-        display: block;
+        height: $image-size;
+        width: $image-size / 8 * 5;
+        border-radius: 3px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+        >.image {
+            width: 100%;
+            height: 100%;
+        }
     }
     >.col {
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -90,7 +97,6 @@ $image-size: 200px;
         background: white;
         flex: 1;
         >.col:nth-child(1) {
-            overflow: visible;
             margin-left: $image-size / 8 * 5 + $size * 2;
             padding: $size $size $size 0;
             height: $image-size - $size * 2;
@@ -99,14 +105,12 @@ $image-size: 200px;
                 font-size: 0.8em;
             }
             >.description {
-                overflow: hidden;
                 margin: 0.5em 0;
                 font-size: 0.8em;
                 line-height: 1.2em;
                 color: #666;
             }
             >.book-button {
-                overflow: visible;
                 >.button {
                     // padding: 0 5px;
                     color: white;

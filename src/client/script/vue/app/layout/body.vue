@@ -2,9 +2,9 @@
     <div id="body"
          class="full"
          :class="{hasScroll: isScroll}">
-        <transition name="body-fade">
-            <router-view></router-view>
-        </transition>
+        <router-view></router-view>
+        <!-- <transition name="body-fade">
+        </transition> -->
     </div>
 </template>
 
@@ -42,5 +42,20 @@ export default {
     &.hasScroll>.contain {
         padding-right: calc(50px - 12px);
     }
+}
+
+// vue transition
+.body-fade-enter-active,
+.body-fade-leave-active {
+    transition: all 0.5s !important;
+}
+
+.body-fade-enter,
+.body-fade-leave-to {
+    opacity: 0;
+}
+
+.bold {
+    font-weight: bold;
 }
 </style>

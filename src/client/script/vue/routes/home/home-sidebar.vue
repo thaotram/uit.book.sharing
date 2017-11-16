@@ -2,7 +2,7 @@
     <div id="sidebar"
          class="col hasShadow">
         <ai-space size="40" />
-        <h6>Thành viên tích cực</h6>
+        <h6 class="bold">Thành viên tích cực</h6>
         <ai-list-of-users/>
     </div>
 </template>
@@ -24,6 +24,5 @@ export default {
 <style lang="scss">
 #sidebar {
     width: 200px;
-    color: #999; // background: blueviolet;
 }
 </style>

@@ -18,7 +18,6 @@ import {
     components,
     complier,
     run,
-    find,
     style
 } from 'modules';
 
@@ -105,7 +104,6 @@ export default {
             return value !== undefined;
         });
         const [parent, property] = find(...args);
-        console.log(parent[property]);
         if (parent
             && property !== undefined
             && parent[property] !== undefined) {
@@ -114,12 +112,11 @@ export default {
                 complier(this, 'value', 'compiledValue', 'watchersValue', undefined, true);
             });
             complier(this, 'value', 'compiledValue', 'watchersValue', undefined, true);
-            console.log(1, this.compiledValue);
+
             this.$watch('compiledValue', () => {
                 this.updateIsActive(value);
             });
             this.buttonClick = () => {
-                console.log([parent, property, this.compiledValue, this]);
                 run(parent, property, this.compiledValue, this);
             };
             if (typeof value !== 'function' && parent.constructor.name === 'VueComponent') {

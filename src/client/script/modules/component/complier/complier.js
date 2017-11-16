@@ -1,6 +1,10 @@
 import complierString from './complierString';
+import router from './../../../router';
+
 module.exports = function complier(component, from, to, watch, self, clear) {
-    if (typeof component[from] === 'string') {
+    if (from === 'router') {
+        router.push(to);
+    } else if (typeof component[from] === 'string') {
         if (clear) {
             component[watch].forEach((eachWatch) => {
                 eachWatch();

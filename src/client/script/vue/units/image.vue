@@ -1,7 +1,7 @@
 <template>
-    <router-link class="image"
-                 :to="link"
-                 :style="srcStyle" />
+    <div class="image"
+         :to="link"
+         :style="srcStyle" />
 </template>
 <script>
 import {

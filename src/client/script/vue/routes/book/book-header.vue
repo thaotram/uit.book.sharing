@@ -1,25 +1,32 @@
 <template>
-    <ai-row class="book-header flex-wrap">
+    <ai-row class="book-header hasShadow">
         <ai-image class="shadow"
-                  :key="'book-image-' + info.id"
                   :src="info.image" />
-        <ai-col class="right shadow full">
-            <ai-col class="box">
-                <h1 style="font-weight: bold">{{ info.title }}</h1>
-                <h5>
-                    <span style="font-weight: bold">
-                        Tác giả: 
-                    </span>
-                    <router-link to="/">
-                        {{ info.author }}
-                    </router-link>
-                </h5>
-            </ai-col>
+        <ai-row class="full content">
             <ai-line class="dark" />
-            <ai-col class="box">
-                <h6>{{ info.description }}</h6>
+            <ai-col class="full">
+                <ai-row class="box">
+                    <ai-col class="full">
+                        <h1 class="bold">{{ info.title }}</h1>
+                        <h6>
+                            <router-link to="/">
+                                {{ info.author }}
+                            </router-link>
+                        </h6>
+                    </ai-col>
+                    <ai-col>
+                        <span class="icon">
+                            
+                        </span>
+                    </ai-col>
+                </ai-row>
+                <ai-line class="dark" />
+                <div class="box scroll">
+                    <span class="bold">Tóm lược:</span>
+                    {{ info.description }}
+                </div>
             </ai-col>
-        </ai-col>
+        </ai-row>
     </ai-row>
 </template>
 
@@ -50,29 +57,28 @@ export default {
 };
 </script>
 <style lang="scss">
+$size: 30px;
 $image-size: 400px;
 .book-header {
-    margin: 30px 0; // background-color: #fff;
+    background: white;
     border-radius: 4px;
-    overflow: visible;
-    .shadow {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-    >* {
-        margin: 10px
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    height: $image-size;
+    margin-top: $size * 1.5;
+    position: relative;
+    .box {
+        padding: $size * 0.5;
     }
     >.image {
-        border-radius: 4px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
         height: $image-size;
+        left: $size;
+        position: absolute;
+        top: -$size;
         width: $image-size / 8 * 5;
     }
-    >.right {
-        border-radius: 4px;
-        background: #fff;
-        min-width: 60%;
-        >.box {
-            padding: 15px;
-        }
+    >.content {
+        margin-left: $image-size / 8 * 5 + $size * 2;
     }
 }
 </style>
