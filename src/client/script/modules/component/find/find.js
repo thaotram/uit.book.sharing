@@ -25,8 +25,7 @@ module.exports = function find(findPath) {
             callback(modules, property);
             return [modules, property];
         } else {
-            console.error('Không tìm thấy module thích hợp');
-            return [];
+            throw 'Không tìm thấy module thích hợp';
         }
     } else if (name || ref) {
         const where = (typeof arguments[1] === 'string') ? [find(arguments[1])]
@@ -37,12 +36,12 @@ module.exports = function find(findPath) {
         const result = recursiveFind(name, ref, where);
         if (!result) {
             console.log(arguments);
-            console.error("Không tìm thấy: component trong path: '" + findPath + "' ");
+            throw "Không tìm thấy: component trong path: '" + findPath + "' ";
         }
         if (property && result[property] === undefined) {
             console.log(arguments);
             console.log(result.$el);
-            console.error("Không tìm thấy: property: '" + property + "' trong path: '" + findPath + "'");
+            throw "Không tìm thấy: property: '" + property + "' trong path: '" + findPath + "'";
         }
         callback(result, property);
         if (returnArray) return [result, property];

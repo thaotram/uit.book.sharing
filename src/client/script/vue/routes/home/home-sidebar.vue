@@ -2,8 +2,9 @@
     <div id="sidebar"
          class="col hasShadow">
         <ai-space size="40" />
-        <h6 class="bold">Thành viên tích cực</h6>
-        <ai-list-of-users/>
+        <router-link to="123">
+            Thông tin
+        </router-link>
     </div>
 </template>
 

@@ -18,9 +18,8 @@
                 <ai-row class="book-button hasShadow"
                         size="35">
                     <ai-button path="#router.push"
-                               value="/to"
+                               :value="'/book/' + info.id"
                                text="Xem thêm" />
-                    <!-- <ai-button icon="" /> -->
                 </ai-row>
             </div>
             <ai-line class="light" />
@@ -115,15 +114,26 @@ $image-size: 200px;
                     // padding: 0 5px;
                     color: white;
                     border-radius: 30px;
-                    &:nth-child(1) {
-                        padding: 0 5px;
-                        background-color: rgba(#2ecc71, 1.0);
-                        box-shadow: 0 0 8px rgba(#2ecc71, 0.5);
+                    &:after {
+                        content: "";
+                        width: 100%;
+                        position: absolute;
+                        height: 100%;
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
                     }
-                    &:nth-child(2) {
-                        margin-left: 10px;
-                        background-color: rgba(#E67E22, 1.0);
-                        box-shadow: 0 0 8px rgba(#E67E22, 0.5);
+                    &:nth-child(1) {
+                        // &:hover {
+                        //     background-color: rgba(#000, 0.9);
+                        // }
+                        padding: 0 5px;
+                        background-color: #2ecc71;
+                        box-shadow: 0 0 8px rgba(#2ecc71, 0.5);
+                        &:hover:after {
+                            background-color: rgba(#000, 0.4)
+                        }
                     }
                 }
             }

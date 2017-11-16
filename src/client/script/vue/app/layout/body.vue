@@ -3,8 +3,6 @@
          class="full"
          :class="{hasScroll: isScroll}">
         <router-view></router-view>
-        <!-- <transition name="body-fade">
-        </transition> -->
     </div>
 </template>
 
