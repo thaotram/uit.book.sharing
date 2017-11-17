@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import io from 'socket.io-client';
+// import io from 'socket.io-client';
 
 import router from './router';
 import store from './store';
@@ -14,7 +14,7 @@ new Vue({
         ref: 'app'
     }),
     created: function() {
-        io();
+        // io();
     }
 });
 

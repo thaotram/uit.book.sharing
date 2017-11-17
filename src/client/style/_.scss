@@ -71,3 +71,24 @@ $out-table: 0px;
         width: 20%;
     }
 }
+.row[size="50"] { min-height: 50px; }
+[size="50"] .label { padding: 0px 15px; }
+[size="50"] .label > .text { height: 50px; line-height: 50px; font-size: 14.5px; }
+[size="30"] .image { height: 30px; width: 30px; }
+.image[size="30"] { height: 30px; width: 30px; }
+[size="50"] .col.square { width: 50px; }
+[size="40"] .image { height: 40px; width: 40px; }
+.image[size="40"] { height: 40px; width: 40px; }
+[size="40"] .col.square { width: 40px; }
+.row[size="40"] { min-height: 40px; }
+.row[size="20"] { min-height: 20px; }
+[size="20"] .button { min-height: 20px; }
+[size="20"] .button > .br { width: 6px; }
+[size="20"] .button > .slot { padding: 0px 6px; font-size: 11px; }
+[size="20"] .button > .icon { min-height: 20px; line-height: 20px; width: 20px; padding: 0px; font-size: 8px; }
+[size="20"] .button > .text { line-height: 20px; padding: 0px; font-size: 10px; }
+[size="50"] .button { min-height: 50px; }
+[size="50"] .button > .br { width: 15px; }
+[size="50"] .button > .slot { padding: 0px 15px; font-size: 17px; }
+[size="50"] .button > .icon { min-height: 50px; line-height: 50px; width: 50px; padding: 0px; font-size: 20px; }
+[size="50"] .button > .text { line-height: 50px; padding: 0px; font-size: 14.5px; }

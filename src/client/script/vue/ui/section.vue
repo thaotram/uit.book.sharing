@@ -1,9 +1,16 @@
 <template>
     <ai-contain class="section">
-        <router-link :to="to" v-if="to">
+        <router-link :to="to"
+                     class="text"
+                     v-if="to">
             {{ text }}
         </router-link>
-        <p v-else>{{ text }}</p>
+        <p v-if="!to && text"
+           class="text">{{ text }}</p>
+        <p v-if="this.$slots.default"
+           class="slot">
+            <slot/>
+        </p>
     </ai-contain>
 </template>
 <script>
@@ -11,13 +18,13 @@ import {
     components
 } from 'modules';
 export default {
-    name: 'header',
+    name: 'section',
     props: {
         to: {
             default: undefined
         },
         text: {
-            default: 'Text'
+            default: undefined
         }
     },
     components: {
@@ -27,11 +34,14 @@ export default {
 </script>
 
 <style lang="scss">
-.section {
-    font-size: 1.3em;
-    padding-top: 25px;
-    padding-bottom: 10px;
-    >*>* {
+.section>* {
+    >.text {
+        font-size: 1.3em;
+        padding-top: 25px;
+        padding-bottom: 10px;
+        display: block;
+    }
+    >* {
         color: black;
         overflow: visible;
         padding: 0 10px;

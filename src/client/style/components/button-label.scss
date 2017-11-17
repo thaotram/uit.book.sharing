@@ -11,6 +11,7 @@
         align-self: center;
         margin: 0;
         z-index: 1;
+        height: 100%;
         &.icon {
             text-align: center;
         }
@@ -31,14 +32,14 @@
     cursor: pointer;
     &:not(.noHover) {
         &:hover {
-            background-color: rgba(0, 0, 0, 0.05);
+            background-color: rgba(0, 0, 0, 0.2);
         }
         &:active {
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0.4);
         }
         &.active,
         &.active:hover {
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0.4);
         }
     }
     &.not>span:after {

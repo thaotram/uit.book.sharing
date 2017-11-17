@@ -21,6 +21,9 @@ const router = new VueRouter({
     }, {
         path: '/Sách/:id',
         component: require('./vue/routes/_book.id/_book.id.vue').default
+    }, {
+        path: '/Thông_tin',
+        component: require('./vue/routes/_about/_about.vue').default
     }]
 });
 
@@ -30,8 +33,11 @@ router.beforeEach((to, from, next) => {
 });
 
 router.afterEach((to, from) => {
-    // console.log(to);
     nanobar.go(100);
+    const body = document.getElementById('body');
+    if (body) {
+        body.scrollTop = 0;
+    }
 });
 
 export default router;

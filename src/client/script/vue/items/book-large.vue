@@ -3,14 +3,14 @@
         <router-link class="image-link"
                      :to="'/Sách/' + computedBook.id">
             <ai-image class="shadow"
-                    :src="computedBook.image" />
+                      :src="computedBook.image" />
         </router-link>
         <ai-row class="full content">
             <ai-line class="dark" />
             <ai-col class="full">
                 <ai-row class="box title-author">
                     <ai-col class="full">
-                        <h1 class="bold">
+                        <h1 bold>
                             <router-link to="/" class="title">
                                 {{ computedBook.title }}
                             </router-link>
@@ -24,7 +24,7 @@
                 </ai-row>
                 <ai-line class="dark" />
                 <div class="box scroll">
-                    <span class="bold">Tóm lược:</span> {{ computedBook.description }}
+                    <span bold>Tóm lược:</span> {{ computedBook.description }}
                 </div>
             </ai-col>
         </ai-row>
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 import {
     components
 } from 'modules';
@@ -63,11 +63,18 @@ export default {
     mounted() {
         const self = this;
         if (this.api !== undefined) {
-            axios
-                .get(this.api)
-                .then((response) => {
-                    self.dataBook = response.data;
-                });
+            // axios
+            //     .get(this.api)
+            //     .then((response) => {
+            //         self.dataBook = response.data;
+            //     });
+            this.dataBook = {
+                id: 1,
+                title: 'Harry Potter',
+                author: 'J. K. Rowling',
+                description: 'Harry Potter là tên của bộ truyện (gồm bảy phần) của nữ nhà văn nước Anh J. K. Rowling. Bộ truyện viết về những cuộc phiêu lưu phù thủy của cậu bé Harry Potter và những người bạn Ronald Weasley, Hermione Granger, lấy bối cảnh tại Trường Phù thủy và Pháp sư Hogwarts nước Anh. Những cuộc phiêu lưu tập trung vào cuộc chiến của Harry Potter trong việc chống lại tên Chúa tể hắc ám Voldemort - người có tham vọng muốn trở nên bất tử, thống trị thế giới phù thủy, nô dịch hóa những người phi pháp thuật và tiêu diệt những ai cản đường hắn đặc biệt là Harry Potter.',
+                image: 'https://ewedit.files.wordpress.com/2016/09/9781408855652-png.jpg?w=409'
+            };
         }
     }
 };
@@ -85,14 +92,14 @@ $image-size: 400px;
     .box {
         padding: $size * 0.5;
     }
-    .title{
+    .title {
         color: black;
-        &:hover{
-            color:#3498db;
+        &:hover {
+            color: #3498db;
             text-decoration: none;
         }
     }
-    .title-author{
+    .title-author {
         min-height: 60px;
     }
     >.image-link {
@@ -102,7 +109,7 @@ $image-size: 400px;
         position: absolute;
         top: -$size;
         width: $image-size / 8 * 5;
-        >.image{
+        >.image {
             width: 100%;
             height: 100%;
         }

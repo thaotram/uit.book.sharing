@@ -1,8 +1,14 @@
 <template>
     <ai-contain id="footer"
                 childClass="row">
-        <p class="bold">Lớp Giao tiếp người máy - SE215.I11</p>
-        <p>Nhóm 12</p>
+        <ai-col class="full">
+            <p>Nhóm 12</p>
+            <p>Lớp Giao tiếp người máy - SE215.I11</p>
+        </ai-col>
+        <ai-row>
+            <router-link to="/">Trang chủ</router-link>
+            <router-link to="/Thông_tin">Thông tin</router-link>
+        </ai-row>
     </ai-contain>
 </template>
 
@@ -13,7 +19,7 @@ import {
 export default {
     name: 'template',
     components: {
-        ...components('contain'),
+        ...components('container'),
         ...components('items')
     }
 };
@@ -25,6 +31,17 @@ export default {
     font-size: 0.9em;
     >.row {
         padding: 20px 10px;
+    }
+    * {
+        color: #666;
+    }
+    a {
+        font-weight: bold;
+        margin-left: 10px;
+        &:hover {
+            color: #333;
+            text-decoration: none;
+        }
     }
 }
 </style>

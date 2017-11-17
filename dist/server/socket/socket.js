@@ -1,1 +1,0 @@
-'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.default=function(a){a.on('connection',function(b){var c=b.request.sessionID,d=b.id;console.log(d+' in'),b.on('foo',function(b){a.emit('okay',{socketID:d,sessionID:c,data:b}),console.log({socketID:d,sessionID:c,data:b})}),b.on('disconnect',function(){console.log(d+' out')})})};

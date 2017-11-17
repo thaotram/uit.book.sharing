@@ -1,9 +1,9 @@
-let styleGroups = {};
+const styleGroups = {};
 
-global.all = function () {
-    for (let group in styleGroups) {
-        let sheet = styleGroups[group].sheet;
-        let length = sheet.cssRules.length;
+global.all = function() {
+    for (const group in styleGroups) {
+        const sheet = styleGroups[group].sheet;
+        const length = sheet.cssRules.length;
         for (let index = 0; index < length; index++) {
             console.log(group, sheet.cssRules[index].cssText);
         }

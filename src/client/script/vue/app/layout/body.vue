@@ -1,6 +1,6 @@
 <template>
     <div id="body"
-         class="full col">
+         class="">
         <ai-contain class="navigator">
             <ai-nav :links="links" />
         </ai-contain>
@@ -50,7 +50,8 @@ export default {
     opacity: 0;
 }
 
-.bold {
-    font-weight: bold;
+.bold, [bold] {
+    font-weight: 700;
 }
+
 </style>

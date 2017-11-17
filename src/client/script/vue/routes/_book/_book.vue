@@ -1,5 +1,5 @@
 <template>
-    <div class="col full">
+    <div class="col">
         <ai-section to="/Sách" text="Tất cả sách"/>
         <ai-contain class="full"
                     id="_book">
