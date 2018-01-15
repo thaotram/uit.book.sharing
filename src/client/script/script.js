@@ -10,12 +10,12 @@ new Vue({
     el: '#app',
     router,
     store,
-    render: h => h(app, {
-        ref: 'app'
-    }),
     created: function() {
         // io();
-    }
+    },
+    render: h => h(app, {
+        ref: 'app'
+    })
 });
 
 global.nope;

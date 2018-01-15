@@ -1,6 +1,6 @@
 <template>
     <ai-contain id="footer"
-                childClass="row">
+                child-class="row">
         <ai-col class="full">
             <p>Nhóm 12</p>
             <p>Lớp Giao tiếp người máy - SE215.I11</p>
@@ -17,7 +17,7 @@ import {
     components
 } from 'modules';
 export default {
-    name: 'template',
+    name: 'Footer',
     components: {
         ...components('container'),
         ...components('items')

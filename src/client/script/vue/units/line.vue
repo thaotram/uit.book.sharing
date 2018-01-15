@@ -3,6 +3,6 @@
 </template>
 <script>
 export default {
-    name: 'line'
+    name: 'AiLine'
 };
 </script>

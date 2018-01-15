@@ -1,8 +1,6 @@
 import path from 'path';
-import chalk from 'chalk';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import log from '../log';
 
 export default {
     cache: true,
@@ -66,14 +64,7 @@ export default {
                 removeScriptTypeAttributes: true,
                 removeStyleLinkTypeAttributes: true
             }
-        }),
-        new class {
-            apply(compiler) {
-                compiler.plugin('emit', (compilation, callback) => {
-                    callback();
-                });
-            }
-        }()
+        })
     ],
     resolve: {
         extensions: ['.js', '.vue', '.json'],

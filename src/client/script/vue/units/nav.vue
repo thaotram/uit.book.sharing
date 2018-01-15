@@ -3,7 +3,7 @@ import {
     components
 } from 'modules';
 export default {
-    name: 'template',
+    name: 'Nav',
     render(h) {
         return h(
             'transition-group', {

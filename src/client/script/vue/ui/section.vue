@@ -18,17 +18,19 @@ import {
     components
 } from 'modules';
 export default {
-    name: 'section',
+    name: 'AiSection',
+    components: {
+        ...components('contain')
+    },
     props: {
         to: {
+            type: String,
             default: undefined
         },
         text: {
+            type: String,
             default: undefined
         }
-    },
-    components: {
-        ...components('contain')
     }
 };
 </script>

@@ -15,17 +15,17 @@ export default function(app) {
                 hash: false,
                 version: false,
                 assets: false,
-                chunks: false,
+                // chunks: false,
                 modules: false,
-                reasons: false,
-                children: false,
-                source: false,
-                errors: false,
-                errorDetails: false,
-                warnings: false,
-                publicPath: false
+                // reasons: false,
+                // children: false,
+                // source: false,
+                colors: true,
+                // errors: false,
+                // errorDetails: false,
+                // warnings: false,
+                // publicPath: false
             },
-            noInfo: false,
             logger: logger
         }))
         && app.use(webpackHotMiddleware(webpackCompiler))

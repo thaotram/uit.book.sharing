@@ -2,7 +2,7 @@
     <div id="header"
          class="row"
          size="50">
-        <ai-contain childClass="row">
+        <ai-contain child-class="row">
             <router-link to="/"
                          class="full"
                          id="logo">

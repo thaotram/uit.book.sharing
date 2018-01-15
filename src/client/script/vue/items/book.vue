@@ -1,6 +1,6 @@
 <template>
     <ai-contain class="hasShadow"
-                childClass="row flex-wrap">
+                child-class="row flex-wrap">
         <ai-book-large :book="book"
                        class="hidden-sm-down" />
         <ai-book-small :book="book"
@@ -12,12 +12,17 @@ import {
     components
 } from 'modules';
 export default {
-    name: 'book',
-    props: ['book'],
+    name: 'Book',
     components: {
         ...components('contain'),
         ...components('items/book-small'),
         ...components('items/book-large')
+    },
+    props: {
+        book: {
+            type: Object,
+            default: () => {}
+        }
     }
 };
 </script>

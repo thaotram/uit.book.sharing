@@ -8,6 +8,11 @@ export default function(
     length = 60) {
 
     text = text.length ? ` ${text} ` : '';
-    const afterRepeat = length - (before.length + text.length);
-    console.log(color(before + text + after.repeat(afterRepeat)));
+    const count = length - (before.length + text.length);
+    const repeat = count < 0 ? 0 : count;
+    console.log(color(
+        before
+        + text
+        + (after != '' ? after.repeat(repeat) : '')
+    ));
 }

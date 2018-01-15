@@ -8,7 +8,7 @@ import {
     style
 } from 'modules';
 export default {
-    name: 'Image',
+    name: 'AiImage',
     props: {
         src: {
             type: String,

@@ -4,13 +4,15 @@ const chalk = require('chalk');
 import log from './log';
 
 module.exports = function() {
-    const object = {};
-    const info = (...a) => {
-        log('┃', a.join(' - '), '', chalk.cyan);
-    };
+    const o = {};
+    const each = (color) => (...text) =>
+        log('┃', text.join(''), '', color);
 
-    object.info = info;
-    object.trace = object.debug = object.warn = object.error = () => {};
+    o.info = each(chalk.cyan);
+    o.trace = each(chalk.blue);
+    o.error = each(chalk.red);
+    o.warn = each(chalk.yellow);
+    o.debug = each(chalk.gray);
 
-    return object;
+    return o;
 }();

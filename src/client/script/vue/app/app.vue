@@ -25,7 +25,6 @@ export default {
 </script>
 <style lang="scss">
 #app {
-    
     position: absolute;
     height: 100%;
     width: 100%;
