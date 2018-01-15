@@ -49,10 +49,12 @@ module.exports = {
         }]
     },
     plugins: [
-        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin(),
 
+        new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
+
+        new webpack.NoErrorsPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
 
         new HtmlWebpackPlugin({
