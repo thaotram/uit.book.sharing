@@ -34,5 +34,6 @@
     "git.ignoreLimitWarning": true,
     "node-module-intellisense.modulePaths": [
         "${workspaceRoot}/src/client/script/modules"
-    ]    
+    ],
+    "terminal.integrated.fontSize": 12
 }

@@ -1,8 +1,8 @@
 <template>
     <div class="book row hasShadow">
         <router-link class="image-link"
-                     :to="'/Sách/' + computedBook.id">
-            <ai-image :src="computedBook.image" />
+                     :to="'/Sách/' + book.id">
+            <ai-image :src="book.image" />
         </router-link>
         <div class="col">
             <div class="col hasShadow">
@@ -10,28 +10,29 @@
                      size="60">
                     <div class="col full">
                         <h4 class="title bold">
-                            {{ computedBook.title }}
+                            {{ book.title }}
                         </h4>
                         <div class="author">
-                            {{ computedBook.author }}
+                            {{ book.author }}
                         </div>
                     </div>
                 </div>
                 <p class="full description scroll">
-                    {{ computedBook.description }}
+                    {{ book.description }}
                 </p>
             </div>
             <ai-line class="light" />
             <ai-row size="20"
                     class="hasShadow">
                 <ai-button class="tag"
-                           text="Giả tưởng" />
+                           v-for="tag in book.tags"
+                           :key="tag"
+                           :text="tag" />
             </ai-row>
         </div>
     </div>
 </template>
 <script>
-// import axios from 'axios';
 import {
     components
 } from 'modules';
@@ -42,11 +43,6 @@ export default {
         ...components('units'),
         ...components('items')
     },
-    computed: {
-        computedBook() {
-            return this.dataBook || this.book;
-        }
-    },
     data() {
         return {
             dataBook: undefined
@@ -54,27 +50,8 @@ export default {
     },
     props: {
         book: {
+            type: Object,
             default: () => ({})
-        },
-        api: {
-            default: undefined
-        }
-    },
-    mounted() {
-        const self = this;
-        if (this.api !== undefined) {
-            // axios
-            //     .get(this.api)
-            //     .then((response) => {
-            //         self.dataBook = response.data;
-            //     });
-            this.dataBook = {
-                id: 1,
-                title: 'Harry Potter',
-                author: 'J. K. Rowling',
-                description: 'Harry Potter là tên của bộ truyện (gồm bảy phần) của nữ nhà văn nước Anh J. K. Rowling. Bộ truyện viết về những cuộc phiêu lưu phù thủy của cậu bé Harry Potter và những người bạn Ronald Weasley, Hermione Granger, lấy bối cảnh tại Trường Phù thủy và Pháp sư Hogwarts nước Anh. Những cuộc phiêu lưu tập trung vào cuộc chiến của Harry Potter trong việc chống lại tên Chúa tể hắc ám Voldemort - người có tham vọng muốn trở nên bất tử, thống trị thế giới phù thủy, nô dịch hóa những người phi pháp thuật và tiêu diệt những ai cản đường hắn đặc biệt là Harry Potter.',
-                image: 'https://ewedit.files.wordpress.com/2016/09/9781408855652-png.jpg?w=409'
-            };
         }
     }
 };

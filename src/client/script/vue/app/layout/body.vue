@@ -17,7 +17,7 @@ import {
 } from 'modules';
 
 export default {
-    name: 'body',
+    name: 'Body',
     components: {
         ...components('layout/footer'),
         ...components('line'),

@@ -13,7 +13,7 @@ import {
 } from 'modules';
 
 export default {
-    name: 'ai-list-of-users',
+    name: 'AiListOfUsers',
     components: {
         ...components('items')
     },

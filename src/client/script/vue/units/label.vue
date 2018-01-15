@@ -12,7 +12,7 @@ import {
 } from 'modules';
 
 export default {
-    name: 'label',
+    name: 'Label',
     components: {
         ...components('container/row'),
         ...components('units/br')

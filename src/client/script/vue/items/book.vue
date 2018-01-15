@@ -1,11 +1,9 @@
 <template>
     <ai-contain class="hasShadow"
                 childClass="row flex-wrap">
-        <ai-book-large :api="api"
-                       :book="book"
+        <ai-book-large :book="book"
                        class="hidden-sm-down" />
-        <ai-book-small :api="api"
-                       :book="book"
+        <ai-book-small :book="book"
                        class="hidden-md-up" />
     </ai-contain>
 </template>
@@ -15,7 +13,7 @@ import {
 } from 'modules';
 export default {
     name: 'book',
-    props: ['api', 'book'],
+    props: ['book'],
     components: {
         ...components('contain'),
         ...components('items/book-small'),

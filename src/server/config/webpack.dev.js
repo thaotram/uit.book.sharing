@@ -17,8 +17,8 @@ export default {
         path: path.resolve(__dirname, './dist/client')
     },
     devServer: {
-        contentBase: './dist/client',
-        hot: true
+        hot: true,
+        contentBase: './dist/client'
     },
     module: {
         rules: [{

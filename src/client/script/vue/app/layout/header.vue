@@ -23,7 +23,7 @@ import {
 } from 'modules';
 
 export default {
-    name: 'header',
+    name: 'Header',
     components: {
         ...components('container'),
         ...components('units')
