@@ -1,8 +1,8 @@
 import express from 'express';
 import SocketIO from 'socket.io';
 import moment from 'moment';
-import http from 'http';
 import chalk from 'chalk';
+import http from 'http';
 
 import AppExpress from './express/express';
 import AppSocket from './socket/socket';
@@ -13,11 +13,7 @@ const port = process.env.PORT || 5;
 const server = http.createServer(app);
 const io = SocketIO(server);
 
-console.log(chalk.bgMagenta(
-    process.env.NODE_ENV === 'development'
-        ? '\n ----- [ Development Environment ] ----- '
-        : '\n ----- [ Productions Environment ] ----- '
-));
+import log from './log';
 
 AppConfig(app, io);
 AppExpress(app);
@@ -25,7 +21,8 @@ AppSocket(io);
 
 server.listen(port);
 
-console.log(
-    '   '
-    + chalk.underline.bgCyan(' http://127.0.0.1:' + port + ' - Lúc: ' + moment().format('hh:mm:ss') + ' ')
-);
+log('┏', `App.js`, '━', chalk.magenta);
+log('┃', `Environment : ${process.env.NODE_ENV}`, '', chalk.magenta);
+log('┃', `Url         : http://127.0.0.1:${port}`, '', chalk.magenta);
+log('┃', `Time        : ${moment().format('hh:mm:ss')}`, '', chalk.magenta);
+log('┗', ``, '━', chalk.magenta);

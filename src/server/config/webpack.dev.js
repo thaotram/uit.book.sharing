@@ -2,6 +2,7 @@ import path from 'path';
 import chalk from 'chalk';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import log from '../log';
 
 export default {
     cache: true,
@@ -55,9 +56,7 @@ export default {
         }]
     },
     plugins: [
-        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin(),
         new HtmlWebpackPlugin({
             template: 'src/client/index.html',
             minify: {
@@ -70,10 +69,7 @@ export default {
         }),
         new class {
             apply(compiler) {
-                compiler.plugin('emit', function(compilation, callback) {
-                    console.log(
-                        '      '
-                        + chalk.bgGreen(' Emit client '));
+                compiler.plugin('emit', (compilation, callback) => {
                     callback();
                 });
             }

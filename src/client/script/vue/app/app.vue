@@ -2,7 +2,8 @@
     <div id="app"
          class="col">
         <ai-header/>
-        <ai-body ref="body" class="col"/>
+        <ai-body ref="body"
+                 class="col" />
     </div>
 </template>
 <script>
@@ -11,7 +12,7 @@ import {
 } from 'modules';
 
 export default {
-    name: 'app',
+    name: 'App',
     components: {
         ...components('layout'),
         ...components('line'),
@@ -24,6 +25,7 @@ export default {
 </script>
 <style lang="scss">
 #app {
+    
     position: absolute;
     height: 100%;
     width: 100%;
