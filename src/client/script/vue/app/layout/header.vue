@@ -8,6 +8,12 @@
                          id="logo">
                 <ai-label text="BookSharing" />
             </router-link>
+            <div id="search-box"
+                 class="row"
+                 size="30">
+                <ai-input class="search"
+                          placeholder="Tìm kiếm" />
+            </div>
             <ai-col class="square">
                 <ai-image size="30"
                           class="round"
@@ -49,6 +55,14 @@ export default {
             font-size: 1.2em;
             flex: 1;
             text-align: left;
+        }
+    }
+    #search-box {
+        align-self: center;
+        border-radius: 30px;
+        border: 1px solid #95a5a6;
+        input {
+            padding: 0 15px;
         }
     }
 }

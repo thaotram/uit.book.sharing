@@ -1,38 +1,37 @@
 <template>
     <div class="input"
-         v-if="this.type !== 'checkbox'"
+         v-if="type !== 'checkbox'"
          :class="{ focus: focus }">
         <input type="text"
                v-model="value"
-               v-if="this.type == 'text'"
+               v-if="type == 'text'"
                @focus="focus = true"
                @blur="focus = false"
                :class="{ highlight: highlight }"
-               :placeholder="this.placeholder" />
+               :placeholder="placeholder">
         <input type="number"
                v-model.number="value"
-               v-else-if="this.type == 'number'"
+               v-else-if="type == 'number'"
                @focus="focus = true"
                @blur="focus = false"
-               :min="this.min"
-               :max="this.max"
+               :min="min"
+               :max="max"
                :class="{ highlight: highlight }"
-               :placeholder="this.placeholder" />
+               :placeholder="placeholder">
         <textarea rows="1"
                   v-model="value"
-                  v-else-if="this.type == 'textarea'"
+                  v-else-if="type == 'textarea'"
                   @focus="focus = true"
                   @blur="focus = false"
                   :class="{ highlight: highlight }"
-                  :placeholder="this.placeholder"></textarea>
+                  :placeholder="placeholder" />
     </div>
     <ai-button class="input"
-               v-else-if="this.type == 'checkbox'"
+               v-else-if="type == 'checkbox'"
                icon=""
                text="Thư mục abc"
                value="@"
-               :path="path">
-    </ai-button>
+               :path="path" />
 </template>
 <script>
 import {
@@ -40,27 +39,33 @@ import {
     style
 } from 'modules';
 export default {
-    name: 'input',
+    name: 'Input',
     components: {
         ...components('units/button')
     },
     props: {
         path: {
+            type: String,
             default: ''
         },
         placeholder: {
+            type: String,
             default: ''
         },
         type: {
+            type: String,
             default: 'text'
         },
         min: {
+            type: String,
             default: '1'
         },
         max: {
-            default: '10'
+            type: Number,
+            default: 10
         },
         root: {
+            type: String,
             default: undefined
         }
     },
@@ -104,24 +109,6 @@ export default {
         setTimeout(() => {
             this.updateTextareaHeight();
         }, 0);
-        /*
-            const args = [this.path, this.root, true].filter((value) => {
-                return value !== undefined;
-            });
-            const [parent, property] = find(...args);
-            if (parent
-                && property !== undefined
-                && parent[property] !== undefined) {
-                this.value = parent[property];
-                this.$watch('value', (value) => {
-                    parent[property] = value;
-                    this.updateTextareaHeight();
-                });
-                parent.$watch(property, (value) => {
-                    this.value = value;
-                });
-            }
-        */
     },
     methods: {
         updateTextareaHeight() {

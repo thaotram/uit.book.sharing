@@ -16,13 +16,13 @@ const router = new VueRouter({
         path: '/',
         component: require('./vue/routes/_home/_home.vue').default
     }, {
-        path: '/Sách',
+        path: '/Book',
         component: require('./vue/routes/_book/_book.vue').default
     }, {
-        path: '/Sách/:id',
+        path: '/Book/:id',
         component: require('./vue/routes/_book.id/_book.id.vue').default
     }, {
-        path: '/Thông_tin',
+        path: '/Info',
         component: require('./vue/routes/_about/_about.vue').default
     }]
 });
@@ -32,12 +32,10 @@ router.beforeEach((to, from, next) => {
     next();
 });
 
-router.afterEach((to, from) => {
-    nanobar.go(100);
+router.afterEach(() => {
     const body = document.getElementById('body');
-    if (body) {
-        body.scrollTop = 0;
-    }
+    nanobar.go(100);
+    if (body) body.scrollTop = 0;
 });
 
 export default router;

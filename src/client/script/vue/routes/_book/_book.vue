@@ -1,33 +1,39 @@
 <template>
     <div class="col">
-        <ai-section to="/Sách" text="Tất cả sách"/>
+        <ai-section to="/book"
+                    text="Tất cả sách" />
         <ai-contain class="full"
                     id="_book">
-            <ai-list-of-books api="/api/book" />
+            <ai-list-of-books :books="books" />
         </ai-contain>
     </div>
 </template>
 
 <script>
 import {
-    components
+    components,
+    computed
 } from 'modules';
 
 export default {
-    name: 'b-page',
     components: {
         ...components('list-of-books'),
         ...components('contain'),
         ...components('ui')
+    },
+    computed: {
+        ...computed('book')
     },
     created() {
         this.$parent.links = [
             ['Trang chủ', '/'],
             ['Sách', '/Sách']
         ];
+        this.books = [
+
+        ];
     }
 };
 </script>
 <style lang="scss">
-
 </style>

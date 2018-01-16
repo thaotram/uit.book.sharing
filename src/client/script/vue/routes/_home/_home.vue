@@ -1,11 +1,11 @@
 <template>
     <div class="full">
         <ai-section text="Ngẫu nhiên" />
-        <ai-book api="/api/book/1"/>
-        <ai-section to="/Sáchs"
+        <ai-book api="/api/book/1" />
+        <ai-section to="/Book"
                     text="Tất cả sách" />
         <ai-contain>
-            <ai-list-of-books api="/api/book" />
+            <ai-list-of-books/>
         </ai-contain>
     </div>
 </template>
@@ -15,7 +15,7 @@ import {
     components
 } from 'modules';
 export default {
-    name: 'home-page',
+    name: 'HomePage',
     components: {
         ...components('contain'),
         ...components('units'),

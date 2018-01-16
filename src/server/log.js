@@ -5,7 +5,7 @@ export default function(
     text,
     after = '',
     color = chalk.white,
-    length = 60) {
+    length = 48) {
 
     text = text.length ? ` ${text} ` : '';
     const count = length - (before.length + text.length);
