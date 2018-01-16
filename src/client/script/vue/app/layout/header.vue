@@ -6,7 +6,7 @@
             <router-link to="/"
                          class="full"
                          id="logo">
-                <ai-label text="Chia sẻ sách" />
+                <ai-label text="Ứng dụng chia sẻ sách" />
             </router-link>
             <div id="search-box"
                  class="row"
@@ -42,6 +42,7 @@ export default {
     background: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     z-index: 2;
+    padding-right: 8px;
     #logo {
         cursor: pointer;
         &:hover {
@@ -49,6 +50,7 @@ export default {
         }
         .label {
             cursor: pointer;
+            padding: 0 10px;
         }
         .text {
             font-family: 'Pacifico', cursive;

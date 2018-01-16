@@ -3,7 +3,7 @@ import {
     components
 } from 'modules';
 export default {
-    name: 'ListNav',
+    name: 'Navigator',
     components: {
         ...components('container'),
         ...components('units'),
@@ -20,62 +20,105 @@ export default {
         }
     },
     render(h) {
+        const icon = index => h(
+            'span', {
+                class: 'icon',
+                key: `icon-${index}`
+            }, ''
+        );
+
+        const link = (url, current) => h('router-link', {
+            props: {
+                to: url[1]
+            },
+            class: ['link', current ? 'current' : null],
+            key: url[0]
+        }, url[0]);
+
+        const center = () => h('div', {
+            class: 'full',
+            key: 'space'
+        });
+
+        const space = key => h('div', {
+            class: 'space',
+            key: `space-${key}`
+        });
+
         return h(
             'transition-group', {
-                class: 'nav row',
+                class: 'navigator row',
                 props: {
-                    name: 'nav'
+                    name: 'navigator'
                 }
-            }, this.left.map((link, index, left) => [
-                (index === 0
-                    ? null
-                    : h('span', {
-                        class: 'icon',
-                        key: index
-                    }, '')),
-                h('router-link', {
-                    props: {
-                        to: link[1]
-                    },
-                    class: {
-                        current: index === left.length - 1
-                    },
-                    key: link[0]
-                }, link[0])
-            ])
+            }, [
+                this.left.map((url, index, left) => [
+                    index === 0 ? null : icon(index),
+                    link(url, index === left.length - 1)
+                ]),
+                center(),
+                this.right.map((url, index) => [
+                    index === 0 ? null : space(index),
+                    link(url, false)
+                ])
+            ]
         );
     }
 };
 </script>
-<style lang="scss"
-       scoped>
-.nav {
-    height: 30px;
+<style lang="scss">
+$blue: #3498db;
+$size: 30px;
+.navigator {
+    height: $size;
     padding: 0 10px;
+    border-bottom: 3px solid rgba($blue, .2);
+    margin-bottom: 10px;
+    margin-top: 15px;
+    background: rgba(0, 0, 0, .0);
+    overflow: visible;
     >* {
-        height: 30px;
-        line-height: 30px;
-        &:not(.icon) {
-            font-size: 1.2em;
+        height: $size;
+        line-height: $size;
+        position: relative;
+        &.link {
+            font-size: 1.1em;
+            font-weight: bold;
         }
-    }
-    >.current {
-        color: #000
-    }
-    >span.icon {
-        margin: 0 10px;
-        font-weight: bold;
-        color: #3498db
+        &.icon {
+            margin: 0 10px;
+            font-weight: bold;
+            color: #3498db
+        }
+        &.space {
+            width: 10px;
+        }
+        &:hover {
+            text-decoration: none;
+            text-shadow: 0 0 5px rgba($blue, .5);
+        }
+        &.current {
+            cursor: default;
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                background: $blue;
+                height: 3px;
+                width: 100%;
+                box-shadow: 0 0 10px rgba(#3498db, .8);
+            }
+        }
     }
 }
 
-.nav-enter-active,
-.nav-leave-active {
+.navigator-enter-active,
+.navigator-leave-active {
     transition: all 0.3s!important;
 }
 
-.nav-enter,
-.nav-leave-to {
+.navigator-enter,
+.navigator-leave-to {
     opacity: 0;
 }
 </style>

@@ -49,11 +49,9 @@ export default {
             default: () => ({})
         }
     },
-    data() {
-        return {
-            dataBook: undefined
-        };
-    },
+    data: () => ({
+        dataBook: undefined
+    })
 };
 </script>
 <style lang="scss">

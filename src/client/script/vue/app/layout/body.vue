@@ -1,9 +1,9 @@
 <template>
     <div id="body">
-        <!-- <ai-contain class="navigator">
-            <ai-nav :links="links" />
-        </ai-contain> -->
-        <!-- <ai-line class="dark"/> -->
+        <ai-contain class="full nav">
+            <ai-navigator :left="left"
+                          :right="right" />
+        </ai-contain>
         <router-view ref="view"
                      id="view" />
         <ai-footer/>
@@ -20,18 +20,17 @@ export default {
     components: {
         ...components('layout/footer'),
         ...components('line'),
-        ...components('list-nav'),
-        ...components('nav'),
+        ...components('navigator'),
         ...components('container')
     },
-    data() {
-        return {
-            links: []
-        };
-    }
+    data: () => ({
+        left: [],
+        right: []
+    })
 };
 </script>
-<style lang="scss">
+<style lang="scss"
+       scoped>
 #body {
     overflow: auto;
     >.navigator {
