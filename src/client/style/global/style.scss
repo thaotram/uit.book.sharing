@@ -12,14 +12,13 @@
 html,
 body {
     user-select: none;
-    -webkit-user-select: none;
     font-family: $text-font;
     color: rgba(0, 0, 0, 0.87);
+    -webkit-user-select: none;
     word-wrap: break-word;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 1.35em;
-
+    line-height: 1.3em;
 }
 
 li,
@@ -48,7 +47,7 @@ a:hover {
 @for $header from 1 through 6 {
     h#{$header} {
         font-weight: normal;
-        font-size: 1em + (6 - $header) * 0.1em; 
+        font-size: 1em + (6 - $header) * 0.1em;
         line-height: 1.5em;
     }
 }
@@ -72,19 +71,19 @@ hr {
 }
 
 // ----- scrollbar -----
+$blue: #3498db;
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-    // border: solid rgba(0, 0, 0, 0.2);
-    // border-width: 0 0 0 1px;
+    width: 6px;
+    height: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.1);
-    border: solid rgba(0, 0, 0, 0.0);
+    background-color: rgba($blue, 0.4);
+    border: solid rgba($blue, 0.0);
     border-width: 0 0 0 1px;
 }
 
-::-webkit-scrollbar-corner {
-    background-color: rgba(0, 0, 0, 0.3)
+.bold,
+[bold] {
+    font-weight: bold;
 }

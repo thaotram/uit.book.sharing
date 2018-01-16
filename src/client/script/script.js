@@ -1,6 +1,5 @@
 import Vue from 'vue';
 // import io from 'socket.io-client';
-
 import router from './router';
 import store from './store';
 import app from './vue/app/app.vue';

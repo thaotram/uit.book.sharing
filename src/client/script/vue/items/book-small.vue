@@ -40,8 +40,7 @@ export default {
     name: 'BookSmall',
     components: {
         ...components('container'),
-        ...components('units'),
-        ...components('items')
+        ...components('units')
     },
     props: {
         book: {

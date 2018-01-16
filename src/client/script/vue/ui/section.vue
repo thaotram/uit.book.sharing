@@ -18,7 +18,7 @@ import {
     components
 } from 'modules';
 export default {
-    name: 'AiSection',
+    name: 'Section',
     components: {
         ...components('contain')
     },

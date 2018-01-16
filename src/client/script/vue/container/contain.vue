@@ -7,8 +7,13 @@
 </template>
 <script>
 export default {
-    name: 'contain',
-    props: ['childClass']
+    name: 'Contain',
+    props: {
+        childClass: {
+            type: String,
+            default: undefined
+        }
+    }
 };
 </script>
 <style lang="scss">

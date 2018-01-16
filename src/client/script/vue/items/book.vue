@@ -15,13 +15,12 @@ export default {
     name: 'Book',
     components: {
         ...components('contain'),
-        ...components('items/book-small'),
-        ...components('items/book-large')
+        ...components('items')
     },
     props: {
         book: {
             type: Object,
-            default: () => {}
+            default: () => ({})
         }
     }
 };

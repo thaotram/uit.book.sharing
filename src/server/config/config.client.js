@@ -1,10 +1,10 @@
-import webpack from 'webpack';
 import express from 'express';
+import logger from '../logger';
+import openInEditor from 'launch-editor-middleware';
+import webpack from 'webpack';
+import webpackDev from './webpack.dev';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
-
-import webpackDev from './webpack.dev';
-import logger from '../logger';
 
 const webpackCompiler = webpack(webpackDev);
 
@@ -15,18 +15,21 @@ export default function(app) {
                 hash: false,
                 version: false,
                 assets: false,
-                // chunks: false,
                 modules: false,
+                colors: true,
+                // chunks: false,
                 // reasons: false,
                 // children: false,
                 // source: false,
-                colors: true,
                 // errors: false,
                 // errorDetails: false,
                 // warnings: false,
                 // publicPath: false
             },
-            logger: logger
+            logger: logger,
+            before(app) {
+                app.use('/__open-in-editor', openInEditor('code'));
+            },
         }))
         && app.use(webpackHotMiddleware(webpackCompiler))
         : app.use(express.static('dist/client'));

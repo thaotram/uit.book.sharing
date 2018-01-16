@@ -86,14 +86,15 @@ $size: 30px;
             font-size: 1.1em;
             font-weight: bold;
             &:after {
-                content: "";
-                display: block;
-                position: absolute;
-                height: 3px;
-                width: 100%;
                 background: transparent;
                 box-shadow: 0 0 10px rgba($blue, .0);
+                content: "";
+                display: block;
+                height: 3px;
+                position: absolute;
                 top: 100%;
+                transition: all 0.2s;
+                width: 100%;
             }
             &:hover:after {
                 background: rgba($blue, .8);
