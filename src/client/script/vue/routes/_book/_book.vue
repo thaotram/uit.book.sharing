@@ -1,7 +1,10 @@
 <template>
-    <div class="col">
-        <ai-section to="/book"
-                    text="Tất cả sách" />
+    <div class="col"
+         id="book">
+        <ai-contain class="full nav">
+            <ai-navigator :left="left"
+                          :right="right" />
+        </ai-contain>
         <ai-contain class="full"
                     id="_book">
             <ai-list-of-books :books="books" />
@@ -12,28 +15,35 @@
 <script>
 import {
     components,
-    computed
+    data
 } from 'modules';
 
 export default {
     components: {
+        ...components('line'),
         ...components('list-of-books'),
+        ...components('navigator'),
         ...components('contain'),
         ...components('ui')
     },
-    computed: {
-        ...computed('book')
-    },
+    data: () => ({
+        ...data('book'),
+        left: [
+            ['Trang chủ', '/'],
+            ['Sách', '/Book']
+        ],
+        right: []
+    }),
     created() {
         this.$parent.links = [
             ['Trang chủ', '/'],
-            ['Sách', '/Sách']
-        ];
-        this.books = [
-
+            ['Sách', '/Book']
         ];
     }
 };
 </script>
 <style lang="scss">
+.nav>div {
+    padding: 10px;
+}
 </style>

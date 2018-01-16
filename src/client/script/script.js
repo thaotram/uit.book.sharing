@@ -10,9 +10,6 @@ new Vue({
     el: '#app',
     router,
     store,
-    created: function() {
-        // io();
-    },
     render: h => h(app, {
         ref: 'app'
     })

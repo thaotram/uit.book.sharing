@@ -1,10 +1,9 @@
 <template>
-    <div id="body"
-         class="">
-        <ai-contain class="navigator">
+    <div id="body">
+        <!-- <ai-contain class="navigator">
             <ai-nav :links="links" />
-        </ai-contain>
-        <ai-line class="dark"/>
+        </ai-contain> -->
+        <!-- <ai-line class="dark"/> -->
         <router-view ref="view"
                      id="view" />
         <ai-footer/>
@@ -21,6 +20,7 @@ export default {
     components: {
         ...components('layout/footer'),
         ...components('line'),
+        ...components('list-nav'),
         ...components('nav'),
         ...components('container')
     },
@@ -50,8 +50,8 @@ export default {
     opacity: 0;
 }
 
-.bold, [bold] {
+.bold,
+[bold] {
     font-weight: 700;
 }
-
 </style>

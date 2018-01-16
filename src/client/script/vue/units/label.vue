@@ -19,9 +19,13 @@ export default {
     },
     props: {
         text: {
+            type: String,
             default: ''
         },
-        root: {}
+        root: {
+            type: String,
+            default: ''
+        }
     },
     data() {
         return {

@@ -6,7 +6,7 @@
             <router-link to="/"
                          class="full"
                          id="logo">
-                <ai-label text="BookSharing" />
+                <ai-label text="Chia sẻ sách" />
             </router-link>
             <div id="search-box"
                  class="row"

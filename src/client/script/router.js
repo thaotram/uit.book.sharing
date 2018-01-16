@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-
 import Nanobar from 'nanobar';
 
 Vue.use(VueRouter);
@@ -11,20 +10,18 @@ const nanobar = new Nanobar({
     target: document.getElementById('what')
 });
 
+const view = (path, name) => ({
+    path: path,
+    component: require(`./vue/routes/_${name}/_${name}.vue`).default
+});
+
 const router = new VueRouter({
-    routes: [{
-        path: '/',
-        component: require('./vue/routes/_home/_home.vue').default
-    }, {
-        path: '/Book',
-        component: require('./vue/routes/_book/_book.vue').default
-    }, {
-        path: '/Book/:id',
-        component: require('./vue/routes/_book.id/_book.id.vue').default
-    }, {
-        path: '/Info',
-        component: require('./vue/routes/_about/_about.vue').default
-    }]
+    routes: [
+        view('/', 'home'),
+        view('/book', 'book'),
+        view('/book/:id', 'book.id'),
+        view('/about', 'about')
+    ]
 });
 
 router.beforeEach((to, from, next) => {

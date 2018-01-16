@@ -26,14 +26,14 @@ export default {
 </script>
 <style lang="scss">
 #footer {
-    background-color: rgba(#000, 0.1);
+    background-color: rgba(#34495e, 0.5);
     margin-top: 30px;
     font-size: 0.9em;
     >.row {
         padding: 20px 10px;
     }
     * {
-        color: #666;
+        color: #fff;
     }
     a {
         font-weight: bold;

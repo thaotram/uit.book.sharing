@@ -3,13 +3,18 @@ import {
     components
 } from 'modules';
 export default {
-    name: 'Nav',
+    name: 'ListNav',
     components: {
-        ...components('contain'),
-        ...components('units')
+        ...components('container'),
+        ...components('units'),
+        ...components('items')
     },
     props: {
-        links: {
+        left: {
+            type: Array,
+            default: () => []
+        },
+        right: {
             type: Array,
             default: () => []
         }
@@ -21,31 +26,29 @@ export default {
                 props: {
                     name: 'nav'
                 }
-            }, this.links ? this.links.map((link, index, links) => {
-                return [
-                    (index === 0
-                        ? null
-                        : h('span', {
-                            class: 'icon',
-                            key: index
-                        }, '')),
-                    h('router-link', {
-                        props: {
-                            to: link[1]
-                        },
-                        class: {
-                            current: index === links.length - 1
-                        },
-                        key: link[0]
-                    }, link[0])
-                ];
-            }) : null
+            }, this.left.map((link, index, left) => [
+                (index === 0
+                    ? null
+                    : h('span', {
+                        class: 'icon',
+                        key: index
+                    }, '')),
+                h('router-link', {
+                    props: {
+                        to: link[1]
+                    },
+                    class: {
+                        current: index === left.length - 1
+                    },
+                    key: link[0]
+                }, link[0])
+            ])
         );
     }
 };
 </script>
-
-<style lang="scss">
+<style lang="scss"
+       scoped>
 .nav {
     height: 30px;
     padding: 0 10px;

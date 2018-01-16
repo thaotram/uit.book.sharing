@@ -1,7 +1,7 @@
 <template>
     <ai-row class="button"
             :class="{ active: isActive }"
-            v-on:click.native="buttonClick()">
+            @click.native="buttonClick()">
         <span class="icon"
               v-if="icon !== ''">{{ icon }}</span>
         <div class="br"
@@ -23,24 +23,29 @@ import {
 } from 'modules';
 
 export default {
-    name: 'button',
+    name: 'Button',
     components: {
         ...components('row')
     },
     props: {
         path: {
+            type: String,
             default: ''
         },
         value: {
+            type: String,
             default: ''
         },
         text: {
+            type: String,
             default: ''
         },
         icon: {
+            type: String,
             default: ''
         },
         root: {
+            type: Object,
             default: undefined
         }
     },

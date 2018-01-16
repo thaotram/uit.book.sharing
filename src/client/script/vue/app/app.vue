@@ -2,8 +2,7 @@
     <div id="app"
          class="col">
         <ai-header/>
-        <ai-body ref="body"
-                 class="col" />
+        <ai-body ref="body" />
     </div>
 </template>
 <script>

@@ -37,23 +37,23 @@ import {
     components
 } from 'modules';
 export default {
-    name: 'book-small',
+    name: 'BookSmall',
     components: {
         ...components('container'),
         ...components('units'),
         ...components('items')
-    },
-    data() {
-        return {
-            dataBook: undefined
-        };
     },
     props: {
         book: {
             type: Object,
             default: () => ({})
         }
-    }
+    },
+    data() {
+        return {
+            dataBook: undefined
+        };
+    },
 };
 </script>
 <style lang="scss">
@@ -126,13 +126,14 @@ $image-size: 200px;
             }
         }
         >.row:nth-child(3) {
-            margin: $size/2 $size;
+            margin: $size * 0.75 calc(#{$size} - 0.25em);
             >.tag {
                 background-color: #3498db;
                 box-shadow: 0 0 10px rgba(#3498db, 0.5);
                 color: white;
                 border-radius: 20px;
                 padding: 0 0.25em;
+                margin: 0 0.25em;
             }
         }
     }
