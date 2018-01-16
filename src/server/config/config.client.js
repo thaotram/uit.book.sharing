@@ -32,5 +32,5 @@ export default function(app) {
             },
         }))
         && app.use(webpackHotMiddleware(webpackCompiler))
-        : app.use(express.static('dist/client'));
+        : app.use(express.static('src/client/static'));
 }

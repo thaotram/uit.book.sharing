@@ -5,6 +5,6 @@
 </template>
 <script>
 export default {
-    name: 'layers'
+    name: 'Layers'
 };
 </script>

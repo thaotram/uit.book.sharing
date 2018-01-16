@@ -15,7 +15,9 @@ export default {
     components: {
         ...components('layout'),
         ...components('line'),
-        ...components('contain')
+        ...components('contain'),
+        ...components('items'),
+        ...components('units'),
     },
     mounted() {
         // console.clear();

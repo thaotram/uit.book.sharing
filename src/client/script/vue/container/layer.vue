@@ -1,6 +1,6 @@
 <template>
     <div class="layer"
-         :index="this.index">
+         :index="index">
         <slot/>
     </div>
 </template>
@@ -9,7 +9,7 @@ import {
     style
 } from 'modules';
 export default {
-    name: 'layer',
+    name: 'Layer',
     props: {
         index: {
             type: Number,

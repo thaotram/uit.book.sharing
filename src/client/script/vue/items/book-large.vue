@@ -25,13 +25,12 @@
                 </ai-row>
                 <ai-line class="dark" />
                 <div class="box scroll">
-                    <span bold>Tóm lược:</span> {{ book.description }}
+                    <!-- <span bold>Tóm lược:</span> {{ book.description }}  -->
                 </div>
             </ai-col>
         </ai-row>
     </ai-row>
 </template>
-
 <script>
 import {
     components

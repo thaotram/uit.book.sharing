@@ -72,7 +72,7 @@ $size: 30px;
 .navigator {
     height: $size;
     margin: 0 10px;
-    border-bottom: 3px solid rgba($blue, .2);
+    border-bottom: 2px solid rgba($blue, .2);
     margin-bottom: 10px;
     margin-top: 15px;
     background: rgba(0, 0, 0, .0);
@@ -90,9 +90,10 @@ $size: 30px;
                 box-shadow: 0 0 10px rgba($blue, .0);
                 content: "";
                 display: block;
-                height: 3px;
+                height: 4px;
                 position: absolute;
-                top: 100%;
+                top: calc(100% - 1px);
+                border-radius: 4px;
                 transition: all 0.2s;
                 width: 100%;
             }

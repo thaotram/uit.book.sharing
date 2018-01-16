@@ -27,6 +27,8 @@ export default {
         axios.get('https://randomuser.me/api/', {
             params: {
                 inc: 'name,picture',
+                nat: 'vn',
+                gender: 'female',
                 results: 5
             }
         }).then(function(response) {
@@ -38,13 +40,6 @@ export default {
 
 <style lang="scss">
 .users {
-    margin: 10px 0;
-}
-
-.user {
     margin: 5px 0;
-    >.image {
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5)
-    }
 }
 </style>

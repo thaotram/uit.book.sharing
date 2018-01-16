@@ -26,7 +26,7 @@ export default {
     }
     >div {
         overflow: visible;
-        max-width: 1000px;
+        max-width: 1120px;
         margin: 0 auto;
     }
 }

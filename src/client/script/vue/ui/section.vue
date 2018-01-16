@@ -1,17 +1,17 @@
 <template>
-    <ai-contain class="section">
+    <div class="section">
         <router-link :to="to"
                      class="text"
                      v-if="to">
             {{ text }}
         </router-link>
         <p v-if="!to && text"
-           class="text">{{ text }}</p>
-        <p v-if="this.$slots.default"
+           class="text"> {{ text }} </p>
+        <p v-if="$slots.default"
            class="slot">
             <slot/>
         </p>
-    </ai-contain>
+    </div>
 </template>
 <script>
 import {
@@ -37,7 +37,7 @@ export default {
 
 <style lang="scss">
 $blue: #3498db;
-.section>* {
+.section {
     >.text {
         display: block;
         font-size: 1.1em;

@@ -1,6 +1,13 @@
 <template>
     <div>
-        <ai-book :book="book" />
+        <ai-contain v-if="book"
+                    class="full hasShadow"
+                    child-class="row flex-wrap">
+            <ai-book-large class="hidden-sm-down full"
+                           :book="book" />
+            <ai-book-small class="hidden-md-up"
+                           :book="book" />
+        </ai-contain>
         <ai-contain class="button-row"
                     child-class="hasShadow row">
             <ai-row size="50"
@@ -10,7 +17,6 @@
                                text="Mượn ngay" />
                 </ai-row>
                 <ai-row>
-
                     <ai-button icon=""
                                text="Cho mượn quyển sách này" />
                 </ai-row>
@@ -20,8 +26,10 @@
                 </ai-row>
             </ai-row>
         </ai-contain>
-        <ai-section text="Có thể mượn" />
-        <ai-contain childClass="col hasShadow borrow-1">
+        <ai-contain>
+            <ai-section text="Có thể mượn" />
+        </ai-contain>
+        <ai-contain child-class="col hasShadow borrow-1">
             <table>
                 <tr>
                     <td>Chủ sách</td>
@@ -43,8 +51,10 @@
                 </tr>
             </table>
         </ai-contain>
-        <ai-section text="Có nhu cầu mượn" />
-        <ai-contain childClass="col hasShadow borrow-2">
+        <ai-contain>
+            <ai-section text="Có nhu cầu mượn" />
+        </ai-contain>
+        <ai-contain child-class="col hasShadow borrow-2">
             <table>
                 <tr>
                     <td>Người muốn mượn sách</td>
@@ -58,8 +68,10 @@
                 </tr>
             </table>
         </ai-contain>
-        <ai-section text="Đang mượn" />
-        <ai-contain childClass="col hasShadow borrow-3">
+        <ai-contain>
+            <ai-section text="Đang mượn" />
+        </ai-contain>
+        <ai-contain child-class="col hasShadow borrow-3">
             <table>
                 <tr>
                     <td>Chủ sách</td>
@@ -83,50 +95,33 @@
 import {
     components
 } from 'modules';
+import state from '../../../state';
+
 export default {
-    name: 'book-page',
+    name: 'BookPage',
     components: {
         ...components('container'),
         ...components('units'),
         ...components('ui'),
-        ...components('routes/_book.id'),
-        ...components('items/book')
+        ...components('items')
     },
     data() {
         return {
-            book: {}
+            book: state.book.books.find(book => book.title == this.$route.params.title)
         };
     },
     created() {
-        // const self = this;
-        // axios
-        //     .get('/api/book/' + this.$route.params.id)
-        //     .then((response) => {
-        //         self.book = response.data;
-        //         self.$parent.links = [
-        //             ['Trang chủ', '/'],
-        //             ['Sách', '/Sách'],
-        //             [self.book.title, '/Sách/' + this.book.id]
-        //         ];
-        //     });
-        this.book = {
-            id: 1,
-            title: 'Harry Potter',
-            author: 'J. K. Rowling',
-            description: 'Harry Potter là tên của bộ truyện (gồm bảy phần) của nữ nhà văn nước Anh J. K. Rowling. Bộ truyện viết về những cuộc phiêu lưu phù thủy của cậu bé Harry Potter và những người bạn Ronald Weasley, Hermione Granger, lấy bối cảnh tại Trường Phù thủy và Pháp sư Hogwarts nước Anh. Những cuộc phiêu lưu tập trung vào cuộc chiến của Harry Potter trong việc chống lại tên Chúa tể hắc ám Voldemort - người có tham vọng muốn trở nên bất tử, thống trị thế giới phù thủy, nô dịch hóa những người phi pháp thuật và tiêu diệt những ai cản đường hắn đặc biệt là Harry Potter.',
-            image: 'https://ewedit.files.wordpress.com/2016/09/9781408855652-png.jpg?w=409'
-        };
-        this.$parent.links = [
+        this.$parent.left = [
             ['Trang chủ', '/'],
-            ['Sách', '/Sách'],
-            [this.book.title, '/Sách/' + this.book.id]
+            ['Sách', '/book'],
+            [this.book.title, '/book/' + this.book.id]
         ];
     }
 };
 </script>
 <style lang="scss">
 .button-row>*>* {
-    margin: 10px;
+    margin: 5px;
     >.row {
         $opacity: 0.3;
         $color-1: #3498db;

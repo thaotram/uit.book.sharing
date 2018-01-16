@@ -1,7 +1,7 @@
 <template>
-    <div class="book row hasShadow">
+    <ai-row class="book-small hasShadow">
         <router-link class="image-link"
-                     :to="'/Sách/' + book.id">
+                     :to="'/book/' + book.title">
             <ai-image :src="book.image" />
         </router-link>
         <ai-button icon=""
@@ -30,7 +30,7 @@
                            :text="tag" />
             </ai-row>
         </div>
-    </div>
+    </ai-row>
 </template>
 <script>
 import {
@@ -47,22 +47,18 @@ export default {
             type: Object,
             default: () => ({})
         }
-    },
-    data: () => ({
-        dataBook: undefined
-    })
+    }
 };
 </script>
 <style lang="scss">
 $size: 20px;
 $image-size: 200px;
 $red: #ff4d4d;
-// $blue: #3498db;
-.book {
+.book-small {
     flex: 1;
     margin: 30px 10px 10px 10px;
-    min-width: $image-size * 2;
-    max-width: $image-size * 2;
+    min-width: $image-size * 1.8;
+    max-width: $image-size * 3;
     position: relative;
     >.image-link {
         display: block;
@@ -122,7 +118,8 @@ $red: #ff4d4d;
             }
         }
         >.line {
-            height: 2px;
+            background: rgba(0, 0, 0, 0.1);
+            height: 1px;
         }
         >.row:nth-child(3) {
             margin: $size * 0.75 calc(#{$size} - 0.25em);
@@ -138,18 +135,18 @@ $red: #ff4d4d;
     }
 }
 
-.book-enter,
-.book-leave-to {
+.book-small-enter,
+.book-small-leave-to {
     opacity: 0;
     transform: scale(0);
 }
 
-.book-enter-to {
+.book-small-enter-to {
     opacity: 1;
     transform: scale(1);
 }
 
-.book-move {
+.book-small-move {
     opacity: 1;
     transition: all 0.5s;
 }
