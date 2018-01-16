@@ -1,11 +1,8 @@
 <template>
     <div class="full">
         <ai-section text="Ngẫu nhiên" />
-        <ai-book api="/api/book/1" />
-        <ai-section to="/Book"
-                    text="Tất cả sách" />
-        <ai-contain>
-            <ai-list-of-books/>
+        <ai-contain class="full">
+            <ai-book-large :book="book" />
         </ai-contain>
     </div>
 </template>
@@ -14,20 +11,27 @@
 import {
     components
 } from 'modules';
+import state from '../../../state';
 export default {
     name: 'HomePage',
     components: {
-        ...components('contain'),
+        ...components('container'),
         ...components('units'),
-        ...components('items/book'),
-        ...components('items/book-large'),
+        ...components('items'),
         ...components('ui'),
-        ...components('list-of-books')
     },
+    data: () => ({
+        book: {}
+    }),
     created() {
-        this.$parent.links = [
+        this.$parent.left = [
             ['Trang chủ', '/']
         ];
+        this.$parent.right = [
+            ['Sách', '/book'],
+            ['Quản lý sách', '/book'],
+        ];
+        this.book = state.book.books[1];
     }
 };
 </script>

@@ -13,7 +13,6 @@ import {
     components,
     data
 } from 'modules';
-
 export default {
     components: {
         ...components('line'),
@@ -30,8 +29,8 @@ export default {
             ['Sách', '/Book']
         ];
         this.$parent.right = [
-            ['sdaschủ', '/'],
-            ['Sácádh', '/Book']
+            // ['Văn học Việt nam', '/'],
+            // ['Văn học nước ngoài', '/Book']
         ];
     }
 };

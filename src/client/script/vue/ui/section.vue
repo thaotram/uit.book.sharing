@@ -36,15 +36,18 @@ export default {
 </script>
 
 <style lang="scss">
+$blue: #3498db;
 .section>* {
     >.text {
-        font-size: 1.3em;
-        padding-top: 25px;
-        padding-bottom: 10px;
         display: block;
+        font-size: 1.1em;
+        font-weight: bold;
+        line-height: 1em;
+        padding-bottom: 10px;
+        padding-top: 25px;
     }
     >* {
-        color: black;
+        color: $blue;
         overflow: visible;
         padding: 0 10px;
     }

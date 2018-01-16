@@ -4,22 +4,22 @@
                      :to="'/Sách/' + book.id">
             <ai-image :src="book.image" />
         </router-link>
+        <ai-button icon=""
+                   class="heart noHover" />
         <div class="col">
             <div class="col hasShadow">
-                <div class="row"
-                     size="60">
-                    <div class="col full">
-                        <h4 class="title bold">
-                            {{ book.title }}
-                        </h4>
-                        <div class="author">
-                            {{ book.author }}
-                        </div>
-                    </div>
+                <h4 class="title">
+                    {{ book.title }}
+                </h4>
+                <div class="author">
+                    {{ book.author }}
                 </div>
-                <p class="full description scroll">
-                    {{ book.description }}
-                </p>
+                <div class="full" />
+                <div class="info">
+                    <p>Tổng: 7</p>
+                    <p>Đang chờ: 2</p>
+                    <p>Đang mượn: 5</p>
+                </div>
             </div>
             <ai-line class="light" />
             <ai-row size="20"
@@ -57,11 +57,13 @@ export default {
 <style lang="scss">
 $size: 20px;
 $image-size: 200px;
+$red: #ff4d4d;
+// $blue: #3498db;
 .book {
     flex: 1;
     margin: 30px 10px 10px 10px;
-    min-width: $image-size * 1.8;
-    max-width: $image-size * 2.3;
+    min-width: $image-size * 2;
+    max-width: $image-size * 2;
     position: relative;
     >.image-link {
         display: block;
@@ -78,6 +80,23 @@ $image-size: 200px;
             height: 100%;
         }
     }
+    >.heart {
+        position: absolute;
+        right: $size;
+        top: $size;
+        padding: 10px;
+        font-size: 20px;
+        color: rgba($red, 0.8);
+        text-shadow: 0 0 0px rgba($red, 0);
+        transition: all 0.2s;
+        cursor: pointer;
+        * {
+            overflow: visible;
+        }
+        &:hover {
+            text-shadow: 0 0 15px rgba($red, 0.5);
+        }
+    }
     >.col {
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         border-radius: 4px;
@@ -88,40 +107,23 @@ $image-size: 200px;
             margin-left: $image-size / 8 * 5 + $size * 2;
             padding: $size $size $size 0;
             height: $image-size - $size * 2;
-            >.description {
-                margin: 0.5em 0;
+            >.title {
+                font-weight: bold;
+                line-height: 1em;
+                padding: 10px 0 3px 0;
+            }
+            >.author {
+                color: rgba(black, 0.6);
+                font-weight: bold;
                 font-size: 0.9em;
-                line-height: 1.3em;
-                color: #222;
+                line-height: 1em;
             }
-            >.book-button {
-                >.button {
-                    // padding: 0 5px;
-                    color: white;
-                    border-radius: 30px;
-                    &:after {
-                        content: "";
-                        width: 100%;
-                        position: absolute;
-                        height: 100%;
-                        left: 0;
-                        top: 0;
-                        right: 0;
-                        bottom: 0;
-                    }
-                    &:nth-child(1) {
-                        // &:hover {
-                        //     background-color: rgba(#000, 0.9);
-                        // }
-                        padding: 0 5px;
-                        background-color: #2ecc71;
-                        box-shadow: 0 0 8px rgba(#2ecc71, 0.5);
-                        &:hover:after {
-                            background-color: rgba(#000, 0.4)
-                        }
-                    }
-                }
+            >.info {
+                font-size: 0.9em; // margin: 10px 0;
             }
+        }
+        >.line {
+            height: 2px;
         }
         >.row:nth-child(3) {
             margin: $size * 0.75 calc(#{$size} - 0.25em);

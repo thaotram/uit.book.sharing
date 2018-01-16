@@ -48,9 +48,4 @@ export default {
 .body-fade-leave-to {
     opacity: 0;
 }
-
-.bold,
-[bold] {
-    font-weight: 700;
-}
 </style>

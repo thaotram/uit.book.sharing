@@ -24,7 +24,7 @@ export default {
             'span', {
                 class: 'icon',
                 key: `icon-${index}`
-            }, ''
+            }, ''
         );
 
         const link = (url, current) => h('router-link', {
@@ -71,7 +71,7 @@ $blue: #3498db;
 $size: 30px;
 .navigator {
     height: $size;
-    padding: 0 10px;
+    margin: 0 10px;
     border-bottom: 3px solid rgba($blue, .2);
     margin-bottom: 10px;
     margin-top: 15px;
@@ -81,9 +81,23 @@ $size: 30px;
         height: $size;
         line-height: $size;
         position: relative;
+        transition: all 0.8s ease-in-out;
         &.link {
             font-size: 1.1em;
             font-weight: bold;
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                height: 3px;
+                width: 100%;
+                background: transparent;
+                box-shadow: 0 0 10px rgba($blue, .0);
+                top: 100%;
+            }
+            &:hover:after {
+                background: rgba($blue, .8);
+            }
         }
         &.icon {
             margin: 0 10px;
@@ -91,7 +105,7 @@ $size: 30px;
             color: #3498db
         }
         &.space {
-            width: 10px;
+            width: 15px;
         }
         &:hover {
             text-decoration: none;
@@ -100,12 +114,7 @@ $size: 30px;
         &.current {
             cursor: default;
             &:after {
-                content: "";
-                display: block;
-                position: absolute;
                 background: $blue;
-                height: 3px;
-                width: 100%;
                 box-shadow: 0 0 10px rgba(#3498db, .8);
             }
         }
