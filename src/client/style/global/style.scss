@@ -159,8 +159,20 @@ $orange: #e67e22;
 
 
 
+$violet: #9b59b6;
+
 .violet {
     color: #9b59b6;
+}
+
+[violet] {
+    >.crescent {
+        background-color: rgba($violet, 0.7);
+    }
+    >* {
+        background-color: $violet;
+        box-shadow: 0 0 10px rgba($violet, 0.8);
+    }
 }
 
 .bg-violet {

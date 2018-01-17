@@ -6,19 +6,20 @@
                 green>
             <ai-tag text="Đang giữ sách"
                     class="crescent" />
-            <ai-user :user="user" />
+            <ai-tag :text="`${random(1, 15)} người`" />
+
         </ai-row>
         <ai-row class="hasShadow"
                 orange>
-            <ai-tag text="Đang mượn trong"
+            <ai-tag text="Đang mượn"
                     class="crescent" />
-            <ai-tag :text="`${random(1, 15)} ngày`" />
+            <ai-tag :text="`${random(1, 15)} người`" />
         </ai-row>
         <ai-row class="hasShadow"
                 violet>
-            <ai-tag text="Còn lại"
+            <ai-tag text="Có nhu cầu mượn"
                     class="crescent" />
-            <ai-tag :text="`${random(1, 15)} ngày`" />
+            <ai-tag :text="`${random(1, 15)} người`" />
         </ai-row>
     </ai-book-small>
 </template>
@@ -32,6 +33,7 @@ export default {
     components: {
         ...components('items/book-small'),
         ...components('container'),
+        ...components('list-of-items'),
         ...components('user'),
         ...components('text'),
         ...components('tag')
