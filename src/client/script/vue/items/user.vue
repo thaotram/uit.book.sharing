@@ -58,7 +58,7 @@ export default {
 
 <style lang="scss">
 .user {
-    background: white;
+    // background: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     >.name {
         display: block;

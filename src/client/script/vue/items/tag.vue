@@ -40,8 +40,6 @@ export default {
 
 <style lang="scss">
 .tag {
-    background-color: #3498db;
-    box-shadow: 0 0 10px rgba(#3498db, 0.5);
     color: white;
     border-radius: 20px;
     padding: 0 1em;

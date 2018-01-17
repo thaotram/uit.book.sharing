@@ -118,11 +118,6 @@ $red: #ff4d4d;
                     margin-top: 0.3em;
                     >.user {
                         display: inline-flex;
-                        background: #3498db;
-                        color: white;
-                    }
-                    >.tag.crescent {
-                        background-color: rgba(#3498db, 0.7);
                     }
                 }
             }

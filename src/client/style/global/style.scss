@@ -90,19 +90,41 @@ $scrollbar-size: 8px;
 }
 
 .blue {
-    color: #3498db
+    color: $blue
+}
+
+[blue] {
+    >.crescent {
+        background-color: rgba($blue, 0.7);
+    }
+
+    >* {
+        background-color: $blue;
+        box-shadow: 0 0 10px rgba($blue, 0.8);
+    }
 }
 
 .bg-blue {
     background-color: #3498db
 }
 
+$green: #27ae60;
 .green {
-    color: #2ecc71;
+    color: $green;
 }
 
 .bg-green {
-    background-color: #2ecc71
+    background-color: $green
+}
+
+[green] {
+    >.crescent {
+        background-color: rgba($green, 0.7);
+    }
+    >* {
+        background-color: $green;
+        box-shadow: 0 0 10px rgba($green, 0.8);
+    }
 }
 
 .red {

@@ -47,7 +47,6 @@ export default {
             let input_length = input.length;
             let output_length = this.random(1, input_length / 3);
             if (output_length > input_length) return input;
-            console.log(input_length, output_length);
             const taken = new Array(input_length);
             while (output_length--) {
                 var x = Math.floor(Math.random() * input_length);

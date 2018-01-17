@@ -1,10 +1,11 @@
 <template>
-    <ai-book-small :book="book"
-                   class="book-small-keep"
+    <ai-book-large :book="book"
+                   class="book-large-general"
                    size="24">
+
         <ai-row class="hasShadow"
-                green>
-            <ai-tag text="Chủ sách"
+                blue>
+            <ai-tag text="Người cho mượn"
                     class="crescent" />
             <ai-user :user="user" />
         </ai-row>
@@ -20,7 +21,7 @@
                     class="crescent" />
             <ai-tag :text="`${random(1, 15)} ngày`" />
         </ai-row>
-    </ai-book-small>
+    </ai-book-large>
 </template>
 <script>
 import {
@@ -28,9 +29,9 @@ import {
     user
 } from 'modules';
 export default {
-    name: 'BookSmallKeep',
+    name: 'BookLargeGeneral',
     components: {
-        ...components('items/book-small'),
+        ...components('items/book-large'),
         ...components('container'),
         ...components('user'),
         ...components('text'),
@@ -61,4 +62,10 @@ export default {
     },
 };
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.book-large-general .detail {
+    >* {
+        margin-bottom: 10px;
+    }
+}
+</style>

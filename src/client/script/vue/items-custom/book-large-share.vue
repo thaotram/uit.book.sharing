@@ -1,18 +1,22 @@
 <template>
     <ai-book-large :book="book"
                    class="book-large-share"
-                   size="24">
-        <ai-row class="hasShadow">
-            <ai-tag text="Người cho mượn"
+                   size="35">
+
+        <ai-row class="hasShadow"
+                blue>
+            <ai-tag text="Người mượn"
                     class="crescent" />
             <ai-user :user="user" />
         </ai-row>
-        <ai-row class="hasShadow">
+        <ai-row class="hasShadow"
+                blue>
             <ai-tag text="Đã mượn trong"
                     class="crescent" />
             <ai-tag :text="`${random(1, 15)} ngày`" />
         </ai-row>
-        <ai-row class="hasShadow">
+        <ai-row class="hasShadow"
+                blue>
             <ai-tag text="Còn lại"
                     class="crescent" />
             <ai-tag :text="`${random(1, 15)} ngày`" />
@@ -58,4 +62,8 @@ export default {
     },
 };
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.book-large-share .detail>* {
+    margin-bottom: 10px;
+}
+</style>

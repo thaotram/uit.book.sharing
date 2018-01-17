@@ -5,8 +5,7 @@
             <ai-image class="shadow"
                       :src="book.image" />
         </router-link>
-        <ai-button icon=""
-                   class="heart noHover" />
+        <div class="icon top-right-icon noHover"></div>
         <ai-row class="full content">
             <ai-line class="dark" />
             <ai-col class="full content-right">
@@ -26,11 +25,13 @@
                                :key="tag"
                                :text="tag" />
                 </ai-row>
-
                 <ai-line class="dark" />
-                <div class="box scroll">
-                    <span bold>Tóm tắt:</span> {{ book.description }}
+                <div class="detail">
+                    <slot/>
                 </div>
+                <!-- <div class="box scroll">
+                    <span bold>Tóm tắt:</span> {{ book.description }}
+                </div> -->
             </ai-col>
         </ai-row>
     </ai-row>
@@ -64,16 +65,15 @@ $red: #ff4d4d;
     height: $image-size;
     margin: ($size + 10px) 10px 10px 10px;
     position: relative;
-    >.heart {
+    >.top-right-icon {
         position: absolute;
-        right: 10px;
-        top: 10px;
-        padding: 10px;
-        font-size: 30px;
+        right: $size;
+        top: $size;
         color: rgba($red, 0.8);
         text-shadow: 0 0 0px rgba($red, 0);
         transition: all 0.2s;
         cursor: pointer;
+        font-size: 28px!important;
         * {
             overflow: visible;
         }
@@ -121,9 +121,11 @@ $red: #ff4d4d;
             }
             >.tags {
                 $tag-size: 20px;
-                padding: $tag-size * 0.75 $tag-size;
-                margin: 0 -0.25em;
+                padding: $tag-size * 0.75 $tag-size; // margin: 0 -0.25em;
                 >div {
+                    &:first-child {
+                        margin-left: 0;
+                    }
                     background-color: #3498db;
                     box-shadow: 0 0 10px rgba(#3498db, 0.5);
                     color: white;
@@ -131,6 +133,9 @@ $red: #ff4d4d;
                     padding: 0 0.25em;
                     margin: 0 0.25em;
                 }
+            }
+            >.detail {
+                padding: 20px;
             }
         }
     }

@@ -24,8 +24,6 @@ import {
     components
 } from 'modules';
 import state from '../../../state';
-console.log(components('items-custom'));
-
 export default {
     components: {
         ...components('line'),

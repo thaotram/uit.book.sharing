@@ -4,7 +4,11 @@
         <ai-contain class="full"
                     id="_book">
             <ai-section text="Tất cả sách" />
-            <ai-list-of-books-small :books="books" />
+            <ai-list-row-wrap>
+                <ai-book-small-general v-for="(book, index) in books"
+                                       :book="book"
+                                       :key="index" />
+            </ai-list-row-wrap>
         </ai-contain>
     </div>
 </template>
@@ -17,8 +21,9 @@ import {
 export default {
     components: {
         ...components('line'),
-        ...components('list-of-books-small'),
+        ...components('list-row-wrap'),
         ...components('contain'),
+        ...components('items-custom'),
         ...components('ui')
     },
     data: () => ({
