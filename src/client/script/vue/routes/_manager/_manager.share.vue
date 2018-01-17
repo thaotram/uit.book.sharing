@@ -20,11 +20,12 @@ import {
 import state from '../../../state';
 export default {
     components: {
-        ...components('line'),
+        ...components('container'),
         ...components('list-of-items'),
-        ...components('contain'),
-        ...components('ui'),
-        ...components('items')
+        ...components('items-custom'),
+        ...components('items'),
+        ...components('units'),
+        ...components('ui')
     },
     data() {
         return {

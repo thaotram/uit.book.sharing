@@ -4,7 +4,11 @@
         <ai-contain class="full"
                     id="_book">
             <ai-section :text="`Đã chia sẻ: ${books.length} quyển sách`" />
-            <list-of-books-share :books="books" />
+            <ai-col>
+                <ai-book-large-keep v-for="(book, index) in books"
+                                    :book="book"
+                                    :key="index" />
+            </ai-col>
         </ai-contain>
     </div>
 </template>
@@ -16,11 +20,12 @@ import {
 import state from '../../../state';
 export default {
     components: {
-        ...components('line'),
+        ...components('container'),
         ...components('list-of-items'),
-        ...components('contain'),
-        ...components('ui'),
-        ...components('items')
+        ...components('items-custom'),
+        ...components('items'),
+        ...components('units'),
+        ...components('ui')
     },
     data() {
         return {

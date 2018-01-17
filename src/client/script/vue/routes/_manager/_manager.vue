@@ -6,8 +6,8 @@
             <ai-section :text="`Đang cho mượn: ${share.length} quyển sách`" />
             <ai-list-row-wrap>
                 <ai-book-small-share v-for="(book, index) in share"
-                                      :book="book"
-                                      :key="index" />
+                                     :book="book"
+                                     :key="index" />
             </ai-list-row-wrap>
             <ai-section :text="`Đang giữ: ${keep.length} quyển sách`" />
             <ai-list-row-wrap>

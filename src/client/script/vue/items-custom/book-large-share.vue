@@ -1,6 +1,6 @@
 <template>
     <ai-book-large :book="book"
-                   class="book-large-keep"
+                   class="book-large-share"
                    size="24">
         <ai-row class="hasShadow">
             <ai-tag text="Người cho mượn"
@@ -25,7 +25,7 @@ import {
     user
 } from 'modules';
 export default {
-    name: 'BookLargeKeep',
+    name: 'BookLargeShare',
     components: {
         ...components('items/book-large'),
         ...components('container'),
