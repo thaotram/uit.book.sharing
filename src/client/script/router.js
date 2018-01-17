@@ -20,6 +20,7 @@ const router = new VueRouter({
         view('/', 'home'),
         view('/book', 'book'),
         view('/book/:title', 'book.title'),
+        view('/manager', 'manager'),
         view('/about', 'about')
     ]
 });

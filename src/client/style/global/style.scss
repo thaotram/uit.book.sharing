@@ -72,9 +72,10 @@ hr {
 
 // ----- scrollbar -----
 $blue: #3498db;
+$scrollbar-size: 8px;
 ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: $scrollbar-size;
+    height: $scrollbar-size;
 }
 
 ::-webkit-scrollbar-thumb {

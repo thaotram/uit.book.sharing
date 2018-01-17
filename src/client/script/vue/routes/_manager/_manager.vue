@@ -3,8 +3,8 @@
          id="book">
         <ai-contain class="full"
                     id="_book">
-            <ai-section text="Tất cả sách" />
-            <ai-list-of-books :books="books" />
+            <ai-section text="Đã chia sẻ" />
+            <!-- <ai-list-of-books :books="books" /> -->
         </ai-contain>
     </div>
 </template>
@@ -27,7 +27,7 @@ export default {
     created() {
         this.$parent.left = [
             ['Trang chủ', '/'],
-            ['Sách', '/Book']
+            ['Quản lý sách', '/manager']
         ];
         this.$parent.right = [
             // ['Văn học Việt nam', '/'],

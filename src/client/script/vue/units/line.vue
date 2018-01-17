@@ -1,5 +1,5 @@
 <template>
-    <div class="line"/>
+    <div class="line" />
 </template>
 <script>
 export default {

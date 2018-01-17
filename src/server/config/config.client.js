@@ -28,7 +28,7 @@ export default function(app) {
             },
             logger: logger,
             before(app) {
-                app.use('/__open-in-editor', openInEditor('code'));
+                app.use('/__open-in-editor', openInEditor());
             },
         }))
         && app.use(webpackHotMiddleware(webpackCompiler))

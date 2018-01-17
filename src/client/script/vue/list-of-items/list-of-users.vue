@@ -40,6 +40,6 @@ export default {
 
 <style lang="scss">
 .users {
-    margin: 5px 0;
+    margin-top: 25px;
 }
 </style>

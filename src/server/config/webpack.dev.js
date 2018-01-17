@@ -1,7 +1,7 @@
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import openInEditor from 'launch-editor-middleware';
 import path from 'path';
 import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-// import lau
 
 export default {
     cache: true,
@@ -18,7 +18,10 @@ export default {
     },
     devServer: {
         hot: true,
-        contentBase: './dist/client'
+        contentBase: './dist/client',
+        before(app) {
+            app.use('/__open-in-editor', openInEditor('code'));
+        },
     },
     module: {
         rules: [{

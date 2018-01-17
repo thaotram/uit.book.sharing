@@ -2,7 +2,8 @@
     <div>
         <ai-contain v-if="book"
                     class="full hasShadow"
-                    child-class="row flex-wrap">
+                    child-class="col">
+            <ai-section text="Thông tin sách" />
             <ai-book-large class="hidden-sm-down full"
                            :book="book" />
             <ai-book-small class="hidden-md-up"

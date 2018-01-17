@@ -2,22 +2,17 @@
     <div class="full">
         <ai-contain>
             <ai-section text="Ngẫu nhiên" />
-        </ai-contain>
-        <ai-contain class="full hasShadow"
-                    child-class="row flex-wrap">
-            <ai-book-large class="hidden-sm-down full"
-                           :book="book" />
-            <ai-book-small class="hidden-md-up"
-                           :book="book" />
+            <ai-book-large :book="book"
+                           class="fix-width" />
         </ai-contain>
         <ai-contain class="full"
                     child-class="row">
-            <div class="col books full">
+            <div class="col col-books full">
                 <ai-section text="Ngẫu nhiên" />
                 <ai-list-of-books :books="books" />
             </div>
             <div class="space" />
-            <div class="col users hasShadow">
+            <div class="col col-users hasShadow">
                 <ai-section text="Thành viên tích cực" />
                 <ai-list-of-users />
             </div>
@@ -30,6 +25,7 @@ import {
     components
 } from 'modules';
 import state from '../../../state';
+
 export default {
     name: 'HomePage',
     components: {
@@ -52,7 +48,7 @@ export default {
         ];
         this.$parent.right = [
             ['Sách', '/book'],
-            ['Quản lý sách', '/book'],
+            ['Quản lý sách', '/manager'],
             ['Chia sẻ sách', '/share'],
         ];
     }
@@ -64,7 +60,7 @@ export default {
     width: 10px;
 }
 
-.users {
+.col-users {
     width: 200px;
 }
 </style>

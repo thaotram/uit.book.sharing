@@ -23,9 +23,8 @@
             </div>
             <ai-line class="light" />
             <ai-row size="20"
-                    class="hasShadow">
-                <ai-button class="tag"
-                           v-for="tag in book.tags"
+                    class="hasShadow tags">
+                <ai-button v-for="tag in book.tags"
                            :key="tag"
                            :text="tag" />
             </ai-row>
@@ -59,7 +58,11 @@ $red: #ff4d4d;
     margin: 30px 10px 10px 10px;
     min-width: $image-size * 1.8;
     max-width: $image-size * 3;
-    position: relative;
+    position: relative; // width: $image-size * 2.9;
+    &.fix-width {
+        min-width: $image-size * 2.5;
+        max-width: $image-size * 2.5;
+    }
     >.image-link {
         display: block;
         position: absolute;
@@ -104,14 +107,14 @@ $red: #ff4d4d;
             height: $image-size - $size * 2;
             >.title {
                 font-weight: bold;
-                line-height: 1em;
-                padding: 10px 0 3px 0;
+                line-height: 1.2em;
+                padding: 10px 40px 3px 0;
             }
             >.author {
                 color: rgba(black, 0.6);
                 font-weight: bold;
                 font-size: 0.9em;
-                line-height: 1em;
+                line-height: 1.2em;
             }
             >.info {
                 font-size: 0.9em; // margin: 10px 0;
@@ -121,9 +124,9 @@ $red: #ff4d4d;
             background: rgba(0, 0, 0, 0.1);
             height: 1px;
         }
-        >.row:nth-child(3) {
+        >.tags {
             margin: $size * 0.75 calc(#{$size} - 0.25em);
-            >.tag {
+            >div {
                 background-color: #3498db;
                 box-shadow: 0 0 10px rgba(#3498db, 0.5);
                 color: white;
