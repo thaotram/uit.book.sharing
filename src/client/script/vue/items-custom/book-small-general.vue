@@ -1,18 +1,21 @@
 <template>
     <ai-book-small :book="book"
                    class="book-small-keep"
-                   size="24">
-        <ai-row class="hasShadow">
-            <ai-tag text="Chủ sách"
+                   size="25">
+        <ai-row class="hasShadow"
+                green>
+            <ai-tag text="Đang giữ sách"
                     class="crescent" />
             <ai-user :user="user" />
         </ai-row>
-        <ai-row class="hasShadow">
-            <ai-tag text="Đã mượn trong"
+        <ai-row class="hasShadow"
+                orange>
+            <ai-tag text="Đang mượn trong"
                     class="crescent" />
             <ai-tag :text="`${random(1, 15)} ngày`" />
         </ai-row>
-        <ai-row class="hasShadow">
+        <ai-row class="hasShadow"
+                violet>
             <ai-tag text="Còn lại"
                     class="crescent" />
             <ai-tag :text="`${random(1, 15)} ngày`" />

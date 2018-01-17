@@ -1,6 +1,6 @@
 <template>
     <div class="col users hasShadow"
-         size="30">
+         size="35">
         <ai-user v-for="(user, index) in users"
                  :key="index"
                  :user="user" />
@@ -44,6 +44,7 @@ export default {
     margin-top: 25px;
     >.user {
         margin: 0.25em;
+        background: white;
     }
 }
 </style>

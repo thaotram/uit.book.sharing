@@ -1,24 +1,20 @@
 <template>
     <ai-book-large :book="book"
-                   class="book-large-keep"
+                   class="book-large-onshare"
                    size="35">
         <ai-row class="hasShadow"
                 blue>
-            <ai-tag text="Người mượn"
-                    class="crescent" />
-            <ai-user :user="user" />
-        </ai-row>
-        <ai-row class="hasShadow"
-                blue>
-            <ai-tag text="Đã mượn trong"
+            <ai-tag text="Cho mượn tối đa"
                     class="crescent" />
             <ai-tag :text="`${random(1, 15)} ngày`" />
         </ai-row>
-        <ai-row class="hasShadow"
-                blue>
-            <ai-tag text="Còn lại"
-                    class="crescent" />
-            <ai-tag :text="`${random(1, 15)} ngày`" />
+        <ai-row class="hasShadow pointer"
+                orange>
+            <ai-tag text="Chỉnh sửa thông tin" />
+        </ai-row>
+        <ai-row class="hasShadow pointer"
+                red>
+            <ai-tag text="Ngưng chia sẻ" />
         </ai-row>
     </ai-book-large>
 </template>
@@ -28,7 +24,7 @@ import {
     user
 } from 'modules';
 export default {
-    name: 'BookLargeKeep',
+    name: 'BookLargeShare',
     components: {
         ...components('items/book-large'),
         ...components('container'),
@@ -62,7 +58,7 @@ export default {
 };
 </script>
 <style lang="scss">
-.book-large-keep .detail>* {
+.book-large-onshare .detail>* {
     margin-bottom: 10px;
 }
 </style>

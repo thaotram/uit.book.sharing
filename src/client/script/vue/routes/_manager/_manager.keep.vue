@@ -3,7 +3,7 @@
          id="book">
         <ai-contain class="full"
                     id="_book">
-            <ai-section :text="`Đã chia sẻ: ${books.length} quyển sách`" />
+            <ai-section :text="`Đang giữ: ${books.length} quyển sách`" />
             <ai-col>
                 <ai-book-large-keep v-for="(book, index) in books"
                                     :book="book"

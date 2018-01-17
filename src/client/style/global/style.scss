@@ -131,9 +131,33 @@ $green: #27ae60;
     color: #e74c3c;
 }
 
+$red: #e74c3c;
+[red] {
+    >.crescent {
+        background-color: rgba($red, 0.7);
+    }
+    >* {
+        background-color: $red;
+        box-shadow: 0 0 10px rgba($red, 0.8);
+    }
+}
+
 .bg-red {
     background-color: #e74c3c
 }
+
+$orange: #e67e22;
+[orange] {
+    >.crescent {
+        background-color: rgba($orange, 0.7);
+    }
+    >* {
+        background-color: $orange;
+        box-shadow: 0 0 10px rgba($orange, 0.8);
+    }
+}
+
+
 
 .violet {
     color: #9b59b6;

@@ -2,7 +2,6 @@
     <ai-book-large :book="book"
                    class="book-large-share"
                    size="35">
-
         <ai-row class="hasShadow"
                 blue>
             <ai-tag text="Người mượn"
