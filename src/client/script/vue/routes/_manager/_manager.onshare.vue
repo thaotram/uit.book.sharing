@@ -3,7 +3,7 @@
          id="book">
         <ai-contain class="full"
                     id="_book">
-            <ai-section :text="`Có: ${books.length} quyển sách sắp được cho mượn`" />
+            <ai-section :text="`Bạn có ${books.length} quyển sách sắp được cho mượn`" />
             <ai-col>
                 <ai-book-large-onshare v-for="(book, index) in books"
                                        :book="book"

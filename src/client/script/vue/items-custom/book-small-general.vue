@@ -7,7 +7,6 @@
             <ai-tag text="Đang giữ sách"
                     class="crescent" />
             <ai-tag :text="`${random(1, 15)} người`" />
-
         </ai-row>
         <ai-row class="hasShadow"
                 orange>
@@ -44,20 +43,9 @@ export default {
             default: () => ({})
         }
     },
-    data() {
-        return {
-            user: {
-                name: {
-                    last: 'Tên',
-                    first: 'Họ'
-                },
-                picture: {}
-            }
-        };
-    },
-    mounted() {
-        user(data => this.user = data);
-    },
+    data: () => ({
+        user: user()
+    }),
     methods: {
         random: (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
     },

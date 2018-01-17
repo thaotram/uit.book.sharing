@@ -4,10 +4,10 @@
                     class="full hasShadow"
                     child-class="col">
             <ai-section text="Thông tin sách" />
-            <ai-book-large class="hidden-sm-down full"
-                           :book="book" />
-            <ai-book-small class="hidden-md-up"
-                           :book="book" />
+            <ai-book-large-general class="hidden-sm-down full"
+                                   :book="book" />
+            <ai-book-small-general class="hidden-md-up"
+                                   :book="book" />
         </ai-contain>
         <ai-contain class="button-row"
                     child-class="hasShadow row">
@@ -104,7 +104,8 @@ export default {
         ...components('container'),
         ...components('units'),
         ...components('ui'),
-        ...components('items')
+        ...components('items'),
+        ...components('items-custom')
     },
     data() {
         return {

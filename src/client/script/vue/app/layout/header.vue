@@ -25,7 +25,8 @@
 </template>
 <script>
 import {
-    components
+    components,
+    user
 } from 'modules';
 
 export default {
@@ -33,7 +34,10 @@ export default {
     components: {
         ...components('container'),
         ...components('units')
-    }
+    },
+    data: () => ({
+        user: user()
+    }),
 };
 </script>
 <style lang="scss">

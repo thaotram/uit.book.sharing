@@ -42,20 +42,9 @@ export default {
             default: () => ({})
         }
     },
-    data() {
-        return {
-            user: {
-                name: {
-                    last: 'Tên',
-                    first: 'Họ'
-                },
-                picture: {}
-            }
-        };
-    },
-    mounted() {
-        user(data => this.user = data);
-    },
+    data: () => ({
+        user: user()
+    }),
     methods: {
         random: (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
     },

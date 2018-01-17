@@ -85,6 +85,7 @@ $size: 30px;
         &.link {
             font-size: 1.1em;
             font-weight: bold;
+            text-transform: capitalize;
             &:after {
                 background: transparent;
                 box-shadow: 0 0 10px rgba($blue, .0);
