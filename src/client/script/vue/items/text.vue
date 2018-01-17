@@ -29,7 +29,10 @@ export default {
 </script>
 <style lang="scss"
        scoped>
-.text>* {
-    vertical-align: -webkit-baseline-middle;
+.text {
+    display: block;
+    >* {
+        vertical-align: -webkit-baseline-middle;
+    }
 }
 </style>

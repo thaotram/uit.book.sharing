@@ -3,8 +3,12 @@
          id="book">
         <ai-contain class="full"
                     id="_book">
-            <ai-section :text="`Đã chia sẻ: ${books.length} quyển sách`" />
-            <list-of-books-borrowing :books="books" />
+            <ai-section :text="`Đang cho mượn: ${books.length} quyển sách`" />
+            <ai-col>
+                <ai-book-large-borrow v-for="(book, index) in books"
+                                      :book="book"
+                                      :key="index" />
+            </ai-col>
         </ai-contain>
     </div>
 </template>
@@ -31,7 +35,7 @@ export default {
         this.$parent.left = [
             ['Trang chủ', '/'],
             ['Quản lý sách', '/manager'],
-            ['Đang mượn', '/manager/borrowed']
+            ['Đang cho mượn', '/manager/borrow']
         ];
         this.$parent.right = [];
     },

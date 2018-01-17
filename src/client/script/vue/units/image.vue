@@ -51,3 +51,15 @@ export default {
     }
 };
 </script>
+<style lang="scss">
+.image {
+    display: block;
+    margin: auto;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(black, 0.3);
+    &.round {
+        border-radius: 50%;
+    }
+}
+</style>

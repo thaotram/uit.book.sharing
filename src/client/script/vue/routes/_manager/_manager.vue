@@ -3,10 +3,18 @@
          id="book">
         <ai-contain class="full"
                     id="_book">
-            <ai-section :text="`Đang cho mượn: ${borrowed.length} quyển sách`" />
-            <ai-list-of-books-small :books="borrowed" />
-            <ai-section :text="`Đang mượn: ${borrowing.length} quyển sách`" />
-            <ai-list-of-books-small :books="borrowing" />
+            <ai-section :text="`Đang mượn: ${borrow.length} quyển sách`" />
+            <ai-list-row-wrap>
+                <ai-book-small-borrow v-for="(book, index) in borrow"
+                                         :book="book"
+                                         :key="index" />
+            </ai-list-row-wrap>
+            <ai-section :text="`Đang cho mượn: ${keep.length} quyển sách`" />
+            <ai-list-row-wrap>
+                <ai-book-small-keep v-for="(book, index) in keep"
+                                        :book="book"
+                                        :key="index" />
+            </ai-list-row-wrap>
         </ai-contain>
     </div>
 </template>
@@ -27,8 +35,8 @@ export default {
     data() {
         return {
             books: state.book.books,
-            borrowed: this.randomArray(state.book.books),
-            borrowing: this.randomArray(state.book.books)
+            keep: this.randomArray(state.book.books),
+            borrow: this.randomArray(state.book.books)
         };
     },
     created() {
@@ -37,8 +45,8 @@ export default {
             ['Quản lý sách', '/manager']
         ];
         this.$parent.right = [
-            ['Đang cho mượn', '/manager/borrowing'],
-            ['Đang mượn', '/manager/borrowed']
+            ['Đang giữ', '/manager/keep'],
+            ['Đang cho mượn', '/manager/borrow'],
         ];
     },
     methods: {

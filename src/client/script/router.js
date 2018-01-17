@@ -23,8 +23,8 @@ const router = new VueRouter({
         view('/book/:title', 'book', 'book.title'),
 
         view('/manager', 'manager', 'manager'),
-        view('/manager/borrowing', 'manager', 'manager.borrowing'),
-        view('/manager/borrowed', 'manager', 'manager.borrowed'),
+        view('/manager/borrow', 'manager', 'manager.borrow'),
+        view('/manager/keep', 'manager', 'manager.keep'),
 
         view('/about', 'about', 'about')
     ]

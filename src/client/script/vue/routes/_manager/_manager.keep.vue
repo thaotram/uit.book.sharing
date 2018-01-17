@@ -4,7 +4,7 @@
         <ai-contain class="full"
                     id="_book">
             <ai-section :text="`Đã chia sẻ: ${books.length} quyển sách`" />
-            <ai-list-of-books-borrowing :books="books" />
+            <list-of-books-borrow :books="books" />
         </ai-contain>
     </div>
 </template>
@@ -31,7 +31,7 @@ export default {
         this.$parent.left = [
             ['Trang chủ', '/'],
             ['Quản lý sách', '/manager'],
-            ['Đang cho mượn', '/manager/borrowing']
+            ['Đang giữ', '/manager/keep']
         ];
         this.$parent.right = [];
     },
