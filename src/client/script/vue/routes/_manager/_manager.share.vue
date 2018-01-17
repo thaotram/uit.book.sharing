@@ -5,9 +5,9 @@
                     id="_book">
             <ai-section :text="`Đang cho mượn: ${books.length} quyển sách`" />
             <ai-col>
-                <ai-book-large-borrow v-for="(book, index) in books"
-                                      :book="book"
-                                      :key="index" />
+                <ai-book-large-share v-for="(book, index) in books"
+                                     :book="book"
+                                     :key="index" />
             </ai-col>
         </ai-contain>
     </div>
@@ -35,7 +35,7 @@ export default {
         this.$parent.left = [
             ['Trang chủ', '/'],
             ['Quản lý sách', '/manager'],
-            ['Đang cho mượn', '/manager/borrow']
+            ['Đang cho mượn', '/manager/share']
         ];
         this.$parent.right = [];
     },

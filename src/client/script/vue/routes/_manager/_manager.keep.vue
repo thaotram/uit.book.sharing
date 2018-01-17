@@ -4,7 +4,7 @@
         <ai-contain class="full"
                     id="_book">
             <ai-section :text="`Đã chia sẻ: ${books.length} quyển sách`" />
-            <list-of-books-borrow :books="books" />
+            <list-of-books-share :books="books" />
         </ai-contain>
     </div>
 </template>

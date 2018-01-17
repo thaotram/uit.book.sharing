@@ -1,6 +1,6 @@
 $in-table: 1px solid rgba(#000, 0.2);
 $out-table: 0px;
-[class*=borrow-] {
+[class*=share-] {
     // padding: 10px;
     >table {
         background: white;
@@ -32,7 +32,7 @@ $out-table: 0px;
     }
 }
 
-.borrow-1>table>tr>td {
+.share-1>table>tr>td {
     &:nth-child(1) {
         width: 20%;
     }
@@ -47,7 +47,7 @@ $out-table: 0px;
     }
 }
 
-.borrow-2>table>tr>td {
+.share-2>table>tr>td {
     &:nth-child(1) {
         width: 20%;
     }
@@ -59,7 +59,7 @@ $out-table: 0px;
     }
 }
 
-.borrow-3>table>tr>td {
+.share-3>table>tr>td {
     &:nth-child(1),
     &:nth-child(2) {
         width: 20%;

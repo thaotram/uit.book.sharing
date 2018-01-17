@@ -6,6 +6,7 @@ import run from './component/run/run';
 import find from './component/find/find';
 import computed from './component/computed/computed';
 import data from './component/data/data';
+import user from './user/user';
 
 module.exports = {
     components,
@@ -15,6 +16,7 @@ module.exports = {
     computed,
     run,
     find,
+    user,
     image: {
         average
     }

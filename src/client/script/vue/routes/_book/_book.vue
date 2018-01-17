@@ -27,11 +27,11 @@ export default {
     created() {
         this.$parent.left = [
             ['Trang chủ', '/'],
-            ['Sách', '/Book']
+            ['Sách', '/book']
         ];
         this.$parent.right = [
             // ['Văn học Việt nam', '/'],
-            // ['Văn học nước ngoài', '/Book']
+            // ['Văn học nước ngoài', '/book']
         ];
     }
 };

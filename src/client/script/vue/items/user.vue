@@ -35,18 +35,22 @@ export default {
                 'border-radius: #{$size}px'
             ],
             '[size="#{$size}"] .user>.avatar': [
-                'margin: #{$size * 0.1}px;'
+                'max-height: #{$size - $border * 2}px',
+                'max-width: #{$size - $border * 2}px',
+                'margin: #{$border}px',
+                'min-width: #{$size - $border * 2}px'
             ],
             '[size="#{$size}"] .user>.name': [
-                'font-size: #{$size * 0.3 + 5}px;',
-                'line-height: #{$size * 1.2}px;',
+                'font-size: #{$size * 0.3 + 5}px',
+                'line-height: #{$size}px',
                 'margin: 0 #{$size * 0.5}px 0 #{$size * 0.2}px;'
             ]
         }
     },
     mounted() {
         style.set(this, {
-            size: style.get('size', this, 40)
+            size: style.get('size', this, 40),
+            border: 2
         });
     }
 };

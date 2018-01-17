@@ -20,10 +20,13 @@ export default {
         rules: {
             '[size="#{$size}"] .tag': [
                 'border-radius: #{$size}px',
-                'padding: #{$size * 0.1}px #{$size * 0.4}px;',
-                'line-height: #{$size + 4}px;',
-                'height: #{$size}px;',
-                'font-size: #{$size * 0.3 + 5}px;',
+                'line-height: #{$size}px',
+                'height: #{$size}px',
+                'font-size: #{$size * 0.3 + 5}px',
+            ],
+            '[size="#{$size}"] .tag.crescent': [
+                'margin-right: -#{$size}px',
+                'padding-right: calc(1em + #{$size * 0.75}px)'
             ]
         }
     },
@@ -41,7 +44,7 @@ export default {
     box-shadow: 0 0 10px rgba(#3498db, 0.5);
     color: white;
     border-radius: 20px;
-    padding: 0 0.25em;
-    margin: 0 0.25em;
+    padding: 0 1em;
+    display: inline-block;
 }
 </style>

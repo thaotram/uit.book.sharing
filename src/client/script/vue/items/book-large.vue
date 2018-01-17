@@ -1,7 +1,7 @@
 <template>
     <ai-row class="book-large hasShadow">
         <router-link class="image-link"
-                     :to="'/Book/' + book.title">
+                     :to="'/book/' + book.title">
             <ai-image class="shadow"
                       :src="book.image" />
         </router-link>

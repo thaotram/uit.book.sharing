@@ -30,7 +30,7 @@
         <ai-contain>
             <ai-section text="Có thể mượn" />
         </ai-contain>
-        <ai-contain child-class="col hasShadow borrow-1">
+        <ai-contain child-class="col hasShadow share-1">
             <table>
                 <tr>
                     <td>Chủ sách</td>
@@ -55,7 +55,7 @@
         <ai-contain>
             <ai-section text="Có nhu cầu mượn" />
         </ai-contain>
-        <ai-contain child-class="col hasShadow borrow-2">
+        <ai-contain child-class="col hasShadow share-2">
             <table>
                 <tr>
                     <td>Người muốn mượn sách</td>
@@ -72,7 +72,7 @@
         <ai-contain>
             <ai-section text="Đang mượn" />
         </ai-contain>
-        <ai-contain child-class="col hasShadow borrow-3">
+        <ai-contain child-class="col hasShadow share-3">
             <table>
                 <tr>
                     <td>Chủ sách</td>

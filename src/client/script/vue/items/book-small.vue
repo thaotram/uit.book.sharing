@@ -4,8 +4,7 @@
                      :to="'/book/' + book.title">
             <ai-image :src="book.image" />
         </router-link>
-        <ai-button icon=""
-                   class="heart noHover" />
+        <div class="icon top-right-icon noHover"></div>
         <div class="col content">
             <div class="col hasShadow">
                 <h4 class="title">
@@ -15,14 +14,12 @@
                     {{ book.author }}
                 </div>
                 <div class="full" />
-                <div class="info">
-                    <p>Tổng: 7</p>
-                    <p>Đang chờ: 2</p>
-                    <p>Đang mượn: 5</p>
+                <div class="detail">
+                    <slot/>
                 </div>
             </div>
             <ai-line class="light" />
-            <ai-row size="20"
+            <ai-row size="24"
                     class="hasShadow tags">
                 <ai-button v-for="tag in book.tags"
                            :key="tag"
@@ -31,6 +28,7 @@
         </div>
     </ai-row>
 </template>
+
 <script>
 import {
     components
@@ -78,16 +76,15 @@ $red: #ff4d4d;
             height: 100%;
         }
     }
-    >.heart {
+    >.top-right-icon {
         position: absolute;
         right: $size;
         top: $size;
-        padding: 10px;
-        font-size: 20px;
         color: rgba($red, 0.8);
         text-shadow: 0 0 0px rgba($red, 0);
         transition: all 0.2s;
         cursor: pointer;
+        font-size: 28px!important;
         * {
             overflow: visible;
         }
@@ -116,8 +113,18 @@ $red: #ff4d4d;
                 font-size: 0.9em;
                 line-height: 1.3em;
             }
-            >.info {
-                font-size: 0.9em; // margin: 10px 0;
+            >.detail {
+                >.row {
+                    margin-top: 0.3em;
+                    >.user {
+                        display: inline-flex;
+                        background: #3498db;
+                        color: white;
+                    }
+                    >.tag.crescent {
+                        background-color: rgba(#3498db, 0.7);
+                    }
+                }
             }
         }
         >.line {

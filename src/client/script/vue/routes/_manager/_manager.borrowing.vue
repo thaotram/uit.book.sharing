@@ -3,18 +3,12 @@
          id="book">
         <ai-contain class="full"
                     id="_book">
-            <ai-section :text="`Đang cho mượn: ${share.length} quyển sách`" />
-            <ai-list-row-wrap>
-                <ai-book-small-share v-for="(book, index) in share"
-                                      :book="book"
-                                      :key="index" />
-            </ai-list-row-wrap>
-            <ai-section :text="`Đang giữ: ${keep.length} quyển sách`" />
-            <ai-list-row-wrap>
-                <ai-book-small-keep v-for="(book, index) in keep"
-                                    :book="book"
-                                    :key="index" />
-            </ai-list-row-wrap>
+            <ai-section :text="`Đang cho mượn: ${books.length} quyển sách`" />
+            <ai-col>
+                <ai-book-large-share v-for="(book, index) in books"
+                                         :book="book"
+                                         :key="index" />
+            </ai-col>
         </ai-contain>
     </div>
 </template>
@@ -24,33 +18,26 @@ import {
     components
 } from 'modules';
 import state from '../../../state';
-console.log(components('items-custom'));
-
 export default {
     components: {
         ...components('line'),
         ...components('list-of-items'),
         ...components('contain'),
         ...components('ui'),
-        ...components('items'),
-        ...components('items-custom')
+        ...components('items')
     },
     data() {
         return {
-            books: state.book.books,
-            keep: this.randomArray(state.book.books),
-            share: this.randomArray(state.book.books)
+            books: this.randomArray(state.book.books)
         };
     },
     created() {
         this.$parent.left = [
             ['Trang chủ', '/'],
-            ['Quản lý sách', '/manager']
+            ['Quản lý sách', '/manager'],
+            ['Đang cho mượn', '/manager/share']
         ];
-        this.$parent.right = [
-            ['Đang giữ', '/manager/keep'],
-            ['Đang cho mượn', '/manager/share'],
-        ];
+        this.$parent.right = [];
     },
     methods: {
         random: (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
@@ -59,6 +46,7 @@ export default {
             let input_length = input.length;
             let output_length = this.random(1, input_length / 3);
             if (output_length > input_length) return input;
+            console.log(input_length, output_length);
             const taken = new Array(input_length);
             while (output_length--) {
                 var x = Math.floor(Math.random() * input_length);
