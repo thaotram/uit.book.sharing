@@ -127,14 +127,12 @@ module.exports = {
             image: 'https://i.imgur.com/uxVmcac.jpg',
             tags: ['Kỹ năng sống']
         }, {
-
             title: 'Tuyết Sơn phi Hồ',
             author: 'Kim Dung',
             description: 'Diễn biến chính của tiểu thuyết Tuyết sơn phi hồ diễn ra vào thời đại nhà Thanh dưới triều vua Càn Long, nhưng các tình tiết câu chuyện lại được kéo dài từ thời đại nhà Đại Thuận dưới triều Lý Tự Thành, và bắt đầu của nhà Thanh dưới lời kể của một số nhân vật. Nhân vật chính của tiểu thuyết là Hồ Phỉ, có biệt danh là Tuyết sơn phi hồ, và các tình tiết chủ yếu của câu chuyện liên quan đến ân oán từ thời tổ tiên của Hồ Phỉ, kéo dài đến bố mẹ Hồ Phỉ và được giải quyết vào thời đại của Hồ Phỉ.',
             image: 'https://i.imgur.com/sBwnMS7.jpg',
             tags: ['Kiếm hiệp']
         }, {
-
             title: 'Vụ án bí ẩn ở Styles',
             author: 'Agatha Christie',
             description: 'Trong tiểu thuyết trinh thám đầu tiên này, Agatha Christie đã giới thiệu với độc giả nhiều điểm đặc sắc trong phong cách viết của bà, đó là cách xây dựng tuyến nhân vật phong phú, đa dạng, các vụ án được mô tả theo kiểu “phòng kín” và bất ngờ liên tục xảy ra từ trang đầu tới trang cuối. Đây cũng là tác phẩm cho ra mắt nhân vật thám tử Hercule Poirot, một trong hai nhân vật thám tử nổi tiếng nhất của Christie (cùng với Bà Marple). Tiểu thuyết cũng có sự xuất hiện của hai nhân vật quen thuộc sau này trong truyện của Agatha Christie, đó là Chánh thanh tra Japp và ngài đại úy Arthur Hastings. Vụ án bí ẩn ở Styles sau khi ra mắt đã nhanh chóng được công chúng đón nhận và nó báo hiệu cho những thành công tiếp theo trong thể loại truyện trinh thám của Agatha Christie.',

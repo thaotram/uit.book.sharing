@@ -21,7 +21,7 @@
                     </router-link>
                 </div>
                 <ai-row class="tags hasShadow"
-                        size="20">
+                        size="25">
                     <ai-button v-for="tag in book.tags"
                                :key="tag"
                                :text="tag" />
@@ -121,7 +121,8 @@ $red: #ff4d4d;
             }
             >.tags {
                 $tag-size: 20px;
-                margin: $tag-size * 0.75 calc(#{$tag-size} - 0.25em);
+                padding: $tag-size * 0.75 $tag-size;
+                margin: 0 -0.25em;
                 >div {
                     background-color: #3498db;
                     box-shadow: 0 0 10px rgba(#3498db, 0.5);

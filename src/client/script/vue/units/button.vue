@@ -85,23 +85,6 @@ export default {
             buttonClick: () => {}
         };
     },
-    methods: {
-        updateIsActive(valueInPath) {
-            if (!this.compiledValue) {
-                this.isActive = false;
-            } else {
-                if (this.compiledValue[0] === '@') {
-                    if (this.compiledValue === '@') {
-                        this.isActive = valueInPath;
-                    } else {
-                        this.isActive = valueInPath === this.compiledValue.substr(1);
-                    }
-                } else {
-                    this.isActive = valueInPath === this.compiledValue && this.compiledValue !== '';
-                }
-            }
-        }
-    },
     mounted() {
         style.set(this, {
             size: style.get('size', this, 40)
@@ -132,6 +115,23 @@ export default {
             }
         } else {
             // console.log(this.$el);
+        }
+    },
+    methods: {
+        updateIsActive(valueInPath) {
+            if (!this.compiledValue) {
+                this.isActive = false;
+            } else {
+                if (this.compiledValue[0] === '@') {
+                    if (this.compiledValue === '@') {
+                        this.isActive = valueInPath;
+                    } else {
+                        this.isActive = valueInPath === this.compiledValue.substr(1);
+                    }
+                } else {
+                    this.isActive = valueInPath === this.compiledValue && this.compiledValue !== '';
+                }
+            }
         }
     }
 };

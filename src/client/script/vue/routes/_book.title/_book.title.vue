@@ -117,6 +117,7 @@ export default {
             ['Sách', '/book'],
             [this.book.title, '/book/' + this.book.id]
         ];
+        this.$parent.right = [];
     }
 };
 </script>

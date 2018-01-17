@@ -1,8 +1,6 @@
 <template>
     <div class="row user hasShadow">
-        <ai-image size="30"
-                  class="round avatar"
-                  link="/user/1"
+        <ai-image class="round avatar"
                   :src="user.picture.thumbnail" />
         <p class="name"> {{ user.name.last }} </p>
     </div>
@@ -10,7 +8,8 @@
 
 <script>
 import {
-    components
+    components,
+    style
 } from 'modules';
 
 export default {
@@ -22,27 +21,43 @@ export default {
     props: {
         user: {
             type: Object,
-            default: () => ({})
+            default: () => ({
+                name: {},
+                picture: {}
+            })
         }
     },
+    style: {
+        group: 'default',
+        overwrite: false,
+        rules: {
+            '[size="#{$size}"] .user': [
+                'border-radius: #{$size}px'
+            ],
+            '[size="#{$size}"] .user>.name': [
+                'line-height: #{$size}px;',
+                'font-size: #{$size * 0.6}px;'
+            ]
+        }
+    },
+    mounted() {
+        style.set(this, {
+            size: style.get('size', this, 40)
+        });
+    }
 };
 </script>
 
 <style lang="scss">
 .user {
     background: white;
-    border-radius: 50px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin: 5px;
     padding: 3px;
-    >.avatar {
-        margin-right: 10px;
-    }
     >.name {
+        margin: 0 10px;
         flex: 1;
-        font-size: 0.9em;
         font-weight: bold;
-        line-height: 30px;
     }
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
-    <div class="col users hasShadow">
+    <div class="col users hasShadow"
+         size="30">
         <ai-user v-for="(user, index) in users"
                  :key="index"
                  :user="user" />
