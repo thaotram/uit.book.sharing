@@ -27,11 +27,13 @@ export default {
         rules: {
             '[size="#{$size}"] .image': [
                 'height: #{$size}px',
-                'width:  #{$size}px'
+                'width:  #{$size}px',
+                'min-width:  #{$size}px'
             ],
             '.image[size="#{$size}"]': [
                 'height: #{$size}px',
-                'width:  #{$size}px'
+                'width:  #{$size}px',
+                'min-width:  #{$size}px'
             ]
         }
     },
@@ -44,7 +46,7 @@ export default {
     },
     mounted() {
         style.set(this, {
-            size: style.get('size', this, 40)
+            size: this.size || style.get('size', this, 40)
         });
     }
 };

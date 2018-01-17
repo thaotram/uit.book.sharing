@@ -9,7 +9,7 @@
                     child-class="row">
             <div class="col col-books full">
                 <ai-section text="Tất cả sách" />
-                <ai-list-of-books :books="books" />
+                <ai-list-of-books-small :books="books" />
             </div>
             <div class="space" />
             <div class="col col-users hasShadow">
@@ -29,7 +29,7 @@ import state from '../../../state';
 export default {
     name: 'HomePage',
     components: {
-        ...components('list-of-books'),
+        ...components('list-of-books-small'),
         ...components('list-of-users'),
         ...components('container'),
         ...components('units'),

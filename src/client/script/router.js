@@ -10,18 +10,23 @@ const nanobar = new Nanobar({
     target: document.getElementById('what')
 });
 
-const view = (path, name) => ({
+const view = (path, folder, name) => ({
     path: path,
-    component: require(`./vue/routes/_${name}/_${name}.vue`).default
+    component: require(`./vue/routes/_${folder}/_${name}.vue`).default
 });
 
 const router = new VueRouter({
     routes: [
-        view('/', 'home'),
-        view('/book', 'book'),
-        view('/book/:title', 'book.title'),
-        view('/manager', 'manager'),
-        view('/about', 'about')
+        view('/', 'home', 'home'),
+
+        view('/book', 'book', 'book'),
+        view('/book/:title', 'book', 'book.title'),
+
+        view('/manager', 'manager', 'manager'),
+        view('/manager/borrowing', 'manager', 'manager.borrowing'),
+        view('/manager/borrowed', 'manager', 'manager.borrowed'),
+
+        view('/about', 'about', 'about')
     ]
 });
 

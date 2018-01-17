@@ -121,12 +121,6 @@ module.exports = {
             image: 'https://i.imgur.com/gcBktSE.jpg',
             tags: ['Tiểu thuyết']
         }, {
-            title: 'Tôi tài giỏi bạn cũng thế',
-            author: 'Adam Khoo',
-            description: 'Tôi tài giỏi, bạn cũng thế! tổng hợp những kỹ năng và phương pháp đã mang tới thành công vượt bậc cho cậu bé Adam kém cõi và dĩ nhiên bạn cũng có thể thành công như vậy! Quyển sách này dành cho các học sinh, sinh viên, các bậc phụ huynh, các nhà giáo và bất kỳ ai luôn mong muốn tăng cường khả năng tận dụng não bộ hoặc phát huy tối đa tiềm năng của mình.',
-            image: 'https://i.imgur.com/uxVmcac.jpg',
-            tags: ['Kỹ năng sống']
-        }, {
             title: 'Tuyết Sơn phi Hồ',
             author: 'Kim Dung',
             description: 'Diễn biến chính của tiểu thuyết Tuyết sơn phi hồ diễn ra vào thời đại nhà Thanh dưới triều vua Càn Long, nhưng các tình tiết câu chuyện lại được kéo dài từ thời đại nhà Đại Thuận dưới triều Lý Tự Thành, và bắt đầu của nhà Thanh dưới lời kể của một số nhân vật. Nhân vật chính của tiểu thuyết là Hồ Phỉ, có biệt danh là Tuyết sơn phi hồ, và các tình tiết chủ yếu của câu chuyện liên quan đến ân oán từ thời tổ tiên của Hồ Phỉ, kéo dài đến bố mẹ Hồ Phỉ và được giải quyết vào thời đại của Hồ Phỉ.',

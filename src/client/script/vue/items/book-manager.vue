@@ -6,7 +6,7 @@
                       :src="book.image" />
         </router-link>
         <ai-button icon=""
-                   class="heart noHover" />
+                   class="top-right-icon noHover" />
         <ai-row class="full content">
             <ai-line class="dark" />
             <ai-col class="full content-right">
@@ -21,23 +21,26 @@
                     </router-link>
                 </div>
                 <ai-row class="tags hasShadow"
-                        size="25">
+                        size="30">
                     <ai-button v-for="tag in book.tags"
                                :key="tag"
                                :text="tag" />
                 </ai-row>
                 <ai-line class="dark" />
                 <div class="detail col"
-                     size="20">
-                    <div class="row">
-                        <ai-user :user="user" />
-                    </div>
-                    <!-- <ai-button text="Đang cho mượn" />
-                    <p> Trạng thái: <span class="blue">Đang cho mượn</span> </p>
-                    <p> Người mượn: <span class="dark-green">
-                        {{ user.name.first }}
-                    </span> </p>
-                    <p> Đã cho mượn: <span class="violet">7 lần (xem lịch sử)</span> </p> -->
+                     size="30">
+                    <ai-text>
+                        <ai-user :user="user"
+                                 style="display: inline-flex" />
+                        <span> đang mượn quyển sách này, dự kiến trả trong </span>
+                        <ai-tag :text="`${random(1, 15)} ngày`" />
+                        <span> nữa. </span>
+                    </ai-text>
+                    <ai-text>
+                        <span> Quyển sách này từng được cho mượn</span>
+                        <ai-tag :text="`${random(1, 8)} lần`" />
+                        <span>.</span>
+                    </ai-text>
                 </div>
             </ai-col>
         </ai-row>
@@ -48,13 +51,14 @@ import {
     components
 } from 'modules';
 import axios from 'axios';
-
 export default {
     name: 'BookManager',
     components: {
         ...components('container'),
         ...components('units'),
-        ...components('user')
+        ...components('user'),
+        ...components('text'),
+        ...components('tag')
     },
     props: {
         book: {
@@ -81,6 +85,9 @@ export default {
         }).then(function(response) {
             self.user = response.data.results[0];
         });
+    },
+    methods: {
+        random: (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
     }
 };
 </script>
@@ -88,6 +95,8 @@ export default {
 $size: 20px;
 $image-size: 300px;
 $red: #ff4d4d;
+$green: #2ecc71;
+$blue: #3498db;
 .book-manager {
     background: white;
     border-radius: 4px;
@@ -95,7 +104,7 @@ $red: #ff4d4d;
     height: $image-size;
     margin: ($size + 10px) 10px 10px 10px;
     position: relative;
-    >.heart {
+    >.top-right-icon {
         position: absolute;
         right: 10px;
         top: 10px;
@@ -162,6 +171,11 @@ $red: #ff4d4d;
             >.detail {
                 padding: $size * 0.75 $size;
                 margin: 0 -0.25em;
+                .user {
+                    background: $green;
+                    box-shadow: 0 0 10px rgba($green, 0.5);
+                    color: rgba(white, 0.9);
+                }
             }
         }
     }

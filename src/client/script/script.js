@@ -13,5 +13,3 @@ new Vue({
         ref: 'app'
     })
 });
-
-global.nope;

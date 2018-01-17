@@ -26,9 +26,9 @@ export default {
 </script>
 <style lang="scss">
 #footer {
-    background-color: rgba(#34495e, 0.5);
-    margin-top: 30px;
+    background-color: rgba(black, 0.8);
     font-size: 0.9em;
+    margin-top: 30px;
     >.row {
         padding: 20px 10px;
     }

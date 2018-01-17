@@ -1,8 +1,8 @@
 <template>
-    <div class="row user hasShadow">
+    <div class="row user">
         <ai-image class="round avatar"
                   :src="user.picture.thumbnail" />
-        <p class="name"> {{ user.name.last }} </p>
+        <span class="name"> {{ user.name.first }} {{ user.name.last }} </span>
     </div>
 </template>
 
@@ -34,9 +34,13 @@ export default {
             '[size="#{$size}"] .user': [
                 'border-radius: #{$size}px'
             ],
+            '[size="#{$size}"] .user>.avatar': [
+                'margin: #{$size * 0.1}px;'
+            ],
             '[size="#{$size}"] .user>.name': [
-                'line-height: #{$size}px;',
-                'font-size: #{$size * 0.6}px;'
+                'font-size: #{$size * 0.3 + 5}px;',
+                'line-height: #{$size * 1.2}px;',
+                'margin: 0 #{$size * 0.5}px 0 #{$size * 0.2}px;'
             ]
         }
     },
@@ -52,12 +56,13 @@ export default {
 .user {
     background: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin: 5px;
-    padding: 3px;
     >.name {
-        margin: 0 10px;
+        display: block;
         flex: 1;
-        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-transform: capitalize;
+        white-space: nowrap;
     }
 }
 </style>

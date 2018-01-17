@@ -3,10 +3,8 @@
          id="book">
         <ai-contain class="full"
                     id="_book">
-            <ai-section :text="`Đang cho mượn: ${borrowed.length} quyển sách`" />
-            <ai-list-of-books-small :books="borrowed" />
-            <ai-section :text="`Đang mượn: ${borrowing.length} quyển sách`" />
-            <ai-list-of-books-small :books="borrowing" />
+            <ai-section :text="`Đã chia sẻ: ${books.length} quyển sách`" />
+            <ai-list-of-books-borrowing :books="books" />
         </ai-contain>
     </div>
 </template>
@@ -26,20 +24,16 @@ export default {
     },
     data() {
         return {
-            books: state.book.books,
-            borrowed: this.randomArray(state.book.books),
-            borrowing: this.randomArray(state.book.books)
+            books: this.randomArray(state.book.books)
         };
     },
     created() {
         this.$parent.left = [
             ['Trang chủ', '/'],
-            ['Quản lý sách', '/manager']
+            ['Quản lý sách', '/manager'],
+            ['Đang cho mượn', '/manager/borrowing']
         ];
-        this.$parent.right = [
-            ['Đang cho mượn', '/manager/borrowing'],
-            ['Đang mượn', '/manager/borrowed']
-        ];
+        this.$parent.right = [];
     },
     methods: {
         random: (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,

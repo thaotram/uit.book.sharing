@@ -4,7 +4,7 @@
         <ai-contain class="full"
                     id="_book">
             <ai-section text="Tất cả sách" />
-            <ai-list-of-books :books="books" />
+            <ai-list-of-books-small :books="books" />
         </ai-contain>
     </div>
 </template>
@@ -17,7 +17,7 @@ import {
 export default {
     components: {
         ...components('line'),
-        ...components('list-of-books'),
+        ...components('list-of-books-small'),
         ...components('contain'),
         ...components('ui')
     },

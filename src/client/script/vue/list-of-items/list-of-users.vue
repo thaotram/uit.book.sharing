@@ -42,5 +42,8 @@ export default {
 <style lang="scss">
 .users {
     margin-top: 25px;
+    >.user {
+        margin: 0.25em;
+    }
 }
 </style>
