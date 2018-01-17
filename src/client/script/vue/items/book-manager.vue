@@ -1,11 +1,11 @@
 <template>
-    <ai-row class="book-small hasShadow">
+    <ai-row class="book-manager hasShadow">
         <router-link class="image-link"
                      :to="'/book/' + book.title">
             <ai-image :src="book.image" />
         </router-link>
-        <ai-button icon=""
-                   class="heart noHover" />
+        <ai-button icon=""
+                   class="top-right-icon noHover" />
         <div class="col content">
             <div class="col hasShadow">
                 <h4 class="title">
@@ -14,10 +14,9 @@
                 <div class="author">
                     {{ book.author }}
                 </div>
-                <div class="full" />
                 <div class="info">
-                    <p>Tổng: 7</p>
-                    <p>Đang chờ: 2</p>
+                    <p>Trạng thái: <span blue>Đang cho mượn</span></p>
+                    <p>Đã cho mượn: 7</p>
                     <p>Đang mượn: 5</p>
                 </div>
             </div>
@@ -36,7 +35,7 @@ import {
     components
 } from 'modules';
 export default {
-    name: 'BookSmall',
+    name: 'Bookmanager',
     components: {
         ...components('container'),
         ...components('units')
@@ -51,18 +50,13 @@ export default {
 </script>
 <style lang="scss">
 $size: 20px;
-$image-size: 200px;
+$image-size: 270px;
+$blue: #3498db;
 $red: #ff4d4d;
-.book-small {
+.book-manager {
     flex: 1;
     margin: 30px 10px 10px 10px;
-    min-width: $image-size * 1.8;
-    max-width: $image-size * 3;
     position: relative; // width: $image-size * 2.9;
-    &.fix-width {
-        min-width: $image-size * 2.5;
-        max-width: $image-size * 2.5;
-    }
     >.image-link {
         display: block;
         position: absolute;
@@ -78,21 +72,21 @@ $red: #ff4d4d;
             height: 100%;
         }
     }
-    >.heart {
+    >.top-right-icon {
         position: absolute;
         right: $size;
         top: $size;
         padding: 10px;
-        font-size: 20px;
-        color: rgba($red, 0.8);
-        text-shadow: 0 0 0px rgba($red, 0);
+        font-size: 25px;
+        color: rgba($blue, 0.8);
+        text-shadow: 0 0 0px rgba($blue, 0);
         transition: all 0.2s;
         cursor: pointer;
         * {
             overflow: visible;
         }
         &:hover {
-            text-shadow: 0 0 15px rgba($red, 0.5);
+            text-shadow: 0 0 15px rgba($blue, 0.5);
         }
     }
     >.content {
@@ -107,17 +101,21 @@ $red: #ff4d4d;
             height: $image-size - $size * 2;
             >.title {
                 font-weight: bold;
+                font-size: 1.5em;
                 line-height: 1.3em;
                 padding: 0 40px 0 0;
             }
             >.author {
                 color: rgba(black, 0.6);
                 font-weight: bold;
-                font-size: 0.9em;
+                font-size: 1.1em;
                 line-height: 1.3em;
             }
             >.info {
-                font-size: 0.9em; // margin: 10px 0;
+                color: rgba(black, 0.8);
+                font-size: 1em;
+                margin-top: 10px;
+                font-weight: bold;
             }
         }
         >.line {
@@ -138,18 +136,18 @@ $red: #ff4d4d;
     }
 }
 
-.book-small-enter,
-.book-small-leave-to {
+.book-manager-enter,
+.book-manager-leave-to {
     opacity: 0;
     transform: scale(0);
 }
 
-.book-small-enter-to {
+.book-manager-enter-to {
     opacity: 1;
     transform: scale(1);
 }
 
-.book-small-move {
+.book-manager-move {
     opacity: 1;
     transition: all 0.5s;
 }

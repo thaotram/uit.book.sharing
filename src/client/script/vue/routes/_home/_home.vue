@@ -8,7 +8,7 @@
         <ai-contain class="full"
                     child-class="row">
             <div class="col col-books full">
-                <ai-section text="Ngẫu nhiên" />
+                <ai-section text="Tất cả sách" />
                 <ai-list-of-books :books="books" />
             </div>
             <div class="space" />

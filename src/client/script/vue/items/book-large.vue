@@ -1,7 +1,7 @@
 <template>
     <ai-row class="book-large hasShadow">
         <router-link class="image-link"
-                     :to="'/Sách/' + book.id">
+                     :to="'/Book/' + book.title">
             <ai-image class="shadow"
                       :src="book.image" />
         </router-link>
@@ -113,7 +113,6 @@ $red: #ff4d4d;
                     font-size: 1.5em;
                     line-height: 1.2em;
                     color: rgba(black, 0.9);
-                    margin-bottom: 0.3em;
                 }
                 .author {
                     font-size: 1.1em;
