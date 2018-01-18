@@ -2,20 +2,26 @@
     <ai-book-large :book="book"
                    class="book-large-onshare"
                    size="35">
-        <ai-row class="hasShadow"
-                blue>
-            <ai-tag text="Cho mượn tối đa"
-                    class="crescent" />
-            <ai-tag :text="`${random(1, 15)} ngày`" />
-        </ai-row>
-        <ai-row class="hasShadow pointer"
-                orange>
-            <ai-tag text="Chỉnh sửa thông tin" />
-        </ai-row>
-        <ai-row class="hasShadow pointer"
-                red>
-            <ai-tag text="Ngưng chia sẻ" />
-        </ai-row>
+        <div class="detail-child">
+            <ai-row class="hasShadow"
+                    blue>
+                <ai-tag text="Cho mượn tối đa"
+                        class="crescent" />
+                <ai-tag :text="`${random(1, 15)} ngày`" />
+            </ai-row>
+        </div>
+        <div class="detail-child">
+            <ai-row class="hasShadow pointer"
+                    orange>
+                <ai-tag text="Chỉnh sửa thông tin" />
+            </ai-row>
+        </div>
+        <div class="detail-child">
+            <ai-row class="hasShadow pointer"
+                    red>
+                <ai-tag text="Ngưng chia sẻ" />
+            </ai-row>
+        </div>
     </ai-book-large>
 </template>
 <script>

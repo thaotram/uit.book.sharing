@@ -66,6 +66,12 @@
                         <ai-tag :text="user.phone" />
                     </ai-row>
                     <ai-row class="hasShadow"
+                            orange>
+                        <ai-tag text="Email"
+                                class="crescent" />
+                        <ai-tag :text="user.email" />
+                    </ai-row>
+                    <ai-row class="hasShadow"
                             dark-green>
                         <ai-tag text="Đường"
                                 class="crescent" />
