@@ -39,12 +39,12 @@ import {
 export default {
     name: 'BookLargeGeneral',
     components: {
+        ...components('container'),
         ...components('items/book-large'),
         ...components('list-of-items'),
-        ...components('container'),
-        ...components('user'),
+        ...components('tag'),
         ...components('text'),
-        ...components('tag')
+        ...components('user'),
     },
     props: {
         book: {

@@ -65,7 +65,7 @@ export default {
     #search-box {
         align-self: center;
         border-radius: 30px;
-        border: 1px solid #95a5a6;
+        border: 0.75px solid rgba(black, 0.1);
         input {
             padding: 0 15px;
         }

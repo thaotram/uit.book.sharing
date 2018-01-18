@@ -1,6 +1,6 @@
 <template>
     <router-link class="row user"
-                 :to="`user/${user.name.first} ${user.name.last}`">
+                 :to="`/user/${user.name.first} ${user.name.last}`">
         <ai-image class="round avatar"
                   :src="user.picture.thumbnail" />
         <span class="name"> {{ user.name.first }} {{ user.name.last }} </span>

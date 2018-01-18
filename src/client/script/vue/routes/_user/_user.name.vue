@@ -11,7 +11,7 @@
                 </span>
                 <div class="row-icon">
                     <div class="layer">
-                        <ai-row :style="{ clipPath: `inset(0 ${random(30, 100)}% 0 0)` }">
+                        <ai-row :style="{ clipPath: `inset(0 ${random(0, 30)}% 0 0)` }">
                             <span class="icon"></span>
                             <span class="icon"></span>
                             <span class="icon"></span>
@@ -83,11 +83,13 @@
             </ai-col>
         </ai-col>
         <ai-col class="full timeline-col">
-            <ai-section text="Lịch sử mượn sách" />
-            <ai-row class="full">
+            <ai-section text="Lịch sử chia sẻ" />
+            <ai-row class="full hasShadow">
                 <ai-line class="dark" />
-                <ai-col class="full">
-                    <ai-transfer-item/>
+                <ai-col class="full hasShadow"
+                        size="30">
+                    <ai-transfer-item v-for="n in random(5, 15)"
+                                      :key="n" />
                 </ai-col>
             </ai-row>
         </ai-col>
@@ -187,13 +189,18 @@ export default {
 }
 
 .timeline-col {
-    margin-left: 0.5em;
+    margin-left: 10px;
     >.row {
         padding: 10px;
         >.line {
             width: 5px;
             border-radius: 5px;
             background-color: rgba(#3498cb, 0.3);
+        }
+        >.col {
+            .flex-wrap {
+                justify-content: flex-start;
+            }
         }
     }
 }
