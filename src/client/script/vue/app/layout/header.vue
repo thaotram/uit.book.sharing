@@ -17,8 +17,7 @@
             <ai-col class="square">
                 <ai-image size="30"
                           class="round"
-                          link="user/me"
-                          src="https://graph.facebook.com/ai.scanlation/picture?width=200" />
+                          :src="user.picture.thumbnail" />
             </ai-col>
         </ai-contain>
     </div>
@@ -36,7 +35,7 @@ export default {
         ...components('units')
     },
     data: () => ({
-        user: user()
+        user: user.one()
     }),
 };
 </script>

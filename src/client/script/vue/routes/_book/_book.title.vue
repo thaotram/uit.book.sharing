@@ -99,7 +99,6 @@ import {
 import state from '../../../state';
 
 export default {
-    name: 'BookPage',
     components: {
         ...components('container'),
         ...components('units'),

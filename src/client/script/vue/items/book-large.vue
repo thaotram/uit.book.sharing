@@ -26,12 +26,9 @@
                                :text="tag" />
                 </ai-row>
                 <ai-line class="dark" />
-                <div class="detail">
+                <div class="detail scroll">
                     <slot/>
                 </div>
-                <!-- <div class="box scroll">
-                    <span bold>Tóm tắt:</span> {{ book.description }}
-                </div> -->
             </ai-col>
         </ai-row>
     </ai-row>
@@ -113,6 +110,7 @@ $red: #ff4d4d;
                     font-size: 1.5em;
                     line-height: 1.2em;
                     color: rgba(black, 0.9);
+                    padding-right: 50px;
                 }
                 .author {
                     font-size: 1.1em;

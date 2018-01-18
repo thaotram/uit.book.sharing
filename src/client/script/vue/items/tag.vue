@@ -26,7 +26,7 @@ export default {
             ],
             '[size="#{$size}"] .tag.crescent': [
                 'margin-right: -#{$size}px',
-                'padding-right: 3em'
+                'padding-right: 2.5em'
             ]
         }
     },

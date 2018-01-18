@@ -10,7 +10,8 @@
 <script>
 import axios from 'axios';
 import {
-    components
+    components,
+    user
 } from 'modules';
 
 export default {
@@ -20,22 +21,15 @@ export default {
     },
     data() {
         return {
-            users: []
+            users: user.more(5)
         };
     },
-    mounted() {
-        const self = this;
-        axios.get('https://randomuser.me/api/', {
-            params: {
-                inc: 'name,picture',
-                nat: 'vn',
-                gender: 'female',
-                results: 5
-            }
-        }).then(function(response) {
-            self.users = response.data.results;
-        });
-    }
+    // mounted() {
+    //    users
+    // },
+    methods: {
+
+    },
 };
 </script>
 

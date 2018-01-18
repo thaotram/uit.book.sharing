@@ -1,9 +1,10 @@
 <template>
-    <div class="row user">
+    <router-link class="row user"
+                 :to="`user/${user.name.first} ${user.name.last}`">
         <ai-image class="round avatar"
                   :src="user.picture.thumbnail" />
         <span class="name"> {{ user.name.first }} {{ user.name.last }} </span>
-    </div>
+    </router-link>
 </template>
 
 <script>
@@ -60,6 +61,7 @@ export default {
 .user {
     // background: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: rgba(black, 0.9);
     >.name {
         display: block;
         flex: 1;
@@ -67,6 +69,9 @@ export default {
         text-overflow: ellipsis;
         text-transform: capitalize;
         white-space: nowrap;
+    }
+    &:hover {
+        text-decoration: none;
     }
 }
 </style>

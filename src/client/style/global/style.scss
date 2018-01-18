@@ -89,9 +89,6 @@ $scrollbar-size: 8px;
     font-weight: bold;
 }
 
-.blue {
-    color: $blue
-}
 
 [blue] {
     >.crescent {
@@ -108,7 +105,23 @@ $scrollbar-size: 8px;
     background-color: #3498db
 }
 
+.blue {
+    color: $blue
+}
+
 $green: #27ae60;
+
+[green] {
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba($green, 0.8);
+    >.crescent {
+        background-color: rgba($green, 0.7);
+    }
+    >* {
+        background-color: $green;
+    }
+}
+
 .green {
     color: $green;
 }
@@ -117,29 +130,21 @@ $green: #27ae60;
     background-color: $green
 }
 
-[green] {
-    >.crescent {
-        background-color: rgba($green, 0.7);
-    }
-    >* {
-        background-color: $green;
-        box-shadow: 0 0 10px rgba($green, 0.8);
-    }
-}
-
-.red {
-    color: #e74c3c;
-}
 
 $red: #e74c3c;
 [red] {
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba($red, 0.8);
     >.crescent {
         background-color: rgba($red, 0.7);
     }
     >* {
         background-color: $red;
-        box-shadow: 0 0 10px rgba($red, 0.8);
     }
+}
+
+.red {
+    color: #e74c3c;
 }
 
 .bg-red {
@@ -148,35 +153,46 @@ $red: #e74c3c;
 
 $orange: #e67e22;
 [orange] {
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba($orange, 0.8);
     >.crescent {
         background-color: rgba($orange, 0.7);
     }
     >* {
         background-color: $orange;
-        box-shadow: 0 0 10px rgba($orange, 0.8);
     }
 }
 
-
-
 $violet: #9b59b6;
-
-.violet {
-    color: #9b59b6;
-}
-
 [violet] {
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba($violet, 0.8);
     >.crescent {
         background-color: rgba($violet, 0.7);
     }
     >* {
         background-color: $violet;
-        box-shadow: 0 0 10px rgba($violet, 0.8);
     }
 }
 
+.violet {
+    color: $violet;
+}
+
 .bg-violet {
-    background-color: #9b59b6
+    background-color: $violet
+}
+
+$dark-green: #1abc9c;
+[dark-green] {
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba($dark-green, 0.8);
+    >.crescent {
+        background-color: rgba($dark-green, 0.7);
+    }
+    >* {
+        background-color: $dark-green;
+    }
 }
 
 .dark-green {

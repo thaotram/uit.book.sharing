@@ -27,7 +27,7 @@ const router = new VueRouter({
         view('/manager/share', 'manager', 'manager.share'),
         view('/manager/onshare', 'manager', 'manager.onshare'),
         
-        view('/user/:id', 'user', 'user.id'),
+        view('/user/:name', 'user', 'user.name'),
 
         view('/about', 'about', 'about')
     ]

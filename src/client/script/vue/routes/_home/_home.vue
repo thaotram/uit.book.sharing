@@ -2,8 +2,8 @@
     <div class="full">
         <ai-contain>
             <ai-section text="Ngẫu nhiên" />
-            <ai-book-large :book="book"
-                           class="fix-width" />
+            <ai-book-large-general :book="book"
+                                   class="fix-width" />
         </ai-contain>
         <ai-contain class="full"
                     child-class="row">

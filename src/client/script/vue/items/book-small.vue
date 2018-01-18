@@ -115,7 +115,8 @@ $red: #ff4d4d;
             }
             >.detail {
                 >.row {
-                    margin-top: 0.3em;
+                    margin-top: 0.5em;
+                    display: inline-flex;
                     >.user {
                         display: inline-flex;
                     }

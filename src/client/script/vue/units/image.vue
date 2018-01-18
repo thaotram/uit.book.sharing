@@ -1,6 +1,5 @@
 <template>
     <div class="image"
-         :to="link"
          :style="srcStyle" />
 </template>
 <script>
