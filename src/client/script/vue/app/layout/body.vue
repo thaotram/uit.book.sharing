@@ -1,6 +1,6 @@
 <template>
     <div id="body">
-        <ai-contain class="full nav">
+        <ai-contain class="nav">
             <ai-navigator :left="left"
                           :right="right" />
         </ai-contain>
@@ -33,6 +33,7 @@ export default {
        scoped>
 #body {
     overflow: auto;
+    min-height: calc(100% - 50px);
     >.navigator {
         margin: 20px auto;
     }

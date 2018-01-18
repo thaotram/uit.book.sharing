@@ -202,3 +202,15 @@ $dark-green: #1abc9c;
 .bg-dark-green {
     background-color: #1abc9c
 }
+
+$dark-blue: #34495e;
+[dark-blue] {
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba($dark-blue, 0.8);
+    >.crescent {
+        background-color: rgba($dark-blue, 0.7);
+    }
+    >* {
+        background-color: $dark-blue;
+    }
+}

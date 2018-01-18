@@ -44,5 +44,7 @@ export default {
     border-radius: 20px;
     padding: 0 1em;
     display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 </style>

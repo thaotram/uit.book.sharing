@@ -11,7 +11,7 @@
                 </span>
                 <div class="row-icon">
                     <div class="layer">
-                        <ai-row :style="{ clipPath: `inset(0 ${percent}% 0 0)` }">
+                        <ai-row :style="{ clipPath: `inset(0 ${random(0, 30)}% 0 0)` }">
                             <span class="icon"></span>
                             <span class="icon"></span>
                             <span class="icon"></span>
@@ -88,8 +88,8 @@
                 <ai-line class="dark" />
                 <ai-col class="full hasShadow"
                         size="30">
-                    <ai-transfer-item v-for="n in number"
-                                      :key="n + '-' + random(0,1000)" />
+                    <ai-transfer-item v-for="n in random(5, 15)"
+                                      :key="n" />
                 </ai-col>
             </ai-row>
         </ai-col>
@@ -115,32 +115,21 @@ export default {
     data() {
         return {
             user: user.one(this.$route.params.name),
-            number: this.random(10, 15),
-            percent: this.random(0, 30)
+
         };
     },
     created() {
-        this.update();
+        this.$parent.left = [
+            ['Trang chủ', '/'],
+            ['Người dùng', '/user'],
+            [`${this.user.name.first} ${this.user.name.last}`, '/user/' + this.$route.params.name]
+        ];
+        this.$parent.right = [];
     },
     methods: {
         date: (string) => moment(string).format('DD/MM/YYYY'),
         random: (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
-        update() {
-            this.$parent.left = [
-                ['Trang chủ', '/'],
-                ['Người dùng', '/user/' + this.$route.params.name],
-                [`${this.user.name.first} ${this.user.name.last}`, '/user/' + this.$route.params.name]
-            ];
-            this.$parent.right = [];
-            this.user = user.one(this.$route.params.name);
-            this.number = this.random(10, 15);
-            this.percent = this.random(0, 70);
-        }
-    },
-    beforeRouteUpdate(to, from, next) {
-        this.update();
-        next();
-    },
+    }
 };
 </script>
 <style lang="scss">
@@ -186,8 +175,8 @@ export default {
         }
         >.line.light {
             margin-top: 0.5em;
-            height: 1px;
-            background-color: rgba(0, 0, 0, 0.1);
+            height: 2px;
+            background-color: rgba(0, 0, 0, 0.2);
             border-radius: 10px;
         }
         >.detail {

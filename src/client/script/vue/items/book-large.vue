@@ -134,6 +134,15 @@ $red: #ff4d4d;
             }
             >.detail {
                 padding: 20px;
+                >.detail-child {
+                    display: block;
+                    >* {
+                        display: inline-flex;
+                    }
+                }
+                >* {
+                    display: inline-flex;
+                }
             }
         }
     }
