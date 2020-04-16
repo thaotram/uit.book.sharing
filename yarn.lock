@@ -6837,9 +6837,9 @@ vue-eslint-parser@^2.0.1, vue-eslint-parser@^2.0.2:
     esquery "^1.0.0"
     lodash "^4.17.4"
 
-vue-hot-reload-api@^2.2.0, vue-hot-reload-api@^2.2.4:
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.2.4.tgz#683bd1d026c0d3b3c937d5875679e9a87ec6cd8f"
+vue-hot-reload-api@^2.2.0, vue-hot-reload-api@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.1.tgz#b2d3d95402a811602380783ea4f566eb875569a2"
 
 vue-loader@^13.7.0:
   version "13.7.0"
