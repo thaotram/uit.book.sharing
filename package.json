@@ -61,7 +61,7 @@
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
-    "eslint-plugin-vue": "^4.2.0",
+    "eslint-plugin-vue": "^4.7.1",
     "eslint-plugin-vue-libs": "^2.1.0",
     "express-open-in-editor": "^3.1.1",
     "file-loader": "^1.1.6",
